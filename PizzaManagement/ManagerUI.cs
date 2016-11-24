@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PizzaManagement
 {
-    public partial class MainMenu : Form
+    public partial class ManagerUI : Form
     {
-        public MainMenu()
+        public ManagerUI()
         {
             InitializeComponent();
+        }
+
+        private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
