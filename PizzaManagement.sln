@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaManagement", "PizzaManagement\PizzaManagement.csproj", "{88A0ACAF-EC3E-4816-8125-39336D2F7249}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "PizzaManagement\GUI.csproj", "{88A0ACAF-EC3E-4816-8125-39336D2F7249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{787F002D-F54D-4E5C-84BB-00A49A58C8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{335C567C-0E9C-4BD2-AB2C-38022897D987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{3EEE0A66-A08D-4A3C-8EFF-19FB8CD20224}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{88A0ACAF-EC3E-4816-8125-39336D2F7249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A0ACAF-EC3E-4816-8125-39336D2F7249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A0ACAF-EC3E-4816-8125-39336D2F7249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{787F002D-F54D-4E5C-84BB-00A49A58C8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787F002D-F54D-4E5C-84BB-00A49A58C8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787F002D-F54D-4E5C-84BB-00A49A58C8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{787F002D-F54D-4E5C-84BB-00A49A58C8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335C567C-0E9C-4BD2-AB2C-38022897D987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335C567C-0E9C-4BD2-AB2C-38022897D987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335C567C-0E9C-4BD2-AB2C-38022897D987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335C567C-0E9C-4BD2-AB2C-38022897D987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EEE0A66-A08D-4A3C-8EFF-19FB8CD20224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEE0A66-A08D-4A3C-8EFF-19FB8CD20224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEE0A66-A08D-4A3C-8EFF-19FB8CD20224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEE0A66-A08D-4A3C-8EFF-19FB8CD20224}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
