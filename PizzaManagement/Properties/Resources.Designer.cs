@@ -73,9 +73,9 @@ namespace PizzaManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendar1 {
+        internal static System.Drawing.Bitmap money_icon {
             get {
-                object obj = ResourceManager.GetObject("calendar1", resourceCulture);
+                object obj = ResourceManager.GetObject("money_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

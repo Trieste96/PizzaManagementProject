@@ -22,12 +22,12 @@ namespace PizzaManagement
 
         }
 
-        private void ManagerUI_Load(object sender, EventArgs e)
+        private void loadTreeView()
         {
             //Node lịch làm việc
             TreeNode timeTable = new TreeNode("Sắp xếp lịch làm việc", 1, 1);
             //Node tài chính
-            TreeNode[] financeOptions = 
+            TreeNode[] financeOptions =
             {
                 new TreeNode("Tình hình tài chính", 21, 21)
             };
@@ -35,7 +35,7 @@ namespace PizzaManagement
             finance.ExpandAll();
 
             //Node kho hàng
-            TreeNode[] storeOptions = 
+            TreeNode[] storeOptions =
             {
                 new TreeNode("Lập phiếu thống kê", 31, 31),
                 new TreeNode("Tra cứu thông tin kho hàng", 32, 32)
@@ -59,6 +59,13 @@ namespace PizzaManagement
             treeFunctionList.Nodes.Add(info);
 
             tabControl.TabPages.Clear();
+        }
+        private void ManagerUI_Load(object sender, EventArgs e)
+        {
+            loadTreeView();
+            ImageList list = new ImageList();
+            list.Images.Add("timeTableIcon", Properties.Resources.calendar);
+            tabLichLam.ImageKey = "timeTableIcon";
         }
 
 
