@@ -65,8 +65,6 @@ namespace PizzaManagement
         {
             loadTreeView();
             ImageList list = new ImageList();
-            list.Images.Add("timeTableIcon", Properties.Resources.calendar);
-            tabLichLam.ImageKey = "timeTableIcon";
         }
 
 
