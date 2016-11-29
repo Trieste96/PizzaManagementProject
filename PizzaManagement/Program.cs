@@ -16,7 +16,7 @@ namespace PizzaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerUI());
+            Application.Run(new AuthenticationUI());
         }
     }
 }
