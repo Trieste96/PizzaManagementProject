@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using DAO;
 using System.Security.Cryptography;
 
 namespace BUS
@@ -20,14 +21,14 @@ namespace BUS
             }
             return sb.ToString();
         }
-        public void verifyAccount(NhanVien nv)
+        public NhanVien verifyAccount(NhanVien guest)
         {
             //Mã hoá mật khẩu thành mã băm MD5
             MD5 md5 = MD5.Create();
-            nv.MatKhau = GetMd5Hash(md5, nv.MatKhau);
+            guest.MatKhau = GetMd5Hash(md5, guest.MatKhau);
 
             AuthenticationDAO dao = new AuthenticationDAO();
-            dao.verifyAccount(nv);
+            return dao.verifyAccount(guest);
         }
     }
 }
