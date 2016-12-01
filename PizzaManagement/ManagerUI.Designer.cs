@@ -40,7 +40,9 @@
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabKhachHang = new System.Windows.Forms.TabPage();
             this.tabNhapKho = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
+            this.tabSanPham.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -49,9 +51,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitle.Location = new System.Drawing.Point(186, 20);
+            this.lblTitle.Location = new System.Drawing.Point(248, 25);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(464, 46);
+            this.lblTitle.Size = new System.Drawing.Size(576, 58);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Quản lý nhà hàng Pizza";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -59,9 +62,10 @@
             // treeFunctionList
             // 
             this.treeFunctionList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeFunctionList.Location = new System.Drawing.Point(2, 142);
+            this.treeFunctionList.Location = new System.Drawing.Point(3, 175);
+            this.treeFunctionList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.treeFunctionList.Name = "treeFunctionList";
-            this.treeFunctionList.Size = new System.Drawing.Size(262, 404);
+            this.treeFunctionList.Size = new System.Drawing.Size(348, 496);
             this.treeFunctionList.TabIndex = 5;
             this.treeFunctionList.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeFunctionList_NodeMouseDoubleClick);
             // 
@@ -81,117 +85,139 @@
             this.tabControl.Controls.Add(this.tabNhapKho);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tabControl.Location = new System.Drawing.Point(303, 142);
+            this.tabControl.Location = new System.Drawing.Point(404, 175);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(505, 404);
+            this.tabControl.Size = new System.Drawing.Size(673, 497);
             this.tabControl.TabIndex = 6;
             // 
             // tabLichLam
             // 
             this.tabLichLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabLichLam.Location = new System.Drawing.Point(4, 34);
+            this.tabLichLam.Location = new System.Drawing.Point(4, 38);
+            this.tabLichLam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabLichLam.Name = "tabLichLam";
-            this.tabLichLam.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLichLam.Size = new System.Drawing.Size(497, 366);
+            this.tabLichLam.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabLichLam.Size = new System.Drawing.Size(665, 455);
             this.tabLichLam.TabIndex = 0;
             this.tabLichLam.Text = "Sắp xếp lịch làm";
             this.tabLichLam.UseVisualStyleBackColor = true;
             // 
             // tabTinhHinhTaiChinh
             // 
-            this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 34);
+            this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
+            this.tabTinhHinhTaiChinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
-            this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(497, 366);
+            this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(665, 455);
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
             // 
             // tabKiemKho
             // 
-            this.tabKiemKho.Location = new System.Drawing.Point(4, 34);
+            this.tabKiemKho.Location = new System.Drawing.Point(4, 38);
+            this.tabKiemKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabKiemKho.Name = "tabKiemKho";
-            this.tabKiemKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKiemKho.Size = new System.Drawing.Size(497, 366);
+            this.tabKiemKho.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabKiemKho.Size = new System.Drawing.Size(665, 455);
             this.tabKiemKho.TabIndex = 2;
             this.tabKiemKho.Text = "Lập phiếu kiểm kho";
             this.tabKiemKho.UseVisualStyleBackColor = true;
             // 
             // tabThongTinKho
             // 
-            this.tabThongTinKho.Location = new System.Drawing.Point(4, 34);
+            this.tabThongTinKho.Location = new System.Drawing.Point(4, 38);
+            this.tabThongTinKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabThongTinKho.Name = "tabThongTinKho";
-            this.tabThongTinKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThongTinKho.Size = new System.Drawing.Size(497, 366);
+            this.tabThongTinKho.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabThongTinKho.Size = new System.Drawing.Size(665, 455);
             this.tabThongTinKho.TabIndex = 3;
             this.tabThongTinKho.Text = "Tra cứu thông tin kho";
             this.tabThongTinKho.UseVisualStyleBackColor = true;
             // 
             // tabSanPham
             // 
-            this.tabSanPham.Location = new System.Drawing.Point(4, 34);
+            this.tabSanPham.Controls.Add(this.button1);
+            this.tabSanPham.Location = new System.Drawing.Point(4, 38);
+            this.tabSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabSanPham.Name = "tabSanPham";
-            this.tabSanPham.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSanPham.Size = new System.Drawing.Size(497, 366);
+            this.tabSanPham.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSanPham.Size = new System.Drawing.Size(665, 455);
             this.tabSanPham.TabIndex = 4;
             this.tabSanPham.Text = "Sản phẩm";
             this.tabSanPham.UseVisualStyleBackColor = true;
             // 
             // tabNguyenLieu
             // 
-            this.tabNguyenLieu.Location = new System.Drawing.Point(4, 34);
+            this.tabNguyenLieu.Location = new System.Drawing.Point(4, 38);
+            this.tabNguyenLieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNguyenLieu.Name = "tabNguyenLieu";
-            this.tabNguyenLieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNguyenLieu.Size = new System.Drawing.Size(497, 366);
+            this.tabNguyenLieu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNguyenLieu.Size = new System.Drawing.Size(665, 455);
             this.tabNguyenLieu.TabIndex = 5;
             this.tabNguyenLieu.Text = "Nguyên liệu";
             this.tabNguyenLieu.UseVisualStyleBackColor = true;
             // 
             // tabNhanVien
             // 
-            this.tabNhanVien.Location = new System.Drawing.Point(4, 34);
+            this.tabNhanVien.Location = new System.Drawing.Point(4, 38);
+            this.tabNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhanVien.Size = new System.Drawing.Size(497, 366);
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNhanVien.Size = new System.Drawing.Size(665, 455);
             this.tabNhanVien.TabIndex = 6;
             this.tabNhanVien.Text = "Nhân viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
             // 
             // tabKhachHang
             // 
-            this.tabKhachHang.Location = new System.Drawing.Point(4, 34);
+            this.tabKhachHang.Location = new System.Drawing.Point(4, 38);
+            this.tabKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabKhachHang.Name = "tabKhachHang";
-            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(497, 366);
+            this.tabKhachHang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabKhachHang.Size = new System.Drawing.Size(665, 455);
             this.tabKhachHang.TabIndex = 7;
             this.tabKhachHang.Text = "Khách hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
             // 
             // tabNhapKho
             // 
-            this.tabNhapKho.Location = new System.Drawing.Point(4, 34);
+            this.tabNhapKho.Location = new System.Drawing.Point(4, 38);
+            this.tabNhapKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNhapKho.Name = "tabNhapKho";
-            this.tabNhapKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhapKho.Size = new System.Drawing.Size(497, 366);
+            this.tabNhapKho.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNhapKho.Size = new System.Drawing.Size(665, 455);
             this.tabNhapKho.TabIndex = 8;
             this.tabNhapKho.Text = "Lập phiếu nhập kho";
             this.tabNhapKho.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(221, 155);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 80);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ManagerUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 570);
+            this.ClientSize = new System.Drawing.Size(1081, 702);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.treeFunctionList);
             this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManagerUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao diện quản lý";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManagerUI_Load);
             this.tabControl.ResumeLayout(false);
+            this.tabSanPham.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,6 +236,7 @@
         private System.Windows.Forms.TabPage tabNhanVien;
         private System.Windows.Forms.TabPage tabKhachHang;
         private System.Windows.Forms.TabPage tabNhapKho;
+        private System.Windows.Forms.Button button1;
     }
 }
 
