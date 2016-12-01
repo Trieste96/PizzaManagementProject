@@ -133,5 +133,10 @@ namespace PizzaManagement
             }
         }
 
+        private void treeFunctionList_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
     }
 }
