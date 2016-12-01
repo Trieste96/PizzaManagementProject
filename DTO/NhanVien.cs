@@ -13,6 +13,7 @@ namespace DTO
         public string SoCMND { get; set; }
         public string DiaChi { get; set; }
         public string Email { get; set; }
+        public int MaLoaiNV { get; set; }
         public string TenLoaiNV { get; set; }
         public string MatKhau { get; set; }
         public int TinhTrang { get; set; }

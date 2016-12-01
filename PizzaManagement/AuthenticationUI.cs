@@ -31,6 +31,7 @@ namespace PizzaManagement
                 cbQuyen.DataSource = dt;
                 cbQuyen.DisplayMember = "TenLoai";
                 cbQuyen.ValueMember = "MaLoai";
+                cbQuyen.SelectedValue = 1;
             }
             catch (SqlException)
             {
@@ -44,29 +45,30 @@ namespace PizzaManagement
             //Kiểm tra tính hợp lệ của id
             string idPattern = @"^[0-9]+$";
             Regex re = new Regex(idPattern);
-            Match m = re.Match(txtMatKhau.Text);
-            if(m.Success)
+
+            if ( !re.IsMatch(txtMaNV.Text) )
             {
                 MessageBox.Show("ID không hợp lệ, vui lòng nhập lại", "Đăng nhập thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                int id = Convert.ToInt32(txtMaNV.Text);
                 string passwd = txtMatKhau.Text;
-                NhanVien user = new NhanVien();
-                user.MaNV = id;
-                user.MatKhau = passwd;
-                user.TenLoaiNV = cbQuyen.SelectedText;
+                NhanVien guest = new NhanVien();
+                guest.MaNV = Convert.ToInt32(txtMaNV.Text);
+                guest.MatKhau = passwd;
+                guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
 
                 AuthenticationBUS bus = new AuthenticationBUS();
-                user = bus.verifyAccount(user);
+                NhanVien user = bus.verifyAccount(guest);
                 if (user.TinhTrang == 0)
                 {
-                    MessageBox.Show("Không đúng");
+                    MessageBox.Show("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin đăng nhập", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show(String.Format("Mã NV:{0}\nHọ tên:{1}\nLoại NV:{2}", user.MaNV, user.HoTen, user.TenLoaiNV));
+                    ManagerUI manager = new ManagerUI();
+                    manager.Show();
+                    this.Hide();
                 }
             }          
         }

@@ -17,17 +17,16 @@ namespace DAO
             cm.CommandType = CommandType.StoredProcedure;
 
             cm.Parameters.Add("@MaNV", SqlDbType.Int);
-            cm.Parameters.Add("@TenLoaiNV", SqlDbType.NVarChar, 20);
+            cm.Parameters.Add("@MaLoaiNV", SqlDbType.SmallInt);
             cm.Parameters.Add("@MatKhau", SqlDbType.Char, 32);
 
             cm.Parameters["@MaNV"].Value = guest.MaNV;
-            cm.Parameters["@TenLoaiNV"].Value = guest.TenLoaiNV;
+            cm.Parameters["@MaLoaiNV"].Value = guest.MaLoaiNV;
             cm.Parameters["@MatKhau"].Value = guest.MatKhau;
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
-            
+           
             NhanVien user = new NhanVien();
             if(dt.Rows.Count == 0)
             {
@@ -36,8 +35,7 @@ namespace DAO
             else
             {
                 user.MaNV = guest.MaNV;
-                user.HoTen = dt.Rows[0]["HoTenNV"].ToString();
-                
+                user.HoTen = dt.Rows[0]["HoTenNV"].ToString();               
                 user.TenLoaiNV = dt.Rows[0]["TenLoai"].ToString();
                 user.TinhTrang = 1;
             }
