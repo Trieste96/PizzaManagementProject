@@ -194,9 +194,9 @@
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblTitle.Location = new System.Drawing.Point(303, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(464, 46);
+            this.lblTitle.Size = new System.Drawing.Size(347, 46);
             this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Quản lý nhà hàng Pizza";
+            this.lblTitle.Text = "Giao diện quản lý";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
@@ -207,6 +207,8 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
             this.groupBox1.Location = new System.Drawing.Point(2, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(281, 137);
@@ -217,7 +219,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 31);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
@@ -226,7 +230,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 67);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(10, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 1;
@@ -235,7 +241,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 100);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(10, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 2;
@@ -243,27 +251,36 @@
             // 
             // txtUserID
             // 
-            this.txtUserID.Enabled = false;
+            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.ForeColor = System.Drawing.Color.Black;
             this.txtUserID.Location = new System.Drawing.Point(115, 28);
             this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(160, 20);
+            this.txtUserID.ReadOnly = true;
+            this.txtUserID.Size = new System.Drawing.Size(160, 26);
             this.txtUserID.TabIndex = 3;
+            this.txtUserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtUserName
             // 
-            this.txtUserName.Enabled = false;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.Black;
             this.txtUserName.Location = new System.Drawing.Point(115, 64);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(160, 20);
+            this.txtUserName.ReadOnly = true;
+            this.txtUserName.Size = new System.Drawing.Size(160, 26);
             this.txtUserName.TabIndex = 4;
+            this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtUserPosition
             // 
-            this.txtUserPosition.Enabled = false;
+            this.txtUserPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserPosition.ForeColor = System.Drawing.Color.Black;
             this.txtUserPosition.Location = new System.Drawing.Point(115, 97);
             this.txtUserPosition.Name = "txtUserPosition";
-            this.txtUserPosition.Size = new System.Drawing.Size(160, 20);
+            this.txtUserPosition.ReadOnly = true;
+            this.txtUserPosition.Size = new System.Drawing.Size(160, 26);
             this.txtUserPosition.TabIndex = 5;
+            this.txtUserPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ManagerUI
             // 
@@ -276,7 +293,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "ManagerUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Giao diện quản lý";
+            this.Text = "Quản lý nhà hàng Pizza";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManagerUI_Load);
             this.tabControl.ResumeLayout(false);

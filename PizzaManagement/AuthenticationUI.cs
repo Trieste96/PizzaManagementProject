@@ -69,7 +69,8 @@ namespace PizzaManagement
                 {
                     user = guest;
                     switchToMangerUI = true;
-                    this.Close();
+                    MessageBox.Show("Đăng nhập thành công! Nhấn OK", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Dispose();
                 }
             }
         }
