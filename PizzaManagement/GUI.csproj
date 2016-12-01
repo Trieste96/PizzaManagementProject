@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthenticationUI.Designer.cs">
+      <DependentUpon>AuthenticationUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AuthenticationUI.resx">
+      <DependentUpon>AuthenticationUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUI.resx">
       <DependentUpon>ManagerUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,10 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Picture\calendar.png" />
-    <Content Include="Picture\money-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">

@@ -37,8 +37,9 @@ namespace PizzaManagement
             //Node kho hàng
             TreeNode[] storeOptions =
             {
-                new TreeNode("Lập phiếu thống kê", 31, 31),
-                new TreeNode("Tra cứu thông tin kho hàng", 32, 32)
+                new TreeNode("Lập phiếu kiểm kho", 31, 31),
+                new TreeNode("Lập phiếu nhập kho", 32, 32),
+                new TreeNode("Tra cứu thông tin kho hàng", 33, 33)
             };
             TreeNode store = new TreeNode("Quản lý kho hàng", 3, 3, storeOptions);
             store.ExpandAll();
@@ -64,8 +65,6 @@ namespace PizzaManagement
         {
             loadTreeView();
             ImageList list = new ImageList();
-            list.Images.Add("timeTableIcon", Properties.Resources.calendar);
-            tabLichLam.ImageKey = "timeTableIcon";
         }
 
 
@@ -83,16 +82,25 @@ namespace PizzaManagement
                     tabControl.TabPages.Add(tabTinhHinhTaiChinh);
                     break;
                 case 3:
-                    tabControl.TabPages.Add(tabLapPhieuTK);
+                    tabControl.TabPages.Add(tabKiemKho);
+                    tabControl.TabPages.Add(tabNhapKho);
                     tabControl.TabPages.Add(tabThongTinKho);
                     break;
                 case 31:
-                    tabControl.TabPages.Add(tabLapPhieuTK);
+                    tabControl.TabPages.Add(tabKiemKho);
+                    tabControl.TabPages.Add(tabNhapKho);
                     tabControl.TabPages.Add(tabThongTinKho);
-                    tabControl.SelectedTab = tabLapPhieuTK;
+                    tabControl.SelectedTab = tabKiemKho;
                     break;
                 case 32:
-                    tabControl.TabPages.Add(tabLapPhieuTK);
+                    tabControl.TabPages.Add(tabKiemKho);
+                    tabControl.TabPages.Add(tabNhapKho);
+                    tabControl.TabPages.Add(tabThongTinKho);
+                    tabControl.SelectedTab = tabNhapKho;
+                    break;
+                case 33:
+                    tabControl.TabPages.Add(tabKiemKho);
+                    tabControl.TabPages.Add(tabNhapKho);
                     tabControl.TabPages.Add(tabThongTinKho);
                     tabControl.SelectedTab = tabThongTinKho;
                     break;
