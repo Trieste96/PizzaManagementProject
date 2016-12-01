@@ -67,10 +67,13 @@ namespace PizzaManagement
                 }
                 else
                 {
-                    user = guest;
-                    switchToMangerUI = true;
-                    MessageBox.Show("Đăng nhập thành công! Nhấn OK", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    this.Dispose();
+                    if(guest.MaLoaiNV == 1)
+                    {
+                        user = guest;
+                        switchToMangerUI = true;
+                        MessageBox.Show("Đăng nhập thành công! Nhấn OK", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        this.Dispose();
+                    }
                 }
             }
         }

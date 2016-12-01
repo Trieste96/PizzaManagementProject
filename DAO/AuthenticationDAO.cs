@@ -37,6 +37,7 @@ namespace DAO
                 user.MaNV = guest.MaNV;
                 user.HoTen = dt.Rows[0]["HoTenNV"].ToString();               
                 user.TenLoaiNV = dt.Rows[0]["TenLoai"].ToString();
+                user.MaLoaiNV = Convert.ToInt32(dt.Rows[0]["MaLoaiNV"]);
                 user.TinhTrang = 1;
             }
             return user;
