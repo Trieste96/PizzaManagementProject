@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace PizzaManagement
 {
     public partial class ManagerUI : Form
     {
+        private NhanVien user;
         public ManagerUI()
         {
             InitializeComponent();
@@ -61,10 +63,17 @@ namespace PizzaManagement
 
             tabControl.TabPages.Clear();
         }
+        public void getUserInfo(NhanVien guest)
+        {
+            user = guest;
+        }
         private void ManagerUI_Load(object sender, EventArgs e)
         {
             loadTreeView();
-            ImageList list = new ImageList();
+            txtUserID.Text = user.MaNV.ToString();
+            txtUserName.Text = user.HoTen;
+            txtUserPosition.Text = user.TenLoaiNV;
+
         }
 
 

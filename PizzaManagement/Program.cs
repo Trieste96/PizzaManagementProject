@@ -16,7 +16,15 @@ namespace PizzaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthenticationUI());
+            AuthenticationUI authUI = new AuthenticationUI();          
+            Application.Run(authUI);
+            if(authUI.switchToMangerUI == true)
+            {
+                ManagerUI mui = new ManagerUI();
+                mui.getUserInfo(authUI.user);
+                Application.Run(mui);
+            }
+           
         }
     }
 }

@@ -16,11 +16,12 @@ namespace PizzaManagement
 {
     public partial class AuthenticationUI : Form
     {
+        public NhanVien user;
+        public bool switchToMangerUI = false;
         public AuthenticationUI()
         {
             InitializeComponent();
         }
-
         private void AuthenticationUI_Load(object sender, EventArgs e)
         {
             PositionListBUS bus = new PositionListBUS();
@@ -59,18 +60,18 @@ namespace PizzaManagement
                 guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
 
                 AuthenticationBUS bus = new AuthenticationBUS();
-                NhanVien user = bus.verifyAccount(guest);
-                if (user.TinhTrang == 0)
+                guest = bus.verifyAccount(guest);
+                if (guest.TinhTrang == 0)
                 {
                     MessageBox.Show("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin đăng nhập", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    ManagerUI manager = new ManagerUI();
-                    manager.Show();
-                    this.Hide();
+                    user = guest;
+                    switchToMangerUI = true;
+                    this.Close();
                 }
-            }          
+            }
         }
     }
 }
