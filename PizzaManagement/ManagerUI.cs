@@ -167,11 +167,6 @@ namespace PizzaManagement
 
         }
 
-        private void dtpNgayLapPhieu_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -185,6 +180,11 @@ namespace PizzaManagement
         private void btnXemPhieu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dtpNgayLapPhieu.Value = DateTime.Now;
         }
     }
 }

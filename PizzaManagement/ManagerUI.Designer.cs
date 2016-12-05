@@ -67,6 +67,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnLuuThayDoi = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabKiemKho.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -154,11 +155,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView2);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Blue;
             this.groupBox4.Location = new System.Drawing.Point(23, 363);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(442, 264);
+            this.groupBox4.Size = new System.Drawing.Size(423, 264);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách các phiếu";
@@ -166,34 +167,35 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(28, 29);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 29);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(395, 229);
             this.dataGridView2.TabIndex = 11;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnCapNhat);
             this.groupBox3.Controls.Add(this.btnTaoPhieuNhap);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.dtpNgayLapPhieu);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Blue;
             this.groupBox3.Location = new System.Drawing.Point(23, 206);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(442, 151);
+            this.groupBox3.Size = new System.Drawing.Size(423, 151);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tạo phiếu nhập";
             // 
             // btnTaoPhieuNhap
             // 
-            this.btnTaoPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoPhieuNhap.ForeColor = System.Drawing.Color.Black;
             this.btnTaoPhieuNhap.Location = new System.Drawing.Point(54, 95);
             this.btnTaoPhieuNhap.Name = "btnTaoPhieuNhap";
-            this.btnTaoPhieuNhap.Size = new System.Drawing.Size(279, 40);
+            this.btnTaoPhieuNhap.Size = new System.Drawing.Size(279, 39);
             this.btnTaoPhieuNhap.TabIndex = 5;
             this.btnTaoPhieuNhap.Text = "Tạo phiếu nhập";
             this.btnTaoPhieuNhap.UseVisualStyleBackColor = true;
@@ -212,23 +214,25 @@
             // 
             // dtpNgayLapPhieu
             // 
+            this.dtpNgayLapPhieu.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             this.dtpNgayLapPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayLapPhieu.Location = new System.Drawing.Point(193, 29);
+            this.dtpNgayLapPhieu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayLapPhieu.Location = new System.Drawing.Point(165, 29);
             this.dtpNgayLapPhieu.Name = "dtpNgayLapPhieu";
-            this.dtpNgayLapPhieu.Size = new System.Drawing.Size(218, 26);
+            this.dtpNgayLapPhieu.Size = new System.Drawing.Size(184, 26);
             this.dtpNgayLapPhieu.TabIndex = 1;
-            this.dtpNgayLapPhieu.ValueChanged += new System.EventHandler(this.dtpNgayLapPhieu_ValueChanged);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Đầu ngày",
             "Cuối ngày"});
-            this.comboBox1.Location = new System.Drawing.Point(193, 61);
+            this.comboBox1.Location = new System.Drawing.Point(165, 61);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 28);
+            this.comboBox1.Size = new System.Drawing.Size(219, 28);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -249,11 +253,11 @@
             this.groupBox2.Controls.Add(this.btnXemPhieu);
             this.groupBox2.Controls.Add(this.cbLoaiPhieuXem);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Blue;
             this.groupBox2.Location = new System.Drawing.Point(23, 62);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(442, 138);
+            this.groupBox2.Size = new System.Drawing.Size(423, 138);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Xem phiếu nhập kho";
@@ -264,7 +268,7 @@
             this.btnXemPhieu.ForeColor = System.Drawing.Color.Black;
             this.btnXemPhieu.Location = new System.Drawing.Point(54, 75);
             this.btnXemPhieu.Name = "btnXemPhieu";
-            this.btnXemPhieu.Size = new System.Drawing.Size(279, 38);
+            this.btnXemPhieu.Size = new System.Drawing.Size(279, 43);
             this.btnXemPhieu.TabIndex = 8;
             this.btnXemPhieu.Text = "Tải danh sách phiếu";
             this.btnXemPhieu.UseVisualStyleBackColor = true;
@@ -272,6 +276,7 @@
             // 
             // cbLoaiPhieuXem
             // 
+            this.cbLoaiPhieuXem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiPhieuXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiPhieuXem.FormattingEnabled = true;
             this.cbLoaiPhieuXem.Items.AddRange(new object[] {
@@ -298,11 +303,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Location = new System.Drawing.Point(318, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(459, 55);
+            this.label4.Size = new System.Drawing.Size(347, 40);
             this.label4.TabIndex = 0;
             this.label4.Text = "Lập phiếu kiểm kho";
             // 
@@ -396,6 +401,7 @@
             this.tabImageList.Images.SetKeyName(5, "ingredient-icon-300.png");
             this.tabImageList.Images.SetKeyName(6, "EmployeeIcon.png");
             this.tabImageList.Images.SetKeyName(7, "customerIcon.png");
+            this.tabImageList.Images.SetKeyName(8, "Refresh.png");
             // 
             // groupBox1
             // 
@@ -485,10 +491,11 @@
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.btnLuuThayDoi);
             this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox5.Location = new System.Drawing.Point(493, 62);
+            this.groupBox5.Location = new System.Drawing.Point(452, 62);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(559, 565);
+            this.groupBox5.Size = new System.Drawing.Size(600, 565);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chi tiết phiếu nhập kho";
@@ -520,6 +527,17 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Xoá phiếu";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.ImageIndex = 8;
+            this.btnCapNhat.ImageList = this.tabImageList;
+            this.btnCapNhat.Location = new System.Drawing.Point(355, 27);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(29, 31);
+            this.btnCapNhat.TabIndex = 6;
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.button3_Click);
             // 
             // ManagerUI
             // 
@@ -590,6 +608,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnLuuThayDoi;
+        private System.Windows.Forms.Button btnCapNhat;
     }
 }
 
