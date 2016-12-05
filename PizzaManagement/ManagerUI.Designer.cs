@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerUI));
             this.treeFunctionList = new System.Windows.Forms.TreeView();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabLichLam = new System.Windows.Forms.TabPage();
@@ -40,7 +42,6 @@
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabKhachHang = new System.Windows.Forms.TabPage();
             this.tabNhapKho = new System.Windows.Forms.TabPage();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtUserPosition = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -48,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.tabControl.SuspendLayout();
             this.tabSanPham.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -58,9 +60,9 @@
             this.treeFunctionList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeFunctionList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeFunctionList.Location = new System.Drawing.Point(2, 226);
+            this.treeFunctionList.Location = new System.Drawing.Point(2, 257);
             this.treeFunctionList.Name = "treeFunctionList";
-            this.treeFunctionList.Size = new System.Drawing.Size(281, 320);
+            this.treeFunctionList.Size = new System.Drawing.Size(281, 289);
             this.treeFunctionList.TabIndex = 5;
             this.treeFunctionList.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeFunctionList_NodeMouseDoubleClick);
             // 
@@ -78,37 +80,40 @@
             this.tabControl.Controls.Add(this.tabNhanVien);
             this.tabControl.Controls.Add(this.tabKhachHang);
             this.tabControl.Controls.Add(this.tabNhapKho);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tabControl.Location = new System.Drawing.Point(303, 69);
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.ImageList = this.tabImageList;
+            this.tabControl.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.tabControl.Location = new System.Drawing.Point(303, 100);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(738, 477);
+            this.tabControl.Size = new System.Drawing.Size(738, 446);
             this.tabControl.TabIndex = 6;
             // 
             // tabLichLam
             // 
             this.tabLichLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabLichLam.Location = new System.Drawing.Point(4, 34);
+            this.tabLichLam.Location = new System.Drawing.Point(4, 38);
             this.tabLichLam.Name = "tabLichLam";
             this.tabLichLam.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLichLam.Size = new System.Drawing.Size(730, 439);
+            this.tabLichLam.Size = new System.Drawing.Size(730, 404);
             this.tabLichLam.TabIndex = 0;
             this.tabLichLam.Text = "Sắp xếp lịch làm";
             this.tabLichLam.UseVisualStyleBackColor = true;
             // 
             // tabTinhHinhTaiChinh
             // 
-            this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 34);
+            this.tabTinhHinhTaiChinh.ImageIndex = 3;
+            this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(730, 439);
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(730, 404);
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
             // 
             // tabKiemKho
             // 
+            this.tabKiemKho.ImageIndex = 0;
             this.tabKiemKho.Location = new System.Drawing.Point(4, 34);
             this.tabKiemKho.Name = "tabKiemKho";
             this.tabKiemKho.Padding = new System.Windows.Forms.Padding(3);
@@ -119,6 +124,8 @@
             // 
             // tabThongTinKho
             // 
+            this.tabThongTinKho.ForeColor = System.Drawing.Color.Black;
+            this.tabThongTinKho.ImageIndex = 2;
             this.tabThongTinKho.Location = new System.Drawing.Point(4, 34);
             this.tabThongTinKho.Name = "tabThongTinKho";
             this.tabThongTinKho.Padding = new System.Windows.Forms.Padding(3);
@@ -130,10 +137,11 @@
             // tabSanPham
             // 
             this.tabSanPham.Controls.Add(this.button1);
-            this.tabSanPham.Location = new System.Drawing.Point(4, 34);
+            this.tabSanPham.ImageIndex = 4;
+            this.tabSanPham.Location = new System.Drawing.Point(4, 38);
             this.tabSanPham.Name = "tabSanPham";
             this.tabSanPham.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSanPham.Size = new System.Drawing.Size(730, 439);
+            this.tabSanPham.Size = new System.Drawing.Size(730, 404);
             this.tabSanPham.TabIndex = 4;
             this.tabSanPham.Text = "Sản phẩm";
             this.tabSanPham.UseVisualStyleBackColor = true;
@@ -150,56 +158,47 @@
             // 
             // tabNguyenLieu
             // 
-            this.tabNguyenLieu.Location = new System.Drawing.Point(4, 34);
+            this.tabNguyenLieu.ImageIndex = 5;
+            this.tabNguyenLieu.Location = new System.Drawing.Point(4, 38);
             this.tabNguyenLieu.Name = "tabNguyenLieu";
             this.tabNguyenLieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNguyenLieu.Size = new System.Drawing.Size(730, 439);
+            this.tabNguyenLieu.Size = new System.Drawing.Size(730, 404);
             this.tabNguyenLieu.TabIndex = 5;
             this.tabNguyenLieu.Text = "Nguyên liệu";
             this.tabNguyenLieu.UseVisualStyleBackColor = true;
             // 
             // tabNhanVien
             // 
-            this.tabNhanVien.Location = new System.Drawing.Point(4, 34);
+            this.tabNhanVien.ImageIndex = 6;
+            this.tabNhanVien.Location = new System.Drawing.Point(4, 38);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhanVien.Size = new System.Drawing.Size(730, 439);
+            this.tabNhanVien.Size = new System.Drawing.Size(730, 404);
             this.tabNhanVien.TabIndex = 6;
             this.tabNhanVien.Text = "Nhân viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
             // 
             // tabKhachHang
             // 
-            this.tabKhachHang.Location = new System.Drawing.Point(4, 34);
+            this.tabKhachHang.ImageIndex = 7;
+            this.tabKhachHang.Location = new System.Drawing.Point(4, 38);
             this.tabKhachHang.Name = "tabKhachHang";
             this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(730, 439);
+            this.tabKhachHang.Size = new System.Drawing.Size(730, 404);
             this.tabKhachHang.TabIndex = 7;
             this.tabKhachHang.Text = "Khách hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
             // 
             // tabNhapKho
             // 
-            this.tabNhapKho.Location = new System.Drawing.Point(4, 34);
+            this.tabNhapKho.ImageIndex = 1;
+            this.tabNhapKho.Location = new System.Drawing.Point(4, 38);
             this.tabNhapKho.Name = "tabNhapKho";
             this.tabNhapKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhapKho.Size = new System.Drawing.Size(730, 439);
+            this.tabNhapKho.Size = new System.Drawing.Size(730, 404);
             this.tabNhapKho.TabIndex = 8;
             this.tabNhapKho.Text = "Lập phiếu nhập kho";
             this.tabNhapKho.UseVisualStyleBackColor = true;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitle.Location = new System.Drawing.Point(303, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(347, 46);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Giao diện quản lý";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
             // 
@@ -211,9 +210,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(2, 69);
+            this.groupBox1.Location = new System.Drawing.Point(2, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(281, 137);
+            this.groupBox1.Size = new System.Drawing.Size(281, 135);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
@@ -269,9 +268,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(10, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 15);
+            this.label2.Size = new System.Drawing.Size(87, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên người dùng:";
+            this.label2.Text = "Tên nhân viên:";
             // 
             // label1
             // 
@@ -284,6 +283,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhân viên:";
             // 
+            // tabImageList
+            // 
+            this.tabImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("tabImageList.ImageStream")));
+            this.tabImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.tabImageList.Images.SetKeyName(0, "store.jpeg");
+            this.tabImageList.Images.SetKeyName(1, "storeImport.png");
+            this.tabImageList.Images.SetKeyName(2, "storeReport.png");
+            this.tabImageList.Images.SetKeyName(3, "financial-icon-lg.gif");
+            this.tabImageList.Images.SetKeyName(4, "food icon.jpg");
+            this.tabImageList.Images.SetKeyName(5, "ingredient-icon-300.png");
+            this.tabImageList.Images.SetKeyName(6, "EmployeeIcon.png");
+            this.tabImageList.Images.SetKeyName(7, "customerIcon.png");
+            // 
             // ManagerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,7 +304,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.treeFunctionList);
-            this.Controls.Add(this.lblTitle);
             this.Name = "ManagerUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà hàng Pizza";
@@ -303,7 +314,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -320,7 +330,6 @@
         private System.Windows.Forms.TabPage tabKhachHang;
         private System.Windows.Forms.TabPage tabNhapKho;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtUserPosition;
         private System.Windows.Forms.TextBox txtUserName;
@@ -328,6 +337,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ImageList tabImageList;
     }
 }
 
