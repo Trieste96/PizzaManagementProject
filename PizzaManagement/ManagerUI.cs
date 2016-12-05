@@ -82,7 +82,7 @@ namespace PizzaManagement
         private void treeFunctionList_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             tabControl.TabPages.Clear();
-             
+            //treeFunctionList.SelectedNode.SelectedImageIndex = 0 ? 1 : treeFunctionList.SelectedNode.SelectedImageIndex;
             switch (treeFunctionList.SelectedNode.SelectedImageIndex)
             {
                 case 1:
@@ -157,5 +157,34 @@ namespace PizzaManagement
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgayLapPhieu_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXemPhieu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
