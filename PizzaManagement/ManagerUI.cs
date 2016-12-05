@@ -13,7 +13,9 @@ namespace PizzaManagement
 {
     public partial class ManagerUI : Form
     {
+        //Thông tin của nngười đăng nhập vào hệ thống được lưu ở biến user này
         private NhanVien user;
+        
         public ManagerUI()
         {
             InitializeComponent();

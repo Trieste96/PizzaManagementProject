@@ -42,12 +42,12 @@
             this.tabNhapKho = new System.Windows.Forms.TabPage();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtUserPosition = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabSanPham.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,7 +102,7 @@
             this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 34);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(497, 323);
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(730, 439);
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.tabKiemKho.Location = new System.Drawing.Point(4, 34);
             this.tabKiemKho.Name = "tabKiemKho";
             this.tabKiemKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKiemKho.Size = new System.Drawing.Size(497, 323);
+            this.tabKiemKho.Size = new System.Drawing.Size(730, 439);
             this.tabKiemKho.TabIndex = 2;
             this.tabKiemKho.Text = "Lập phiếu kiểm kho";
             this.tabKiemKho.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.tabThongTinKho.Location = new System.Drawing.Point(4, 34);
             this.tabThongTinKho.Name = "tabThongTinKho";
             this.tabThongTinKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThongTinKho.Size = new System.Drawing.Size(497, 323);
+            this.tabThongTinKho.Size = new System.Drawing.Size(730, 439);
             this.tabThongTinKho.TabIndex = 3;
             this.tabThongTinKho.Text = "Tra cứu thông tin kho";
             this.tabThongTinKho.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.tabSanPham.Location = new System.Drawing.Point(4, 34);
             this.tabSanPham.Name = "tabSanPham";
             this.tabSanPham.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSanPham.Size = new System.Drawing.Size(497, 323);
+            this.tabSanPham.Size = new System.Drawing.Size(730, 439);
             this.tabSanPham.TabIndex = 4;
             this.tabSanPham.Text = "Sản phẩm";
             this.tabSanPham.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.tabNguyenLieu.Location = new System.Drawing.Point(4, 34);
             this.tabNguyenLieu.Name = "tabNguyenLieu";
             this.tabNguyenLieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNguyenLieu.Size = new System.Drawing.Size(497, 323);
+            this.tabNguyenLieu.Size = new System.Drawing.Size(730, 439);
             this.tabNguyenLieu.TabIndex = 5;
             this.tabNguyenLieu.Text = "Nguyên liệu";
             this.tabNguyenLieu.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             this.tabNhanVien.Location = new System.Drawing.Point(4, 34);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhanVien.Size = new System.Drawing.Size(497, 323);
+            this.tabNhanVien.Size = new System.Drawing.Size(730, 439);
             this.tabNhanVien.TabIndex = 6;
             this.tabNhanVien.Text = "Nhân viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             this.tabKhachHang.Location = new System.Drawing.Point(4, 34);
             this.tabKhachHang.Name = "tabKhachHang";
             this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(497, 323);
+            this.tabKhachHang.Size = new System.Drawing.Size(730, 439);
             this.tabKhachHang.TabIndex = 7;
             this.tabKhachHang.Text = "Khách hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.tabNhapKho.Location = new System.Drawing.Point(4, 34);
             this.tabNhapKho.Name = "tabNhapKho";
             this.tabNhapKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhapKho.Size = new System.Drawing.Size(497, 323);
+            this.tabNhapKho.Size = new System.Drawing.Size(730, 439);
             this.tabNhapKho.TabIndex = 8;
             this.tabNhapKho.Text = "Lập phiếu nhập kho";
             this.tabNhapKho.UseVisualStyleBackColor = true;
@@ -216,51 +216,18 @@
             this.groupBox1.Size = new System.Drawing.Size(281, 137);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin người dùng";
+            this.groupBox1.Text = "Thông tin tài khoản";
             // 
-            // label1
+            // txtUserPosition
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã nhân viên:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(10, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên người dùng:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(10, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Vị trí:";
-            // 
-            // txtUserID
-            // 
-            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.ForeColor = System.Drawing.Color.Black;
-            this.txtUserID.Location = new System.Drawing.Point(115, 28);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.ReadOnly = true;
-            this.txtUserID.Size = new System.Drawing.Size(160, 26);
-            this.txtUserID.TabIndex = 3;
-            this.txtUserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUserPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserPosition.ForeColor = System.Drawing.Color.Black;
+            this.txtUserPosition.Location = new System.Drawing.Point(115, 97);
+            this.txtUserPosition.Name = "txtUserPosition";
+            this.txtUserPosition.ReadOnly = true;
+            this.txtUserPosition.Size = new System.Drawing.Size(160, 26);
+            this.txtUserPosition.TabIndex = 5;
+            this.txtUserPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtUserName
             // 
@@ -273,16 +240,49 @@
             this.txtUserName.TabIndex = 4;
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtUserPosition
+            // txtUserID
             // 
-            this.txtUserPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserPosition.ForeColor = System.Drawing.Color.Black;
-            this.txtUserPosition.Location = new System.Drawing.Point(115, 97);
-            this.txtUserPosition.Name = "txtUserPosition";
-            this.txtUserPosition.ReadOnly = true;
-            this.txtUserPosition.Size = new System.Drawing.Size(160, 26);
-            this.txtUserPosition.TabIndex = 5;
-            this.txtUserPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.ForeColor = System.Drawing.Color.Black;
+            this.txtUserID.Location = new System.Drawing.Point(115, 28);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.ReadOnly = true;
+            this.txtUserID.Size = new System.Drawing.Size(160, 26);
+            this.txtUserID.TabIndex = 3;
+            this.txtUserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(10, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Vị trí:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(10, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên người dùng:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã nhân viên:";
             // 
             // ManagerUI
             // 

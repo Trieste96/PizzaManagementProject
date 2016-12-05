@@ -18,28 +18,16 @@ namespace PizzaManagement
     {
         public NhanVien user;
         public bool switchToMangerUI = false;
+        public bool switchToCsrUI = false;
         public AuthenticationUI()
         {
             InitializeComponent();
         }
         private void AuthenticationUI_Load(object sender, EventArgs e)
         {
-            PositionListBUS bus = new PositionListBUS();
-            DataTable dt;
-            try
-            {
-                dt = bus.loadPositionList();
-                cbQuyen.DataSource = dt;
-                cbQuyen.DisplayMember = "TenLoai";
-                cbQuyen.ValueMember = "MaLoai";
-                cbQuyen.SelectedValue = 1;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không thể kết nối với CSDL!", "Mất kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Dispose();
-            } 
-         }
+            switchToMangerUI = false;
+            switchToCsrUI = false;
+        }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -57,8 +45,8 @@ namespace PizzaManagement
                 NhanVien guest = new NhanVien();
                 guest.MaNV = Convert.ToInt32(txtMaNV.Text);
                 guest.MatKhau = passwd;
-                guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
-
+                //guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
+                
                 AuthenticationBUS bus = new AuthenticationBUS();
                 guest = bus.verifyAccount(guest);
                 if (guest.TinhTrang == 0)
@@ -67,13 +55,18 @@ namespace PizzaManagement
                 }
                 else
                 {
-                    if(guest.MaLoaiNV == 1)
+                    user = guest;
+                    if (user.TenLoaiNV == "Quản lý")
                     {
-                        user = guest;
                         switchToMangerUI = true;
-                        MessageBox.Show("Đăng nhập thành công! Nhấn OK", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        this.Dispose();
                     }
+                    else if(user.TenLoaiNV == "CSR")
+                    {
+                        switchToCsrUI = true;
+                    }
+                    
+                    MessageBox.Show("Đăng nhập thành công! Nhấn OK", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Dispose();
                 }
             }
         }
