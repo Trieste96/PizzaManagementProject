@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AuthenticationBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreCheckBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

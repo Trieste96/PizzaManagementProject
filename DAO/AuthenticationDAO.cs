@@ -40,6 +40,8 @@ namespace DAO
                 user.MaLoaiNV = Convert.ToInt32(dt.Rows[0]["MaLoaiNV"]);
                 user.TinhTrang = 1;
             }
+            DBConnection.CloseConnection();
+            cn.Close();
             return user;
         }
     }

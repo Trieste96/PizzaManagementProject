@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using BUS;
 
 namespace PizzaManagement
 {
@@ -71,11 +72,21 @@ namespace PizzaManagement
         }
         private void ManagerUI_Load(object sender, EventArgs e)
         {
+            //Tạo sơ đồ dạng cây
             loadTreeView();
+
+            //Cập nhật thông tin người đăng nhập
             txtUserID.Text = user.MaNV.ToString();
             txtUserName.Text = user.HoTen;
             txtUserPosition.Text = user.TenLoaiNV;
 
+            //Thiết lập cho việc xem phiếu kiểm kho
+            cbLoaiPhieuXem.SelectedIndex = 0;
+            dtDSPhieu.ForeColor = Color.Black;
+            dtDSPhieu.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+
+            //Thiết lập cho việc tạo phiếu kiểm kho
+            cbLoaiPhieuTao.SelectedIndex = 0;
         }
 
 
@@ -152,39 +163,33 @@ namespace PizzaManagement
             }
         }
 
-        private void treeFunctionList_AfterSelect(object sender, TreeViewEventArgs e)
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
+            dtpNgayLapPhieu.Value = DateTime.Now;
         }
 
         private void btnXemPhieu_Click(object sender, EventArgs e)
         {
+            PhieuKiemKho phieu_kk = new PhieuKiemKho();
+            phieu_kk.loai_phieu = cbLoaiPhieuXem.GetItemText(cbLoaiPhieuXem.SelectedItem);
+
+            StoreCheckBUS bus = new StoreCheckBUS();
+            phieu_kk = bus.getStoreCheckReportList(phieu_kk);
+
+            dtDSPhieu.DataSource = phieu_kk.danh_sach_phieu;
+            //dtDSPhieu.AutoResizeRows();
+            dtDSPhieu.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells) ;
+            dtDSPhieu.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void groupBox4_Enter(object sender, EventArgs e)
         {
-            dtpNgayLapPhieu.Value = DateTime.Now;
+
         }
     }
 }
