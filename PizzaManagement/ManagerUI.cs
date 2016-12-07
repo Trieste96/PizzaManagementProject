@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace PizzaManagement
 {
     public partial class ManagerUI : Form
     {
+        private SanPhamBUS spBus;
         public ManagerUI()
         {
             InitializeComponent();
+            spBus = new SanPhamBUS();
+            //load_info_SP();
         }
 
         private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
@@ -146,5 +151,92 @@ namespace PizzaManagement
 
         }
 
+// ------------ NGHIA ---------------------------
+                private void ManagerUI_Activated(object sender, EventArgs e)
+        {
+            load_info_SP();
+        }
+        private void load_info_SP()
+        {
+            DataTable dt = new DataTable();
+            SanPhamBUS spBUS = new SanPhamBUS();
+            dt = spBUS.Load_info_SP();
+            table_info_SP.DataSource = dt;
+            table_info_SP.Columns[0].HeaderText = "Mã SP";
+            table_info_SP.Columns[1].HeaderText = "Tên SP";
+            table_info_SP.Columns[2].HeaderText = "Giá bán";
+            table_info_SP.Columns[3].HeaderText = "Loại SP";
+            table_info_SP.Columns[4].HeaderText = "Mã loại SP";
+
+            for (int i = 0; i < table_info_SP.ColumnCount; i++)
+            {
+                table_info_SP.AutoResizeColumn(i);
+            }
+            table_info_SP.ReadOnly = true;
+            //table_info_SP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+
+
+        private void btn_info_addSP_Click(object sender, EventArgs e)
+        {
+            AddSPUI f = new AddSPUI();
+            f.Show();
+        }
+
+        private void btn_info_editSP_Click(object sender, EventArgs e)
+        {
+            int masp = Convert.ToInt32(table_info_SP.CurrentRow.Cells[0].FormattedValue.ToString());
+            int check = Convert.ToInt32(table_info_SP.CurrentRow.Cells[4].FormattedValue.ToString()) - 1;
+            string tensp = table_info_SP.CurrentRow.Cells[1].FormattedValue.ToString();
+            int gia = Convert.ToInt32(table_info_SP.CurrentRow.Cells[2].FormattedValue.ToString());
+            PizzaManagement.EditSPUI f2 = new EditSPUI(masp, check, tensp, gia);
+            f2.Show();
+        }
+
+        private void btn_info_deleteSP_Click(object sender, EventArgs e)
+        {
+            string maSP;
+            string tenSP;
+            maSP = table_info_SP.CurrentRow.Cells[0].FormattedValue.ToString();
+            tenSP = table_info_SP.CurrentRow.Cells[1].FormattedValue.ToString();
+            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá sản phẩm {0} ra khỏi danh sách?", tenSP), "Xác nhận",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Info_SanPham_DTO spDto = new Info_SanPham_DTO(Convert.ToInt32(maSP), null, 0, 0);
+                try
+                {
+                    spBus.deleteSP(spDto);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Xoá thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                };
+                MessageBox.Show("Xoá thành công!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void table_info_SP_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                table_info_SP.CurrentCell = table_info_SP.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                table_info_SP.Rows[e.RowIndex].Selected = true;
+                table_info_SP.Focus();
+            }
+        }
+
+        private void sửaSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btn_info_editSP_Click(null, null);
+        }
+
+        private void xóaSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btn_info_deleteSP_Click(null, null);
+        }
+        // -------------------------------------------------------------------------------------------------
     }
 }
