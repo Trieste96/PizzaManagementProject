@@ -152,7 +152,7 @@ namespace PizzaManagement
         }
 
 // ------------ NGHIA ---------------------------
-                private void ManagerUI_Activated(object sender, EventArgs e)
+        private void ManagerUI_Activated(object sender, EventArgs e)
         {
             load_info_SP();
         }
@@ -173,7 +173,7 @@ namespace PizzaManagement
                 table_info_SP.AutoResizeColumn(i);
             }
             table_info_SP.ReadOnly = true;
-            //table_info_SP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            table_info_SP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
 
@@ -182,6 +182,7 @@ namespace PizzaManagement
         {
             AddSPUI f = new AddSPUI();
             f.Show();
+            table_info_SP.FirstDisplayedCell = table_info_SP.Rows[table_info_SP.Rows.Count - 1].Cells[0];
         }
 
         private void btn_info_editSP_Click(object sender, EventArgs e)
@@ -215,6 +216,7 @@ namespace PizzaManagement
                     return;
                 };
                 MessageBox.Show("Xoá thành công!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                table_info_SP.FirstDisplayedCell = table_info_SP.Rows[table_info_SP.Rows.Count - 1].Cells[0];
             }
         }
 
@@ -237,6 +239,6 @@ namespace PizzaManagement
         {
             btn_info_deleteSP_Click(null, null);
         }
-        // -------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
     }
 }

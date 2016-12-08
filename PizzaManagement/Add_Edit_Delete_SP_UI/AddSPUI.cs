@@ -46,7 +46,7 @@ namespace PizzaManagement
                     MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                this.Close();
+                this.Dispose();
                 
             }
         }
