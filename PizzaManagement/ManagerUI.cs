@@ -15,7 +15,7 @@ namespace PizzaManagement
     public partial class ManagerUI : Form
     {
         //Thông tin của nngười đăng nhập vào hệ thống được lưu ở biến user này
-        private NhanVien user;
+        private Employee user;
         
         public ManagerUI()
         {
@@ -66,7 +66,7 @@ namespace PizzaManagement
 
             tabControl.TabPages.Clear();
         }
-        public void getUserInfo(NhanVien guest)
+        public void getUserInfo(Employee guest)
         {
             user = guest;
         }
@@ -82,8 +82,7 @@ namespace PizzaManagement
 
             //Thiết lập cho việc xem phiếu kiểm kho
             cbLoaiPhieuXem.SelectedIndex = 0;
-            dtDSPhieu.ForeColor = Color.Black;
-            dtDSPhieu.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+            
 
             //Thiết lập cho việc tạo phiếu kiểm kho
             cbLoaiPhieuTao.SelectedIndex = 0;
@@ -177,9 +176,14 @@ namespace PizzaManagement
             phieu_kk = bus.getStoreCheckReportList(phieu_kk);
 
             dtDSPhieu.DataSource = phieu_kk.danh_sach_phieu;
-            //dtDSPhieu.AutoResizeRows();
-            dtDSPhieu.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells) ;
-            dtDSPhieu.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+            
+            dtDSPhieu.ForeColor = Color.Black;
+            dtDSPhieu.Font = new Font("Arial", 9, FontStyle.Regular);
+            dtDSPhieu.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+
+            dtDSPhieu.Columns["Mã phiếu"].Width = 55;
+            dtDSPhieu.Columns["Loại phiếu"].Width = 90;
+            dtDSPhieu.Columns["Mã nhân viên"].Width = 55;
         }
 
         private void groupBox5_Enter(object sender, EventArgs e)
@@ -190,6 +194,17 @@ namespace PizzaManagement
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtDSPhieu_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //MessageBox.Show(dtDSPhieu.SelectedRows[0].Cells[0].Value.ToString());
+        }
+
+        private void dtDSPhieu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           string ma_phieu = (dtDSPhieu.SelectedRows[0].Cells[0].Value.ToString());
+            
         }
     }
 }

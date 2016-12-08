@@ -21,7 +21,7 @@ namespace BUS
             }
             return sb.ToString();
         }
-        public NhanVien verifyAccount(NhanVien guest)
+        public Employee verifyAccount(Employee guest)
         {
             //Mã hoá mật khẩu thành mã băm MD5
             MD5 md5 = MD5.Create();

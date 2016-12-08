@@ -16,7 +16,7 @@ namespace PizzaManagement
 {
     public partial class AuthenticationUI : Form
     {
-        public NhanVien user;
+        public Employee user;
         public bool switchToMangerUI = false;
         public bool switchToCsrUI = false;
         public AuthenticationUI()
@@ -42,7 +42,7 @@ namespace PizzaManagement
             else
             {
                 string passwd = txtMatKhau.Text;
-                NhanVien guest = new NhanVien();
+                Employee guest = new Employee();
                 guest.MaNV = Convert.ToInt32(txtMaNV.Text);
                 guest.MatKhau = passwd;
                 //guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
