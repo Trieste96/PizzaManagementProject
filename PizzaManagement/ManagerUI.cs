@@ -12,14 +12,16 @@ using BUS;
 
 namespace PizzaManagement
 {
+
     public partial class ManagerUI : Form
     {
         //Thông tin của nngười đăng nhập vào hệ thống được lưu ở biến user này
         private Employee user;
-        
+        private SanPhamBUS spBus;
         public ManagerUI()
         {
             InitializeComponent();
+            spBus = new SanPhamBUS();
         }
 
         private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
@@ -205,6 +207,32 @@ namespace PizzaManagement
         {
            string ma_phieu = (dtDSPhieu.SelectedRows[0].Cells[0].Value.ToString());
             
+        }
+
+        private void ManagerUI_Activated(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            SanPhamBUS spBUS = new SanPhamBUS();
+            dt = spBUS.Load_info_SP();
+            dgv_info_SanPham.DataSource = dt;
+            dgv_info_SanPham.Columns[0].HeaderText = "Mã SP";
+            dgv_info_SanPham.Columns[1].HeaderText = "Tên SP";
+            dgv_info_SanPham.Columns[2].HeaderText = "Giá bán";
+            dgv_info_SanPham.Columns[3].HeaderText = "Loại SP";
+            dgv_info_SanPham.Columns[4].HeaderText = "Mã loại SP";
+
+            for (int i = 0; i < dgv_info_SanPham.ColumnCount; i++)
+            {
+                dgv_info_SanPham.AutoResizeColumn(i);
+            }
+            dgv_info_SanPham.ReadOnly = true;
+            dgv_info_SanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void btn_themSP_Click(object sender, EventArgs e)
+        {
+            PizzaManagement.ThemMoiSP f = new ThemMoiSP();
+            f.Show();
         }
     }
 }
