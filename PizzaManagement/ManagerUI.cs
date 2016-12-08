@@ -16,7 +16,7 @@ namespace PizzaManagement
     public partial class ManagerUI : Form
     {
         //Thông tin của nngười đăng nhập vào hệ thống được lưu ở biến user này
-
+        private NhanVien user;
 
         private SanPhamBUS spBus;
         public ManagerUI()
@@ -172,7 +172,7 @@ namespace PizzaManagement
 
         private void btnXemPhieu_Click(object sender, EventArgs e)
         {
-            PhieuKiemKho phieu_kk = new PhieuKiemKho();
+            DSphieuKiemKho phieu_kk = new DSphieuKiemKho();
             phieu_kk.loai_phieu = cbLoaiPhieuXem.GetItemText(cbLoaiPhieuXem.SelectedItem);
 
             StoreCheckBUS bus = new StoreCheckBUS();

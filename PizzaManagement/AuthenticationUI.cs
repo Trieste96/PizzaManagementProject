@@ -42,7 +42,7 @@ namespace PizzaManagement
             else
             {
                 string passwd = txtMatKhau.Text;
-                Employee guest = new Employee();
+                NhanVien guest = new NhanVien();
                 guest.MaNV = Convert.ToInt32(txtMaNV.Text);
                 guest.MatKhau = passwd;
                 //guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
