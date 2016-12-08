@@ -58,28 +58,26 @@
     <Compile Include="CsrUI.Designer.cs">
       <DependentUpon>CsrUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddItemUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddItemUI.Designer.cs">
-      <DependentUpon>AddItemUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerUI.Designer.cs">
       <DependentUpon>ManagerUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="PizzaDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddItemUI.resx">
-      <DependentUpon>AddItemUI.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="UI_Add-Edit_Delete_SP\EditSPUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Add-Edit_Delete_SP\EditSPUI.designer.cs">
+      <DependentUpon>EditSPUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Add-Edit_Delete_SP\AddSPUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Add-Edit_Delete_SP\AddSPUI.designer.cs">
+      <DependentUpon>AddSPUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AuthenticationUI.resx">
       <DependentUpon>AuthenticationUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,17 +91,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="PizzaDBDataSet.xsc">
-      <DependentUpon>PizzaDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PizzaDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PizzaDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PizzaDBDataSet.xss">
-      <DependentUpon>PizzaDBDataSet.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="UI_Add-Edit_Delete_SP\EditSPUI.resx">
+      <DependentUpon>EditSPUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Add-Edit_Delete_SP\AddSPUI.resx">
+      <DependentUpon>AddSPUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
