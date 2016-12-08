@@ -7,7 +7,7 @@ namespace DAO
 {
     public class StoreCheckDAO
     {
-        public PhieuKiemKho getSpecificReportList(PhieuKiemKho phieu_kk)
+        public DSphieuKiemKho getSpecificReportList(DSphieuKiemKho phieu_kk)
         {
             SqlConnection conn = DBConnection.GetConnection();
             SqlCommand cmd = new SqlCommand("sp_getSpecificReportList", conn);
@@ -23,7 +23,7 @@ namespace DAO
             return phieu_kk;
         }
 
-        public PhieuKiemKho getAllReportList(PhieuKiemKho phieu_kk)
+        public DSphieuKiemKho getAllReportList(DSphieuKiemKho phieu_kk)
         {
             SqlConnection conn = DBConnection.GetConnection();
             SqlCommand cmd = new SqlCommand("sp_getAllReportList", conn);

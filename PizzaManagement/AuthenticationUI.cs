@@ -16,8 +16,8 @@ namespace PizzaManagement
 {
     public partial class AuthenticationUI : Form
     {
-        public Employee user;
-        public bool switchToMangerUI = false;
+        public NhanVien user;
+        public bool switchToManagerUI = false;
         public bool switchToCsrUI = false;
         public AuthenticationUI()
         {
@@ -25,7 +25,7 @@ namespace PizzaManagement
         }
         private void AuthenticationUI_Load(object sender, EventArgs e)
         {
-            switchToMangerUI = false;
+            switchToManagerUI = false;
             switchToCsrUI = false;
         }
 
@@ -58,7 +58,7 @@ namespace PizzaManagement
                     user = guest;
                     if (user.TenLoaiNV == "Quản lý")
                     {
-                        switchToMangerUI = true;
+                        switchToManagerUI = true;
                     }
                     else if(user.TenLoaiNV == "CSR")
                     {

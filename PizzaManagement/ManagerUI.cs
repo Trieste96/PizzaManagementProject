@@ -16,7 +16,8 @@ namespace PizzaManagement
     public partial class ManagerUI : Form
     {
         //Thông tin của nngười đăng nhập vào hệ thống được lưu ở biến user này
-        private Employee user;
+
+
         private SanPhamBUS spBus;
         public ManagerUI()
         {
@@ -68,7 +69,7 @@ namespace PizzaManagement
 
             tabControl.TabPages.Clear();
         }
-        public void getUserInfo(Employee guest)
+        public void getUserInfo(NhanVien guest)
         {
             user = guest;
         }

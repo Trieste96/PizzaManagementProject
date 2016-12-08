@@ -10,7 +10,7 @@ namespace DAO
 {
     public class AuthenticationDAO
     {
-        public Employee verifyAccount(Employee guest)
+        public NhanVien verifyAccount(NhanVien guest)
         {
             SqlConnection cn = DBConnection.GetConnection();
             SqlCommand cm = new SqlCommand("sp_authenticate", cn);
@@ -27,7 +27,7 @@ namespace DAO
             DataTable dt = new DataTable();
             da.Fill(dt);
            
-            Employee user = new Employee();
+            NhanVien user = new NhanVien();
             if(dt.Rows.Count == 0)
             {
                 user.TinhTrang = 0;

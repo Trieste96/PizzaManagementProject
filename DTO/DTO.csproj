@@ -41,8 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PhieuKiemKho.cs" />
-    <Compile Include="Info_SanPham_DTO.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="Info_SanPham_DTO.cs" />
+    <Compile Include="DSphieuKiemKho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

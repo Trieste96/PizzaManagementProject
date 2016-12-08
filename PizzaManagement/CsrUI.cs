@@ -13,13 +13,13 @@ namespace PizzaManagement
 {
     public partial class CsrUI : Form
     {
-        private Employee user;
+        private NhanVien user;
         public CsrUI()
         {
             InitializeComponent();
         }
 
-        public void getUserInfo(Employee guest)
+        public void getUserInfo(NhanVien guest)
         {
             user = guest;
         }
@@ -29,6 +29,31 @@ namespace PizzaManagement
             txtMaNV.Text = user.MaNV.ToString();
             txtHoTenNV.Text = user.HoTen;
             txtViTri.Text = user.TenLoaiNV;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
