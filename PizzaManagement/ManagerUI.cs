@@ -15,7 +15,7 @@ namespace PizzaManagement
     public partial class ManagerUI : Form
     {
         //Thông tin của nngười đăng nhập vào hệ thống được lưu ở biến user này
-        private Employee user;
+        private NhanVien user;
         
         public ManagerUI()
         {
@@ -66,7 +66,7 @@ namespace PizzaManagement
 
             tabControl.TabPages.Clear();
         }
-        public void getUserInfo(Employee guest)
+        public void getUserInfo(NhanVien guest)
         {
             user = guest;
         }
@@ -204,7 +204,7 @@ namespace PizzaManagement
         private void dtDSPhieu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
            string ma_phieu = (dtDSPhieu.SelectedRows[0].Cells[0].Value.ToString());
-            
+           
         }
     }
 }

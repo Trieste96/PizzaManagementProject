@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-
 namespace DTO
 {
-    public class PhieuKiemKho
+    public class DSphieuKiemKho
     {
-        public int ma_phieu { get; set; }
-        public DataTable chi_tiet_phieu { get; set; }
+        public string loai_phieu { get; set; }
+        public DataTable danh_sach_phieu { get; set; }
+
     }
 }

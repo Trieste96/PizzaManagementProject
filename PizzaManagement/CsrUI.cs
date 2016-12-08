@@ -13,13 +13,13 @@ namespace PizzaManagement
 {
     public partial class CsrUI : Form
     {
-        private Employee user;
+        private NhanVien user;
         public CsrUI()
         {
             InitializeComponent();
         }
 
-        public void getUserInfo(Employee guest)
+        public void getUserInfo(NhanVien guest)
         {
             user = guest;
         }

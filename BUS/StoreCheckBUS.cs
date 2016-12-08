@@ -10,7 +10,7 @@ namespace BUS
 {
     public class StoreCheckBUS
     {
-        public PhieuKiemKho getStoreCheckReportList(PhieuKiemKho phieu_kk)
+        public DSphieuKiemKho getStoreCheckReportList(DSphieuKiemKho phieu_kk)
         {
             StoreCheckDAO dao = new StoreCheckDAO();
             if (phieu_kk.loai_phieu == "Tất cả")

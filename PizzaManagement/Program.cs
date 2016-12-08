@@ -18,7 +18,7 @@ namespace PizzaManagement
             Application.SetCompatibleTextRenderingDefault(false);
             AuthenticationUI authUI = new AuthenticationUI();
             Application.Run(authUI);
-            if (authUI.switchToMangerUI == true)
+            if (authUI.switchToManagerUI == true)
             {
                 ManagerUI manager_ui = new ManagerUI();
                 manager_ui.getUserInfo(authUI.user);
