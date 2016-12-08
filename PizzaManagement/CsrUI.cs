@@ -55,5 +55,11 @@ namespace PizzaManagement
         {
 
         }
+
+        private void additem_Click(object sender, EventArgs e)
+        {
+            AddItemUI form = new AddItemUI();
+            form.Show();
+        }
     }
 }
