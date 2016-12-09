@@ -26,9 +26,9 @@ namespace PizzaManagement
 
         private void CsrUI_Load(object sender, EventArgs e)
         {
-            txtMaNV.Text = user.MaNV.ToString();
-            txtHoTenNV.Text = user.HoTen;
-            txtViTri.Text = user.TenLoaiNV;
+            txtMaNV.Text = user.ma_NV.ToString();
+            txtHoTenNV.Text = user.ho_ten;
+            txtViTri.Text = user.ten_loai_nv;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

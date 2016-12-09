@@ -20,9 +20,9 @@ namespace DAO
             //cm.Parameters.Add("@MaLoaiNV", SqlDbType.SmallInt);
             cm.Parameters.Add("@MatKhau", SqlDbType.Char, 32);
 
-            cm.Parameters["@MaNV"].Value = guest.MaNV;
+            cm.Parameters["@MaNV"].Value = guest.ma_NV;
             //cm.Parameters["@MaLoaiNV"].Value = guest.MaLoaiNV;
-            cm.Parameters["@MatKhau"].Value = guest.MatKhau;
+            cm.Parameters["@MatKhau"].Value = guest.mat_khau;
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -30,15 +30,15 @@ namespace DAO
             NhanVien user = new NhanVien();
             if(dt.Rows.Count == 0)
             {
-                user.TinhTrang = 0;
+                user.tinh_trang = 0;
             }
             else
             {
-                user.MaNV = guest.MaNV;
-                user.HoTen = dt.Rows[0]["HoTenNV"].ToString();               
-                user.TenLoaiNV = dt.Rows[0]["TenLoai"].ToString();
-                user.MaLoaiNV = Convert.ToInt32(dt.Rows[0]["MaLoaiNV"]);
-                user.TinhTrang = 1;
+                user.ma_NV = guest.ma_NV;
+                user.ho_ten = dt.Rows[0]["HoTenNV"].ToString();               
+                user.ten_loai_nv = dt.Rows[0]["TenLoai"].ToString();
+                user.ma_loai_NV = Convert.ToInt32(dt.Rows[0]["MaLoaiNV"]);
+                user.tinh_trang = 1;
             }
             DBConnection.CloseConnection();
             cn.Close();

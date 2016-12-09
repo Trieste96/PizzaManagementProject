@@ -10,18 +10,32 @@ namespace BUS
 {
     public class StoreCheckBUS
     {
-        public DSphieuKiemKho getStoreCheckReportList(DSphieuKiemKho phieu_kk)
+        StoreCheckDAO dao = new StoreCheckDAO();
+        public DSphieuKiemKho getStoreCheckReportList(DSphieuKiemKho ds_pkk)
         {
-            StoreCheckDAO dao = new StoreCheckDAO();
-            if (phieu_kk.loai_phieu == "Tất cả")
+
+            if (ds_pkk.loai_phieu == "Tất cả")
             {
-                return dao.getAllReportList(phieu_kk);
+                return dao.getAllReportList(ds_pkk);
             }
             else
             {
-                return dao.getSpecificReportList(phieu_kk);
+                return dao.getSpecificReportList(ds_pkk);
             }
+        }
+        public PhieuKiemKho getCheckReportDetail(PhieuKiemKho pkk)
+        {
+            return dao.getCheckReportDetail(pkk);
+        }
 
+        public int createNewStoreReport(PhieuKiemKho phieu_moi)
+        {
+            return dao.createNewStoreReport(phieu_moi);
+        }
+
+        public int deleteReport(PhieuKiemKho pkk)
+        {
+            return dao.deleteReport(pkk);
         }
     }
 }
