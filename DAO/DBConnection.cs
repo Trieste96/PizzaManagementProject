@@ -9,6 +9,7 @@ namespace DAO
     public class DBConnection
     {
         private static SqlConnection connection;
+        private DBConnection() { }
         public static SqlConnection GetConnection()
         {
             if (connection == null)

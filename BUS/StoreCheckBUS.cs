@@ -11,31 +11,50 @@ namespace BUS
     public class StoreCheckBUS
     {
         StoreCheckDAO dao = new StoreCheckDAO();
-        public DSphieuKiemKho getStoreCheckReportList(DSphieuKiemKho ds_pkk)
+        public DSphieuKiemKho getReportList(DSphieuKiemKho ds)
         {
-
-            if (ds_pkk.loai_phieu == "Tất cả")
-            {
-                return dao.getAllReportList(ds_pkk);
-            }
-            else
-            {
-                return dao.getSpecificReportList(ds_pkk);
-            }
+            //Lấy DS phiếu
+            return dao.getReportList(ds);
         }
-        public PhieuKiemKho getCheckReportDetail(PhieuKiemKho pkk)
+
+        public PhieuThongKe getCheckReportDetail(PhieuThongKe pkk)
         {
+            //Xem chi tiết phiếu thống kê
             return dao.getCheckReportDetail(pkk);
         }
 
-        public int createNewStoreReport(PhieuKiemKho phieu_moi)
+        public int createNewStoreReport(PhieuThongKe phieu_moi)
         {
-            return dao.createNewStoreReport(phieu_moi);
+            //Tạo phiếu thống kê đầu/cuối ngày
+            return dao.createStoreCheckReport(phieu_moi);
+        }
+        public int createImportReport(PhieuThongKe phieu_moi)
+        {
+            //Tạo phiếu nhập kho
+            return dao.createImportReport(phieu_moi);
         }
 
-        public int deleteReport(PhieuKiemKho pkk)
+        public int deleteReport(PhieuThongKe pkk)
         {
             return dao.deleteReport(pkk);
+        }
+
+        public void changeReportDetail(PhieuThongKe pkk)
+        {
+            //Sửa chi tiết phiếu TK
+            try
+            {
+                dao.changeReportDetail(pkk);
+            }
+            catch (FormatException)
+            {
+                throw;
+            }
+        }
+
+        public BangTinhHinhTK storeStatistics(BangTinhHinhTK bang)
+        {
+            return dao.storeStatistics(bang);
         }
     }
 }

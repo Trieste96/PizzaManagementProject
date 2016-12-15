@@ -8,7 +8,7 @@ using System.Data;
 
 namespace DTO
 {
-    public class PhieuKiemKho
+    public class PhieuThongKe
     {
         public int ma_phieu { get; set; }
         public int ma_nv { get; set; }
