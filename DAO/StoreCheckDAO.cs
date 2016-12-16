@@ -11,7 +11,7 @@ namespace DAO
         SqlCommand cmd;
         public DSphieuKiemKho getSpecificReportList(DSphieuKiemKho phieu_kk)
         {
-            cmd = new SqlCommand("sp_getSpecificReportList", conn);
+            cmd = new SqlCommand("sp_STORE_getSpecificReportList", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.Add("@TenLoaiPhieu", SqlDbType.NVarChar, 50);
@@ -26,7 +26,7 @@ namespace DAO
 
         public DSphieuKiemKho getReportList(DSphieuKiemKho ds)
         {
-            cmd = new SqlCommand("sp_getReportList", conn);
+            cmd = new SqlCommand("sp_STORE_getReportList", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@phieu_1", ds.phieu_1);
@@ -42,7 +42,7 @@ namespace DAO
 
         public DSphieuKiemKho getAllReportList(DSphieuKiemKho ds_pkk)
         {           
-            cmd = new SqlCommand("sp_getAllReportList", conn);
+            cmd = new SqlCommand("sp_STORE_getAllReportList", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -53,7 +53,7 @@ namespace DAO
         }
         public PhieuThongKe getCheckReportDetail(PhieuThongKe pkk)
         {
-            cmd = new SqlCommand("sp_getCheckReportDetail", conn);
+            cmd = new SqlCommand("sp_STORE_getCheckReportDetail", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@MaPhieu", pkk.ma_phieu);
@@ -69,7 +69,7 @@ namespace DAO
             //Thêm một dòng vào bảng PhieuThongKe
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            cmd = new SqlCommand("sp_createNewStoreReport", conn);
+            cmd = new SqlCommand("sp_STORE_createNewStoreReport", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@MaNV", phieu_moi.ma_nv.ToString());
@@ -90,7 +90,7 @@ namespace DAO
             da.Fill(ds_ma_NL);
 
             //Tạo chi tiết phiếu thống kê gồm tất cả những nguyên liệu kể trên vói số lượng ban đầu là 0
-            cmd = new SqlCommand("sp_insertNewStoreReportDetail", conn);
+            cmd = new SqlCommand("sp_STORE_insertNewStoreReportDetail", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@MaPhieuTK", id_phieu_moi.ToString());
             cmd.Parameters.Add("@MaNL", SqlDbType.Int);
@@ -140,7 +140,7 @@ namespace DAO
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
-                cmd = new SqlCommand("sp_changeReportDetail", conn);
+                cmd = new SqlCommand("sp_STORE_changeReportDetail", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@MaPhieuTK", SqlDbType.Int).Value = pkk.ma_phieu.ToString();
@@ -164,7 +164,7 @@ namespace DAO
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
-            cmd = new SqlCommand("sp_storeStatistics", conn);
+            cmd = new SqlCommand("sp_STORE_storeStatistics", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@NgayBD", bang.ngay_BD.ToString("yyyy-MM-dd 00:00:00"));

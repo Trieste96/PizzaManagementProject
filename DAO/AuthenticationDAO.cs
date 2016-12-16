@@ -13,7 +13,7 @@ namespace DAO
         public NhanVien verifyAccount(NhanVien guest)
         {
             SqlConnection cn = DBConnection.GetConnection();
-            SqlCommand cm = new SqlCommand("sp_authenticate", cn);
+            SqlCommand cm = new SqlCommand("sp_STORE_authenticate", cn);
             cm.CommandType = CommandType.StoredProcedure;
 
             cm.Parameters.Add("@MaNV", SqlDbType.Int);
