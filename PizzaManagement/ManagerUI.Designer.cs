@@ -47,7 +47,6 @@
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabNguyenLieu = new System.Windows.Forms.TabPage();
             this.tabSanPham = new System.Windows.Forms.TabPage();
-            this.btn_XoaSP = new System.Windows.Forms.Button();
             this.btn_SuaSP = new System.Windows.Forms.Button();
             this.btn_themSP = new System.Windows.Forms.Button();
             this.dgv_info_SanPham = new System.Windows.Forms.DataGridView();
@@ -95,7 +94,6 @@
             this.StripMenu_XoaNL = new System.Windows.Forms.ToolStripMenuItem();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabKhachHang = new System.Windows.Forms.TabPage();
-            this.tabNhapKho = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtUserPosition = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -131,9 +129,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabSanPham.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_info_SanPham)).BeginInit();
-            this.menu_themSuaSP.SuspendLayout();
-            this.tabNguyenLieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_info_NguyenLieu)).BeginInit();
             this.menu_themSuaNL.SuspendLayout();
             this.tabNhanVien.SuspendLayout();
@@ -1226,18 +1221,11 @@
         private System.Windows.Forms.Label lbLoaiPhieuTitle;
         private System.Windows.Forms.Button btnChonLai;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnTaoPhieuNhap;
         private System.Windows.Forms.DataGridView dtDSPhieu;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnLuuThayDoi;
-        private System.Windows.Forms.Button btnCapNhat;
-        private System.Windows.Forms.DataGridView dgv_info_SanPham;
-        private System.Windows.Forms.Button btn_XoaSP;
-        private System.Windows.Forms.Button btn_SuaSP;
-        private System.Windows.Forms.Button btn_themSP;
         private System.Windows.Forms.ContextMenuStrip menu_themSuaSP;
         private System.Windows.Forms.ToolStripMenuItem stripMenu_suaSP;
         private System.Windows.Forms.ToolStripMenuItem stripMenu_xoaSP;

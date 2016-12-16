@@ -81,9 +81,9 @@ namespace PizzaManagement
             loadTreeView();
 
             //Cập nhật thông tin người đăng nhập
-            txtUserID.Text = user.ma_NV.ToString();
-            txtUserName.Text = user.ho_ten;
-            txtUserPosition.Text = user.ten_loai_nv;
+            txtUserID.Text = user.MaNV.ToString();
+            txtUserName.Text = user.HoTen;
+            txtUserPosition.Text = user.TenLoaiNV;
 
             
             //Thiết lập cho việc tạo phiếu kiểm kho
@@ -349,7 +349,7 @@ namespace PizzaManagement
         private void btnTaoPhieuNhap_Click(object sender, EventArgs e)
         {
             PhieuThongKe phieu_moi = new PhieuThongKe();
-            phieu_moi.ma_nv = user.ma_NV;
+            phieu_moi.ma_nv = user.MaNV;
             phieu_moi.ngay_gio = dtpNgayLapPhieu.Value;
             phieu_moi.ma_loai_phieu = cbLoaiPhieuTao.SelectedIndex + 1;
 

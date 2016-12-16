@@ -25,7 +25,7 @@ namespace BUS
         {
             //Mã hoá mật khẩu thành mã băm MD5
             MD5 md5 = MD5.Create();
-            guest.mat_khau = GetMd5Hash(md5, guest.mat_khau);
+            guest.MatKhau = GetMd5Hash(md5, guest.MatKhau);
 
             AuthenticationDAO dao = new AuthenticationDAO();
             return dao.verifyAccount(guest);
