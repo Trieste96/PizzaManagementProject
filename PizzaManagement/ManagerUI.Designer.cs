@@ -47,6 +47,7 @@
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.tabNguyenLieu = new System.Windows.Forms.TabPage();
             this.tabSanPham = new System.Windows.Forms.TabPage();
+            this.btn_XoaSP = new System.Windows.Forms.Button();
             this.btn_SuaSP = new System.Windows.Forms.Button();
             this.btn_themSP = new System.Windows.Forms.Button();
             this.dgv_info_SanPham = new System.Windows.Forms.DataGridView();
@@ -85,15 +86,6 @@
             this.menu_themSuaNL = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StripMenu_SuaNL = new System.Windows.Forms.ToolStripMenuItem();
             this.StripMenu_XoaNL = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabNhanVien = new System.Windows.Forms.TabPage();
-            this.tabKhachHang = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUserPosition = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.txtUserID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_xoaNV = new System.Windows.Forms.Button();
             this.btn_suaNV = new System.Windows.Forms.Button();
             this.btn_themNV = new System.Windows.Forms.Button();
