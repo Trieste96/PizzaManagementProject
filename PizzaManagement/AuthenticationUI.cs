@@ -27,6 +27,7 @@ namespace PizzaManagement
         {
             switchToManagerUI = false;
             switchToCsrUI = false;
+            this.AcceptButton = btnDangNhap;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

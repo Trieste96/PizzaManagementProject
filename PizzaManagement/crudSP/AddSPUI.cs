@@ -29,6 +29,7 @@ namespace PizzaManagement
 
         private void ThemMoiSP_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = button1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,7 +57,15 @@ namespace PizzaManagement
             this.Dispose();
         }
 
-        private void ThemMoiSP_FormClosing(object sender, FormClosingEventArgs e)
+        //private void button1_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        button1_Click(null, null);
+        //    }
+        //}
+
+        private void txtInfoGia_KeyDown(object sender, KeyEventArgs e)
         {
 
         }

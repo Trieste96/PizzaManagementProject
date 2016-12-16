@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crudNL\AddNLUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crudNL\AddNLUI.Designer.cs">
+      <DependentUpon>AddNLUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="AuthenticationUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,18 @@
     <Compile Include="CsrUI.Designer.cs">
       <DependentUpon>CsrUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="crudNL\EditNL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crudNL\EditNL.Designer.cs">
+      <DependentUpon>EditNL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditNVUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNVUI.Designer.cs">
+      <DependentUpon>EditNVUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,23 +84,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI_Add-Edit_Delete_SP\EditSPUI.cs">
+    <Compile Include="crudSP\EditSPUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI_Add-Edit_Delete_SP\EditSPUI.designer.cs">
+    <Compile Include="crudSP\EditSPUI.designer.cs">
       <DependentUpon>EditSPUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI_Add-Edit_Delete_SP\AddSPUI.cs">
+    <Compile Include="crudSP\AddSPUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI_Add-Edit_Delete_SP\AddSPUI.designer.cs">
+    <Compile Include="crudSP\AddSPUI.designer.cs">
       <DependentUpon>AddSPUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNVUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNVUI.Designer.cs">
+      <DependentUpon>AddNVUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="crudNL\AddNLUI.resx">
+      <DependentUpon>AddNLUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AuthenticationUI.resx">
       <DependentUpon>AuthenticationUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CsrUI.resx">
       <DependentUpon>CsrUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crudNL\EditNL.resx">
+      <DependentUpon>EditNL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNVUI.resx">
+      <DependentUpon>EditNVUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUI.resx">
       <DependentUpon>ManagerUI.cs</DependentUpon>
@@ -91,11 +124,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI_Add-Edit_Delete_SP\EditSPUI.resx">
+    <EmbeddedResource Include="crudSP\EditSPUI.resx">
       <DependentUpon>EditSPUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI_Add-Edit_Delete_SP\AddSPUI.resx">
+    <EmbeddedResource Include="crudSP\AddSPUI.resx">
       <DependentUpon>AddSPUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNVUI.resx">
+      <DependentUpon>AddNVUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
