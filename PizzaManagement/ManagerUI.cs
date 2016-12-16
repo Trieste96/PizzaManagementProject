@@ -81,14 +81,11 @@ namespace PizzaManagement
             loadTreeView();
 
             //Cập nhật thông tin người đăng nhập
-            txtUserID.Text = user.MaNV.ToString();
-            txtUserName.Text = user.HoTen;
-            txtUserPosition.Text = user.TenLoaiNV;
+            txtUserID.Text = user.ma_NV.ToString();
+            txtUserName.Text = user.ho_ten;
+            txtUserPosition.Text = user.ten_loai_nv;
 
-            //Thiết lập cho việc xem phiếu kiểm kho
-            cbLoaiPhieuXem.SelectedIndex = 0;
             
-
             //Thiết lập cho việc tạo phiếu kiểm kho
             cbLoaiPhieuTao.SelectedIndex = 0;
         }
@@ -96,74 +93,75 @@ namespace PizzaManagement
 
         private void treeFunctionList_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            tabControl.TabPages.Clear();
-            //treeFunctionList.SelectedNode.SelectedImageIndex = 0 ? 1 : treeFunctionList.SelectedNode.SelectedImageIndex;
-            switch (treeFunctionList.SelectedNode.SelectedImageIndex)
+            tabControl.TabPages.Clear();  
+            try
             {
-                case 1:
-                    tabControl.TabPages.Add(tabLichLam);
-                    break;
-                case 2:
-                case 21:
-                    tabControl.TabPages.Add(tabTinhHinhTaiChinh);
-                    break;
-                case 3:
-                    tabControl.TabPages.Add(tabKiemKho);
-                    tabControl.TabPages.Add(tabNhapKho);
-                    tabControl.TabPages.Add(tabThongTinKho);
-                    break;
-                case 31:
-                    tabControl.TabPages.Add(tabKiemKho);
-                    tabControl.TabPages.Add(tabNhapKho);
-                    tabControl.TabPages.Add(tabThongTinKho);
-                    tabControl.SelectedTab = tabKiemKho;
-                    break;
-                case 32:
-                    tabControl.TabPages.Add(tabKiemKho);
-                    tabControl.TabPages.Add(tabNhapKho);
-                    tabControl.TabPages.Add(tabThongTinKho);
-                    tabControl.SelectedTab = tabNhapKho;
-                    break;
-                case 33:
-                    tabControl.TabPages.Add(tabKiemKho);
-                    tabControl.TabPages.Add(tabNhapKho);
-                    tabControl.TabPages.Add(tabThongTinKho);
-                    tabControl.SelectedTab = tabThongTinKho;
-                    break;
-                case 4:
-                    tabControl.TabPages.Add(tabSanPham);
-                    tabControl.TabPages.Add(tabNguyenLieu);
-                    tabControl.TabPages.Add(tabNhanVien);
-                    tabControl.TabPages.Add(tabKhachHang);
-                    break;
-                case 41:
-                    tabControl.TabPages.Add(tabSanPham);
-                    tabControl.TabPages.Add(tabNguyenLieu);
-                    tabControl.TabPages.Add(tabNhanVien);
-                    tabControl.TabPages.Add(tabKhachHang);
-                    tabControl.SelectedTab = tabSanPham;
-                    break;
-                case 42:
-                    tabControl.TabPages.Add(tabSanPham);
-                    tabControl.TabPages.Add(tabNguyenLieu);
-                    tabControl.TabPages.Add(tabNhanVien);
-                    tabControl.TabPages.Add(tabKhachHang);
-                    tabControl.SelectedTab = tabNguyenLieu;
-                    break;
-                case 43:
-                    tabControl.TabPages.Add(tabSanPham);
-                    tabControl.TabPages.Add(tabNguyenLieu);
-                    tabControl.TabPages.Add(tabNhanVien);
-                    tabControl.TabPages.Add(tabKhachHang);
-                    tabControl.SelectedTab = tabNhanVien;
-                    break;
-                case 44:
-                    tabControl.TabPages.Add(tabSanPham);
-                    tabControl.TabPages.Add(tabNguyenLieu);
-                    tabControl.TabPages.Add(tabNhanVien);
-                    tabControl.TabPages.Add(tabKhachHang);
-                    tabControl.SelectedTab = tabKhachHang;
-                    break;
+                switch (treeFunctionList.SelectedNode.SelectedImageIndex)
+                {
+                    case 1:
+                        tabControl.TabPages.Add(tabLichLam);
+                        break;
+                    case 2:
+                    case 21:
+                        tabControl.TabPages.Add(tabTinhHinhTaiChinh);
+                        break;
+                    case 3:
+                        tabControl.TabPages.Add(tabKiemKho);
+                        tabControl.TabPages.Add(tabThongTinKho);
+                        break;
+                    case 31:
+                        tabControl.TabPages.Add(tabKiemKho);
+                        tabControl.TabPages.Add(tabThongTinKho);
+                        tabControl.SelectedTab = tabKiemKho;
+                        break;
+                    case 32:
+                        tabControl.TabPages.Add(tabKiemKho);
+                        tabControl.TabPages.Add(tabThongTinKho);
+                        break;
+                    case 33:
+                        tabControl.TabPages.Add(tabKiemKho);
+                        tabControl.TabPages.Add(tabThongTinKho);
+                        tabControl.SelectedTab = tabThongTinKho;
+                        break;
+                    case 4:
+                        tabControl.TabPages.Add(tabSanPham);
+                        tabControl.TabPages.Add(tabNguyenLieu);
+                        tabControl.TabPages.Add(tabNhanVien);
+                        tabControl.TabPages.Add(tabKhachHang);
+                        break;
+                    case 41:
+                        tabControl.TabPages.Add(tabSanPham);
+                        tabControl.TabPages.Add(tabNguyenLieu);
+                        tabControl.TabPages.Add(tabNhanVien);
+                        tabControl.TabPages.Add(tabKhachHang);
+                        tabControl.SelectedTab = tabSanPham;
+                        break;
+                    case 42:
+                        tabControl.TabPages.Add(tabSanPham);
+                        tabControl.TabPages.Add(tabNguyenLieu);
+                        tabControl.TabPages.Add(tabNhanVien);
+                        tabControl.TabPages.Add(tabKhachHang);
+                        tabControl.SelectedTab = tabNguyenLieu;
+                        break;
+                    case 43:
+                        tabControl.TabPages.Add(tabSanPham);
+                        tabControl.TabPages.Add(tabNguyenLieu);
+                        tabControl.TabPages.Add(tabNhanVien);
+                        tabControl.TabPages.Add(tabKhachHang);
+                        tabControl.SelectedTab = tabNhanVien;
+                        break;
+                    case 44:
+                        tabControl.TabPages.Add(tabSanPham);
+                        tabControl.TabPages.Add(tabNguyenLieu);
+                        tabControl.TabPages.Add(tabNhanVien);
+                        tabControl.TabPages.Add(tabKhachHang);
+                        tabControl.SelectedTab = tabKhachHang;
+                        break;
+                }
+            }
+            catch (NullReferenceException)
+            {
+                //doing shit
             }
         }
 
@@ -174,21 +172,40 @@ namespace PizzaManagement
 
         private void btnXemPhieu_Click(object sender, EventArgs e)
         {
-            DSphieuKiemKho phieu_kk = new DSphieuKiemKho();
-            phieu_kk.loai_phieu = cbLoaiPhieuXem.GetItemText(cbLoaiPhieuXem.SelectedItem);
+            DSphieuKiemKho ds = new DSphieuKiemKho();
+            ds.phieu_1 = chkDauNgay.CheckState == CheckState.Checked    ? "Đầu ngày"    : "";
+            ds.phieu_2 = chkCuoiNgay.CheckState == CheckState.Checked   ? "Cuối ngày"   : "";
+            ds.phieu_3 = chkNhapKho.CheckState == CheckState.Checked    ? "Nhập kho"    : "";
 
             StoreCheckBUS bus = new StoreCheckBUS();
-            phieu_kk = bus.getStoreCheckReportList(phieu_kk);
+            ds = bus.getReportList(ds);
 
-            dtDSPhieu.DataSource = phieu_kk.danh_sach_phieu;
-            
-            dtDSPhieu.ForeColor = Color.Black;
-            dtDSPhieu.Font = new Font("Arial", 9, FontStyle.Regular);
-            dtDSPhieu.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+            tableDS_PKK.DataSource = ds.danh_sach_phieu;
 
-            dtDSPhieu.Columns["Mã phiếu"].Width = 55;
-            dtDSPhieu.Columns["Loại phiếu"].Width = 90;
-            dtDSPhieu.Columns["Mã nhân viên"].Width = 55;
+            tableDS_PKK.ForeColor = Color.Black;
+            tableDS_PKK.Font = new Font("Arial", 9, FontStyle.Regular);
+            tableDS_PKK.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+
+            //Cho phép các nút có thể nhấn được
+            btnTaoPKK.Enabled = true;
+            btnXemDS_PKK.Enabled = true;
+            btnXemChiTietPKK.Enabled = true;
+            btnXoaPKK.Enabled = true;
+            btnLuuPKK.Enabled = true;
+            btnXoaThayDoiPKK.Enabled = true;
+
+            try
+            {
+                tableDS_PKK.Rows[0].Selected = true;
+
+                //Hiện chi tiết phiếu đầu tiên
+                dtDSPhieu_CellDoubleClick(null, null);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //do nothing
+            }
+
         }
 
         private void groupBox5_Enter(object sender, EventArgs e)
@@ -208,10 +225,34 @@ namespace PizzaManagement
 
         private void dtDSPhieu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           string ma_phieu = (dtDSPhieu.SelectedRows[0].Cells[0].Value.ToString());
-            
+            try
+            {
+                int ma_phieu = Convert.ToInt32(tableDS_PKK.SelectedRows[0].Cells[0].Value.ToString());
+                PhieuThongKe pkk = new PhieuThongKe();
+                pkk.ma_phieu = ma_phieu;
+
+                StoreCheckBUS bus = new StoreCheckBUS();
+                pkk = bus.getCheckReportDetail(pkk);
+
+                tableChiTiet_PKK.DataSource = pkk.chi_tiet_phieu;
+                tableChiTiet_PKK.ForeColor = Color.Black;
+                tableChiTiet_PKK.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                tableChiTiet_PKK.Font = new Font("Arial", 12, FontStyle.Regular);
+
+                //Thông tin phiếu trên label
+                lblMaPhieu.Text = tableDS_PKK.SelectedRows[0].Cells[0].Value.ToString();
+                lblLoaiPhieu.Text = tableDS_PKK.SelectedRows[0].Cells[1].Value.ToString();
+
+                tableChiTiet_PKK.Columns[0].ReadOnly = true;
+                tableChiTiet_PKK.Columns[1].ReadOnly = true;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+                //doing shit
+            }
         }
-// ================= Nghia ==========================================================
+
         private void ManagerUI_Activated(object sender, EventArgs e)
         {
             load_info_SP();
@@ -236,6 +277,7 @@ namespace PizzaManagement
             }
             dgv_info_SanPham.ReadOnly = true;
             dgv_info_SanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
         private void load_info_NL()
         {
@@ -292,6 +334,173 @@ namespace PizzaManagement
             int gia = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[2].FormattedValue.ToString());
             PizzaManagement.SuaSP f = new SuaSP(masp, check, tensp, gia);
             f.Show();
+        }
+
+        private void tabKiemKho_Click(object sender, EventArgs e)
+        {
+            btnXemPhieu_Click(null, null);
+        }
+
+        private void tabKiemKho_ControlAdded(object sender, ControlEventArgs e)
+        {
+            btnXemPhieu_Click(null, null);
+        }
+
+        private void btnTaoPhieuNhap_Click(object sender, EventArgs e)
+        {
+            PhieuThongKe phieu_moi = new PhieuThongKe();
+            phieu_moi.ma_nv = user.ma_NV;
+            phieu_moi.ngay_gio = dtpNgayLapPhieu.Value;
+            phieu_moi.ma_loai_phieu = cbLoaiPhieuTao.SelectedIndex + 1;
+
+            StoreCheckBUS bus = new StoreCheckBUS();
+            int id_new_row; //mã phiếu mới tạo
+
+            if (phieu_moi.ma_loai_phieu == 3)    //TH là phiếu nhập kho
+            {
+                id_new_row = bus.createImportReport(phieu_moi);
+                MessageBox.Show(String.Format("Phiếu {0} đã được tạo", id_new_row.ToString()), "Thành công", MessageBoxButtons.OK, MessageBoxIcon.None);
+                btnXemPhieu_Click(null, null);
+            }
+            else
+            {
+                id_new_row = bus.createNewStoreReport(phieu_moi);
+                if (id_new_row != 0)
+                {
+                    MessageBox.Show(String.Format("Phiếu {0} đã được tạo", id_new_row.ToString()), "Thành công", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    btnXemPhieu_Click(null, null);
+                    dtDSPhieu_CellDoubleClick(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(String.Format("Đã tồn tại phiếu cùng loại vào cùng ngày {0}!", phieu_moi.ngay_gio.ToString("dd-MM-yyyy")), "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnXemPhieu_Click(null, null);
+                }
+            }
+            
+            
+        }
+
+        private void btnXemChiTietPhieu_Click(object sender, EventArgs e)
+        {
+            dtDSPhieu_CellDoubleClick(null, null);
+        }
+
+        private void btnXoaPhieu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ma_phieu = Convert.ToInt32(tableDS_PKK.SelectedRows[0].Cells[0].Value);
+                DialogResult confirm = MessageBox.Show(String.Format("Bạn có muốn xoá phiếu {0} không?", ma_phieu), "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (confirm == DialogResult.OK)
+                {
+                    PhieuThongKe pkk = new PhieuThongKe();
+                    pkk.ma_phieu = ma_phieu;
+                    StoreCheckBUS bus = new StoreCheckBUS();
+                    if (bus.deleteReport(pkk) > 0)
+                    {
+                        MessageBox.Show(String.Format("Xoá phiếu {0} thành công!", ma_phieu), "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        btnXemPhieu_Click(null, null);
+                        btnXemChiTietPhieu_Click(null, null);
+                    }
+                    else
+                        MessageBox.Show(String.Format("Xoá phiếu {0} không thành công!", ma_phieu), "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //do nothing
+            }
+        }
+
+        private void btnLuuThayDoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult confirm = MessageBox.Show(String.Format("Bạn có muốn lưu thay đổi đối với phiếu {0} ?", lblMaPhieu.Text), "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.Yes)
+                {
+                    PhieuThongKe pkk = new PhieuThongKe();
+                    pkk.chi_tiet_phieu = (DataTable)tableChiTiet_PKK.DataSource;
+                    pkk.ma_phieu = Convert.ToInt32(lblMaPhieu.Text);
+
+                    StoreCheckBUS bus = new StoreCheckBUS();
+                    bus.changeReportDetail(pkk);
+                    //btnXemChiTietPhieu_Click(this, null);
+                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Lỗi dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+
+        }
+
+        private void btnXoaThayDoi_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Bạn có muốn xoá thay đổi đối với phiếu này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+                btnXemChiTietPhieu_Click(this, null);
+        }
+
+        private void dtChiTietPhieuTK_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dtChiTietPhieuTK_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Kiểm tra lại dữ liệu tại ô Số lượng");
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btnChonLai_Click(object sender, EventArgs e)
+        {
+            chkDauNgay.Checked = false;
+            chkCuoiNgay.Checked = false;
+            chkNhapKho.Checked = false;
+        }
+
+        private void tableChiTiet_PKK_Leave(object sender, EventArgs e)
+        {
+            btnLuuThayDoi_Click(this, null);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgayBD_ValueChanged(object sender, EventArgs e)
+        {
+            dtpNgayKT.MinDate = dtpNgayBD.Value;
+        }
+
+        private void btnXemTK_Click(object sender, EventArgs e)
+        {
+            BangTinhHinhTK bang = new BangTinhHinhTK();
+            bang.ngay_BD = dtpNgayBD.Value;
+            bang.ngay_KT = dtpNgayKT.Value;
+            bang.chi_tiet = new DataTable();
+
+            StoreCheckBUS bus = new StoreCheckBUS();
+            bang = bus.storeStatistics(bang);
+            tableThongKe.DataSource = bang.chi_tiet;
+
+            tableThongKe.Font = new Font("Arial", 14, FontStyle.Regular);
+            tableThongKe.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
+            tableThongKe.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
+            tableThongKe.DefaultCellStyle.ForeColor = Color.Black;
+            tableThongKe.Columns["Đã sử dụng"].DefaultCellStyle.ForeColor = Color.Red;
         }
 
         private void btn_XoaSP_Click(object sender, EventArgs e)
