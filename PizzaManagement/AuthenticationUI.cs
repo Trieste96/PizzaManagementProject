@@ -44,24 +44,24 @@ namespace PizzaManagement
             {
                 string passwd = txtMatKhau.Text;
                 NhanVien guest = new NhanVien();
-                guest.ma_NV = Convert.ToInt32(txtMaNV.Text);
-                guest.mat_khau = passwd;
+                guest.MaNV = Convert.ToInt32(txtMaNV.Text);
+                guest.MatKhau = passwd;
                 //guest.MaLoaiNV = Convert.ToInt32(cbQuyen.SelectedValue);
                 
                 AuthenticationBUS bus = new AuthenticationBUS();
                 guest = bus.verifyAccount(guest);
-                if (guest.tinh_trang == 0)
+                if (guest.TinhTrang == 0)
                 {
                     MessageBox.Show("Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin đăng nhập", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     user = guest;
-                    if (user.ten_loai_nv == "Quản lý")
+                    if (user.TenLoaiNV == "Quản lý")
                     {
                         switchToManagerUI = true;
                     }
-                    else if(user.ten_loai_nv == "CSR")
+                    else if(user.TenLoaiNV == "CSR")
                     {
                         switchToCsrUI = true;
                     }
