@@ -163,11 +163,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="crudSP\EditSPUI.resx">
+    </EmbeddedResource>
     <EmbeddedResource Include="Quantity.resx">
       <DependentUpon>Quantity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI_Add-Edit_Delete_SP\EditSPUI.resx">
-      <DependentUpon>EditSPUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="crudSP\AddSPUI.resx">
       <DependentUpon>AddSPUI.cs</DependentUpon>
