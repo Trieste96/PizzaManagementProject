@@ -122,9 +122,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ItemTable;
-        private PizzaDBDataSet pizzaDBDataSet;
         private System.Windows.Forms.BindingSource sanPhamBindingSource;
-        private PizzaDBDataSetTableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
