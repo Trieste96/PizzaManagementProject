@@ -420,6 +420,7 @@ namespace PizzaManagement
                 DialogResult confirm = MessageBox.Show(String.Format("Bạn có muốn lưu thay đổi đối với phiếu {0} ?", lblMaPhieu.Text), "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.Yes)
                 {
+                    tableChiTiet_PKK.CancelEdit(); 
                     PhieuThongKe pkk = new PhieuThongKe();
                     pkk.chi_tiet_phieu = (DataTable)tableChiTiet_PKK.DataSource;
                     pkk.ma_phieu = Convert.ToInt32(lblMaPhieu.Text);
@@ -447,6 +448,7 @@ namespace PizzaManagement
 
         private void dtChiTietPhieuTK_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            btnLuuPKK.Enabled = true;
         }
 
         private void dtChiTietPhieuTK_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -648,6 +650,11 @@ namespace PizzaManagement
 
             
             
+        }
+
+        private void tableChiTiet_PKK_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            btnLuuPKK.Enabled = false;
         }
 
 
