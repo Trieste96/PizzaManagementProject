@@ -43,6 +43,8 @@ namespace DAO
             return dt2;
         }
 
+
+
         public void addNV(NhanVien nvDto)
         {
             SqlConnection cn = DBConnection.GetConnection();
@@ -69,6 +71,45 @@ namespace DAO
 
             cmd.ExecuteNonQuery();
 
+        }
+        public void editNV(NhanVien nvDto)
+        {
+            SqlConnection cn = DBConnection.GetConnection();
+            SqlCommand cmd = new SqlCommand("sp_INFO_editNV", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@MaNV", SqlDbType.Int);
+            cmd.Parameters.Add("@HoTenNV", SqlDbType.NVarChar);
+            cmd.Parameters.Add("@CMND", SqlDbType.NVarChar);
+            cmd.Parameters.Add("@SoDT", SqlDbType.NVarChar);
+            cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar);
+            cmd.Parameters.Add("@Email", SqlDbType.VarChar);
+            cmd.Parameters.Add("@MaLoaiNV", SqlDbType.SmallInt);
+            cmd.Parameters.Add("@MaTinhTrang", SqlDbType.TinyInt);
+
+            cmd.Parameters["@MaNV"].Value = nvDto.MaNV;
+            cmd.Parameters["@HoTenNV"].Value = nvDto.HoTen;
+            cmd.Parameters["@CMND"].Value = nvDto.SoCMND;
+            cmd.Parameters["@SoDT"].Value = nvDto.SoDT;
+            cmd.Parameters["@DiaChi"].Value = nvDto.DiaChi;
+            cmd.Parameters["@Email"].Value = nvDto.Email;
+            cmd.Parameters["@MaLoaiNV"].Value = nvDto.MaLoaiNV;
+            cmd.Parameters["@MaTinhTrang"].Value = nvDto.TinhTrang;
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+        public void deleteNV(NhanVien nvDto)
+        {
+            SqlConnection cn = DBConnection.GetConnection();
+            SqlCommand cmd = new SqlCommand("sp_INFO_deleteNV", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@MaNV", SqlDbType.Int);
+            cmd.Parameters["@MaNV"].Value = nvDto.MaNV;
+
+            cmd.ExecuteNonQuery();
         }
     }
 }

@@ -20,11 +20,15 @@ namespace PizzaManagement
 
         private SanPhamBUS spBus;
         private NguyenLieuBUS nlBus;
+        private NhanVienBUS nvBus;
+        private KhachHangBUS khBus;
         public ManagerUI()
         {
             InitializeComponent();
             spBus = new SanPhamBUS();
             nlBus = new NguyenLieuBUS();
+            nvBus = new NhanVienBUS();
+            khBus = new KhachHangBUS();
         }
 
         private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
@@ -252,90 +256,6 @@ namespace PizzaManagement
                 //doing shit
             }
         }
-
-        private void ManagerUI_Activated(object sender, EventArgs e)
-        {
-            load_info_SP();
-            load_info_NL();
-            load_info_NV();
-        }
-        private void load_info_SP()
-        {
-            DataTable dt = new DataTable();
-            SanPhamBUS spBUS = new SanPhamBUS();
-            dt = spBUS.Load_info_SP();
-            dgv_info_SanPham.DataSource = dt;
-            dgv_info_SanPham.Columns[0].HeaderText = "Mã SP";
-            dgv_info_SanPham.Columns[1].HeaderText = "Tên SP";
-            dgv_info_SanPham.Columns[2].HeaderText = "Giá bán";
-            dgv_info_SanPham.Columns[3].HeaderText = "Loại SP";
-            dgv_info_SanPham.Columns[4].HeaderText = "Mã loại SP";
-
-            for (int i = 0; i < dgv_info_SanPham.ColumnCount; i++)
-            {
-                dgv_info_SanPham.AutoResizeColumn(i);
-            }
-            dgv_info_SanPham.ReadOnly = true;
-            dgv_info_SanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-        }
-        private void load_info_NL()
-        {
-            
-            DataTable dt = new DataTable();
-            NguyenLieuBUS nlBus = new NguyenLieuBUS();
-            dt = nlBus.Load_info_NL();
-            dgv_info_NguyenLieu.DataSource = dt;
-            dgv_info_NguyenLieu.Columns[0].HeaderText = "Mã NL";
-            dgv_info_NguyenLieu.Columns[1].HeaderText = "Tên NL";
-            dgv_info_NguyenLieu.Columns[2].HeaderText = "Đơn vị";
-
-            for(int i = 0; i < dgv_info_NguyenLieu.ColumnCount; i++)
-            {
-                dgv_info_NguyenLieu.AutoResizeColumn(i);
-            }
-            dgv_info_NguyenLieu.ReadOnly = true;
-            dgv_info_NguyenLieu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-        private void load_info_NV()
-        {
-            DataTable dt = new DataTable();
-            NhanVienBUS nvBus = new NhanVienBUS();
-            dt = nvBus.Load_info_NV();
-            dgv_info_NhanVien.DataSource = dt;
-            dgv_info_NhanVien.Columns[0].HeaderText = "Mã NV";
-            dgv_info_NhanVien.Columns[1].HeaderText = "Họ tên NV";
-            dgv_info_NhanVien.Columns[2].HeaderText = "CMND";
-            dgv_info_NhanVien.Columns[3].HeaderText = "số ĐT";
-            dgv_info_NhanVien.Columns[4].HeaderText = "Địa chỉ";
-            dgv_info_NhanVien.Columns[5].HeaderText = "Email";
-            dgv_info_NhanVien.Columns[6].HeaderText = "Tên loại NV";
-            dgv_info_NhanVien.Columns[7].HeaderText = "Lương/giờ";
-            dgv_info_NhanVien.Columns[8].HeaderText = "Tình trạng";
-
-            for(int i=0;i<dgv_info_NhanVien.ColumnCount;i++)
-            {
-                dgv_info_NhanVien.AutoResizeColumn(i);
-            }
-            dgv_info_NhanVien.ReadOnly = true;
-            dgv_info_NhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-        private void btn_themSP_Click(object sender, EventArgs e)
-        {
-            PizzaManagement.ThemMoiSP f = new ThemMoiSP();
-            f.Show();
-        }
-
-        private void btn_SuaSP_Click(object sender, EventArgs e)
-        {
-            int masp = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[0].FormattedValue.ToString());
-            int check = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[4].FormattedValue.ToString()) - 1;
-            string tensp = dgv_info_SanPham.CurrentRow.Cells[1].FormattedValue.ToString();
-            int gia = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[2].FormattedValue.ToString());
-            PizzaManagement.SuaSP f = new SuaSP(masp, check, tensp, gia);
-            f.Show();
-        }
-
         private void tabKiemKho_Click(object sender, EventArgs e)
         {
             btnXemPhieu_Click(null, null);
@@ -377,8 +297,8 @@ namespace PizzaManagement
                     btnXemPhieu_Click(null, null);
                 }
             }
-            
-            
+
+
         }
 
         private void btnXemChiTietPhieu_Click(object sender, EventArgs e)
@@ -435,7 +355,7 @@ namespace PizzaManagement
             {
                 MessageBox.Show("Lỗi dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
 
         }
 
@@ -505,6 +425,113 @@ namespace PizzaManagement
             tableThongKe.Columns["Đã sử dụng"].DefaultCellStyle.ForeColor = Color.Red;
         }
 
+        private void ManagerUI_Activated(object sender, EventArgs e)
+        {
+            load_info_SP();
+            load_info_NL();
+            load_info_NV();
+            load_info_KH();
+        }
+        private void load_info_SP()
+        {
+            DataTable dt = new DataTable();
+            SanPhamBUS spBUS = new SanPhamBUS();
+            dt = spBUS.Load_info_SP();
+            dgv_info_SanPham.DataSource = dt;
+            dgv_info_SanPham.Columns[0].HeaderText = "Mã SP";
+            dgv_info_SanPham.Columns[1].HeaderText = "Tên SP";
+            dgv_info_SanPham.Columns[2].HeaderText = "Giá bán";
+            dgv_info_SanPham.Columns[3].HeaderText = "Loại SP";
+            dgv_info_SanPham.Columns[4].HeaderText = "Mã loại SP";
+
+            for (int i = 0; i < dgv_info_SanPham.ColumnCount; i++)
+            {
+                dgv_info_SanPham.AutoResizeColumn(i);
+            }
+            dgv_info_SanPham.ReadOnly = true;
+            dgv_info_SanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+        }
+        private void load_info_NL()
+        {
+            
+            DataTable dt = new DataTable();
+            NguyenLieuBUS nlBus = new NguyenLieuBUS();
+            dt = nlBus.Load_info_NL();
+            dgv_info_NguyenLieu.DataSource = dt;
+            dgv_info_NguyenLieu.Columns[0].HeaderText = "Mã NL";
+            dgv_info_NguyenLieu.Columns[1].HeaderText = "Tên NL";
+            dgv_info_NguyenLieu.Columns[2].HeaderText = "Đơn vị";
+
+            for(int i = 0; i < dgv_info_NguyenLieu.ColumnCount; i++)
+            {
+                dgv_info_NguyenLieu.AutoResizeColumn(i);
+            }
+            dgv_info_NguyenLieu.ReadOnly = true;
+            dgv_info_NguyenLieu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void load_info_NV()
+        {
+            DataTable dt = new DataTable();
+            NhanVienBUS nvBus = new NhanVienBUS();
+            dt = nvBus.Load_info_NV();
+            dgv_info_NhanVien.DataSource = dt;
+            dgv_info_NhanVien.Columns[0].HeaderText = "Mã NV";
+            dgv_info_NhanVien.Columns[1].HeaderText = "Họ tên NV";
+            dgv_info_NhanVien.Columns[2].HeaderText = "CMND";
+            dgv_info_NhanVien.Columns[3].HeaderText = "số ĐT";
+            dgv_info_NhanVien.Columns[4].HeaderText = "Địa chỉ";
+            dgv_info_NhanVien.Columns[5].HeaderText = "Email";
+            dgv_info_NhanVien.Columns[6].HeaderText = "Tên loại NV";
+            dgv_info_NhanVien.Columns[7].HeaderText = "Lương/giờ";
+            dgv_info_NhanVien.Columns[8].HeaderText = "Tình trạng";
+            dgv_info_NhanVien.Columns[9].Visible = false;
+            dgv_info_NhanVien.Columns[10].Visible = false;
+            for (int i=0;i<dgv_info_NhanVien.ColumnCount;i++)
+            {
+                dgv_info_NhanVien.AutoResizeColumn(i);
+            }
+            dgv_info_NhanVien.ReadOnly = true;
+            dgv_info_NhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void load_info_KH()
+        {
+            DataTable dt = new DataTable();
+            KhachHangBUS khBus = new KhachHangBUS();
+            dt = khBus.Load_info_KH();
+            dgv_info_KhachHang.DataSource = dt;
+            dgv_info_KhachHang.Columns[0].HeaderText = "Mã KH";
+            dgv_info_KhachHang.Columns[1].HeaderText = "Họ tên KH";
+            dgv_info_KhachHang.Columns[2].HeaderText = "Loại KH";
+            dgv_info_KhachHang.Columns[3].HeaderText = "Địa chỉ";
+            dgv_info_KhachHang.Columns[4].HeaderText = "Email";
+            dgv_info_KhachHang.Columns[5].HeaderText = "Số ĐT";
+            dgv_info_KhachHang.Columns[6].HeaderText = "Chiết khấu";
+            //dgv_info_KhachHang.Columns[7].HeaderText = "Mã loại";
+            dgv_info_KhachHang.Columns[7].Visible = false;
+
+            for (int i = 0; i < dgv_info_KhachHang.ColumnCount; i++)
+            {
+                dgv_info_KhachHang.AutoResizeColumn(i);
+            }
+            dgv_info_KhachHang.ReadOnly = true;
+            dgv_info_KhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void btn_themSP_Click(object sender, EventArgs e)
+        {
+            PizzaManagement.ThemMoiSP f = new ThemMoiSP();
+            f.Show();
+        }
+        private void btn_SuaSP_Click(object sender, EventArgs e)
+        {
+            int masp = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[0].FormattedValue.ToString());
+            int check = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[4].FormattedValue.ToString()) - 1;
+            string tensp = dgv_info_SanPham.CurrentRow.Cells[1].FormattedValue.ToString();
+            int gia = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[2].FormattedValue.ToString());
+            PizzaManagement.SuaSP f = new SuaSP(masp, check, tensp, gia);
+            f.Show();
+        }
         private void btn_XoaSP_Click(object sender, EventArgs e)
         {
             string maSP;
@@ -531,17 +558,14 @@ namespace PizzaManagement
                 dgv_info_SanPham.FirstDisplayedScrollingRowIndex = a-1;
             }
         }
-
         private void stripMenu_suaSP_Click(object sender, EventArgs e)
         {
             btn_SuaSP_Click(null, null);
         }
-
         private void stripMenu_xoaSP_Click(object sender, EventArgs e)
         {
             btn_XoaSP_Click(null, null);
         }
-
         private void dgv_info_SanPham_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if(e.Button == MouseButtons.Right)
@@ -554,14 +578,12 @@ namespace PizzaManagement
         }
 
 
-
         private void btn_themNL_Click(object sender, EventArgs e)
         {
             PizzaManagement.ThemMoiNL f2 = new ThemMoiNL();
             f2.Show();
 
         }
-
         private void btn_SuaNL_Click(object sender, EventArgs e)
         {
             int maNL = Convert.ToInt32(dgv_info_NguyenLieu.CurrentRow.Cells[0].FormattedValue.ToString());
@@ -570,7 +592,6 @@ namespace PizzaManagement
             PizzaManagement.SuaNL f2 = new SuaNL(maNL, tenNL, donVi);
             f2.Show();
         }
-
         private void btn_XoaNL_Click(object sender, EventArgs e)
         {
             string maNL;
@@ -597,17 +618,14 @@ namespace PizzaManagement
                 dgv_info_NguyenLieu.FirstDisplayedScrollingRowIndex = a - 1;
             }
         }
-
         private void StripMenu_SuaNL_Click(object sender, EventArgs e)
         {
             btn_SuaNL_Click(null, null);
         }
-
         private void StripMenu_XoaNL_Click(object sender, EventArgs e)
         {
             btn_XoaNL_Click(null, null);
         }
-
         private void dgv_info_NguyenLieu_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -625,7 +643,6 @@ namespace PizzaManagement
             PizzaManagement.ThemNV f3 = new ThemNV();
             f3.Show();
         }
-
         private void btn_suaNV_Click(object sender, EventArgs e)
         {
             int maNV = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[0].FormattedValue.ToString());
@@ -634,20 +651,56 @@ namespace PizzaManagement
             string sdt = dgv_info_NhanVien.CurrentRow.Cells[3].FormattedValue.ToString();
             string diachi = dgv_info_NhanVien.CurrentRow.Cells[4].FormattedValue.ToString();
             string email = dgv_info_NhanVien.CurrentRow.Cells[5].FormattedValue.ToString();
-            try
+            int check_loainv = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[9].FormattedValue.ToString())-1;
+            int check_tinhtrang = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[10].FormattedValue.ToString());
+            PizzaManagement.SuaNV f3 = new SuaNV(maNV, tenNV, cmnd, sdt, diachi, email, check_loainv, check_tinhtrang);
+            f3.Show();
+        }
+        private void btn_xoaNV_Click(object sender, EventArgs e)
+        {
+            string maNV;
+            string tenNV;
+            maNV = dgv_info_NhanVien.CurrentRow.Cells[0].FormattedValue.ToString();
+            tenNV = dgv_info_NhanVien.CurrentRow.Cells[1].FormattedValue.ToString();
+            int a = dgv_info_NhanVien.CurrentCell.RowIndex;
+            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá nguyên liệu {0} ra khỏi danh sách?", tenNV), "Xác nhận",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                int check_loainv = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[6].FormattedValue.ToString())-1;
-                int check_tinhtrang = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[8].FormattedValue.ToString())-1;
-                PizzaManagement.SuaNV f3 = new SuaNV(maNV, tenNV, cmnd, sdt, diachi, email, check_loainv, check_tinhtrang);
-                f3.Show();
+                NhanVien nvDto = new NhanVien(Convert.ToInt32(maNV), null, null, null, null, null, -1, null, -1);
+                try
+                {
+                    nvBus.deleteNL(nvDto);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Xoá thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                };
+                MessageBox.Show("Xoá thành công!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dgv_info_NhanVien.Rows[a - 1].Selected = true;
+                dgv_info_NhanVien.FirstDisplayedScrollingRowIndex = a - 1;
             }
-            catch (Exception)
+
+
+        }
+        private void StripMenu_SuaNV_Click(object sender, EventArgs e)
+        {
+            btn_suaNV_Click(null, null);
+        }
+        private void StripMenu_XoaNV_Click(object sender, EventArgs e)
+        {
+            btn_xoaNV_Click(null, null);
+        }
+        private void dgv_info_NhanVien_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
             {
+                dgv_info_NhanVien.CurrentCell = dgv_info_NhanVien.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                MessageBox.Show("Lỗi ở đây");
+                dgv_info_NhanVien.Rows[e.RowIndex].Selected = true;
+                dgv_info_NhanVien.Focus();
             }
-            
-
             
             
         }
@@ -657,7 +710,66 @@ namespace PizzaManagement
             btnLuuPKK.Enabled = false;
         }
 
+        private void btn_themKH_Click(object sender, EventArgs e)
+        {
+            PizzaManagement.ThemKH f4 = new ThemKH();
+            f4.Show();
+        }
+        private void btn_suaKH_Click(object sender, EventArgs e)
+        {
+            int maKH = Convert.ToInt32(dgv_info_KhachHang.CurrentRow.Cells[0].FormattedValue.ToString());
+            string tenKH = dgv_info_KhachHang.CurrentRow.Cells[1].FormattedValue.ToString();
+            string diachi = dgv_info_KhachHang.CurrentRow.Cells[3].FormattedValue.ToString();
+            string email = dgv_info_KhachHang.CurrentRow.Cells[4].FormattedValue.ToString();
+            string sdt = dgv_info_KhachHang.CurrentRow.Cells[5].FormattedValue.ToString();
+            int check_loaikh = Convert.ToInt32(dgv_info_KhachHang.CurrentRow.Cells[7].FormattedValue.ToString()) - 1;
+            PizzaManagement.SuaKH f4 = new SuaKH(maKH,tenKH,diachi,email,sdt,check_loaikh);
+            f4.Show();
+        }
+        private void btn_xoaKH_Click(object sender, EventArgs e)
+        {
+            string maKH;
+            string tenKH;
+            maKH = dgv_info_KhachHang.CurrentRow.Cells[0].FormattedValue.ToString();
+            tenKH = dgv_info_KhachHang.CurrentRow.Cells[1].FormattedValue.ToString();
+            int a = dgv_info_KhachHang.CurrentCell.RowIndex;
+            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá khách hàng {0} ra khỏi danh sách?", tenKH), "Xác nhận",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Info_KhachHang_DTO khDto = new Info_KhachHang_DTO(Convert.ToInt32(maKH), null, null, null, null, 0);
+                try
+                {
+                    khBus.deleteKH(khDto);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Xoá thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                };
+                MessageBox.Show("Xoá thành công!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dgv_info_KhachHang.Rows[a - 1].Selected = true;
+                dgv_info_KhachHang.FirstDisplayedScrollingRowIndex = a - 1;
+            }
+        }
+        private void StripMenu_SuaKH_Click(object sender, EventArgs e)
+        {
+            btn_suaKH_Click(null, null);
+        }
+        private void StripMenu_XoaKH_Click(object sender, EventArgs e)
+        {
+            btn_xoaKH_Click(null, null);
+        }
+        private void dgv_info_KhachHang_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                dgv_info_KhachHang.CurrentCell = dgv_info_KhachHang.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
+                dgv_info_KhachHang.Rows[e.RowIndex].Selected = true;
+                dgv_info_KhachHang.Focus();
+            }
+        }
 
         //private void getCurrentCellButton_Click(object sender, System.EventArgs e)
         //{

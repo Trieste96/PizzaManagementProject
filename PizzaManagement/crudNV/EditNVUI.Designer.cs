@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInfoMaNV = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbInfoLoaiNV
@@ -210,21 +210,21 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "Mã NV:";
             // 
-            // textBox1
+            // txtInfoMaNV
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(200, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(156, 34);
-            this.textBox1.TabIndex = 45;
+            this.txtInfoMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoMaNV.Location = new System.Drawing.Point(200, 64);
+            this.txtInfoMaNV.Name = "txtInfoMaNV";
+            this.txtInfoMaNV.ReadOnly = true;
+            this.txtInfoMaNV.Size = new System.Drawing.Size(156, 34);
+            this.txtInfoMaNV.TabIndex = 45;
             // 
             // SuaNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 455);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtInfoMaNV);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbInfoLoaiNV);
             this.Controls.Add(this.label8);
@@ -269,6 +269,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtInfoMaNV;
     }
 }
