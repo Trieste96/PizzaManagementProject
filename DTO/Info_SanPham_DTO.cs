@@ -40,5 +40,9 @@ namespace DTO
             gia = _gia;
             maLoaiSP = _maloaisp;
         }
+        public Info_SanPham_DTO()
+            {
+
+            }
     }
 }
