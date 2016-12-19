@@ -41,5 +41,31 @@ namespace BUS
                 throw;
             }
         }
+
+        public void editNV(NhanVien nvDto)
+        {
+            try
+            {
+                nvDao.editNV(nvDto);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void deleteNL(NhanVien nvDto)
+        {
+            try
+            {
+                nvDao.deleteNV(nvDto);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

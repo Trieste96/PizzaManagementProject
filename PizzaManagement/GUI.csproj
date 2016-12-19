@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddKHUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddKHUI.Designer.cs">
+      <DependentUpon>AddKHUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="crudNL\AddNLUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +76,17 @@
     <Compile Include="crudNL\EditNL.Designer.cs">
       <DependentUpon>EditNL.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditNVUI.cs">
+    <Compile Include="crudNV\EditNVUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditNVUI.Designer.cs">
+    <Compile Include="crudNV\EditNVUI.Designer.cs">
       <DependentUpon>EditNVUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditKHUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditKHUI.Designer.cs">
+      <DependentUpon>EditKHUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUI.cs">
       <SubType>Form</SubType>
@@ -96,12 +108,15 @@
     <Compile Include="crudSP\AddSPUI.designer.cs">
       <DependentUpon>AddSPUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNVUI.cs">
+    <Compile Include="crudNV\AddNVUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNVUI.Designer.cs">
+    <Compile Include="crudNV\AddNVUI.Designer.cs">
       <DependentUpon>AddNVUI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddKHUI.resx">
+      <DependentUpon>AddKHUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="crudNL\AddNLUI.resx">
       <DependentUpon>AddNLUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,8 +129,11 @@
     <EmbeddedResource Include="crudNL\EditNL.resx">
       <DependentUpon>EditNL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditNVUI.resx">
+    <EmbeddedResource Include="crudNV\EditNVUI.resx">
       <DependentUpon>EditNVUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditKHUI.resx">
+      <DependentUpon>EditKHUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUI.resx">
       <DependentUpon>ManagerUI.cs</DependentUpon>
@@ -130,7 +148,7 @@
     <EmbeddedResource Include="crudSP\AddSPUI.resx">
       <DependentUpon>AddSPUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNVUI.resx">
+    <EmbeddedResource Include="crudNV\AddNVUI.resx">
       <DependentUpon>AddNVUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

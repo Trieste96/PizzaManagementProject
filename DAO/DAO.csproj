@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AuthenticationDAO.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="KhachHangDAO.cs" />
     <Compile Include="NguyenLieuDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
