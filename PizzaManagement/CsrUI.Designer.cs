@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtViTri = new System.Windows.Forms.TextBox();
             this.txtHoTenNV = new System.Windows.Forms.TextBox();
@@ -38,9 +39,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.savebutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.suasoluongtext = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.ItemTable = new System.Windows.Forms.DataGridView();
+            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maLoaiSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pizzaDBDataSet = new PizzaManagement.PizzaDBDataSet();
+            this.label9 = new System.Windows.Forms.Label();
+            this.soluongtext = new System.Windows.Forms.TextBox();
+            this.savebutton = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cktext = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -50,7 +65,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.additem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +73,9 @@
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.htpvtext = new System.Windows.Forms.TextBox();
+            this.htpvcombo = new System.Windows.Forms.ComboBox();
+            this.hinhThucPhucVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pizzaDBDataSet2 = new PizzaManagement.PizzaDBDataSet2();
             this.datetext = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -72,13 +88,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pizzaDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sanPhamTableAdapter = new PizzaManagement.PizzaDBDataSetTableAdapters.SanPhamTableAdapter();
+            this.hinhThucPhucVuTableAdapter = new PizzaManagement.PizzaDBDataSet2TableAdapters.HinhThucPhucVuTableAdapter();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hinhThucPhucVuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -166,11 +193,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.savebutton);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.additem);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -183,15 +209,160 @@
             this.tabPage1.Text = "Tạo hoá đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.suasoluongtext);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Location = new System.Drawing.Point(34, 344);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(404, 200);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "groupBox6";
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(34, 529);
+            this.button2.Location = new System.Drawing.Point(184, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(214, 59);
             this.button2.TabIndex = 11;
-            this.button2.Text = "Sửa món";
+            this.button2.Text = "Sửa số lượng";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(184, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 59);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Xóa món";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // suasoluongtext
+            // 
+            this.suasoluongtext.Location = new System.Drawing.Point(108, 48);
+            this.suasoluongtext.Name = "suasoluongtext";
+            this.suasoluongtext.Size = new System.Drawing.Size(70, 26);
+            this.suasoluongtext.TabIndex = 17;
+            this.suasoluongtext.Text = "1";
+            this.suasoluongtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(8, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 24);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Số lượng";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.ItemTable);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.soluongtext);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox4.Location = new System.Drawing.Point(789, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(523, 590);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Danh sách món";
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button4.Location = new System.Drawing.Point(309, 531);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(208, 48);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Thêm món";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ItemTable
+            // 
+            this.ItemTable.AutoGenerateColumns = false;
+            this.ItemTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ItemTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maSPDataGridViewTextBoxColumn,
+            this.tenSPDataGridViewTextBoxColumn,
+            this.giaDataGridViewTextBoxColumn,
+            this.maLoaiSPDataGridViewTextBoxColumn});
+            this.ItemTable.DataSource = this.sanPhamBindingSource;
+            this.ItemTable.Location = new System.Drawing.Point(11, 32);
+            this.ItemTable.Name = "ItemTable";
+            this.ItemTable.ReadOnly = true;
+            this.ItemTable.Size = new System.Drawing.Size(506, 493);
+            this.ItemTable.TabIndex = 12;
+            // 
+            // maSPDataGridViewTextBoxColumn
+            // 
+            this.maSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "Mã Sản Phẩm";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên Sản Phẩm";
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // giaDataGridViewTextBoxColumn
+            // 
+            this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
+            this.giaDataGridViewTextBoxColumn.HeaderText = "Giá";
+            this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
+            this.giaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maLoaiSPDataGridViewTextBoxColumn
+            // 
+            this.maLoaiSPDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiSP";
+            this.maLoaiSPDataGridViewTextBoxColumn.HeaderText = "Mã Loại";
+            this.maLoaiSPDataGridViewTextBoxColumn.Name = "maLoaiSPDataGridViewTextBoxColumn";
+            this.maLoaiSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sanPhamBindingSource
+            // 
+            this.sanPhamBindingSource.DataMember = "SanPham";
+            this.sanPhamBindingSource.DataSource = this.pizzaDBDataSet;
+            // 
+            // pizzaDBDataSet
+            // 
+            this.pizzaDBDataSet.DataSetName = "PizzaDBDataSet";
+            this.pizzaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(7, 547);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 24);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Số lượng";
+            // 
+            // soluongtext
+            // 
+            this.soluongtext.Location = new System.Drawing.Point(107, 544);
+            this.soluongtext.Name = "soluongtext";
+            this.soluongtext.Size = new System.Drawing.Size(190, 29);
+            this.soluongtext.TabIndex = 14;
+            this.soluongtext.Text = "1";
+            this.soluongtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // savebutton
             // 
@@ -202,16 +373,6 @@
             this.savebutton.Text = "Lưu hóa đơn";
             this.savebutton.UseVisualStyleBackColor = true;
             this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(34, 445);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 59);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Xóa món";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox5
             // 
@@ -241,6 +402,7 @@
             this.cktext.ReadOnly = true;
             this.cktext.Size = new System.Drawing.Size(138, 21);
             this.cktext.TabIndex = 7;
+            this.cktext.Text = "0";
             this.cktext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
@@ -264,6 +426,7 @@
             this.thanhtoantext.ReadOnly = true;
             this.thanhtoantext.Size = new System.Drawing.Size(138, 21);
             this.thanhtoantext.TabIndex = 5;
+            this.thanhtoantext.Text = "0";
             this.thanhtoantext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // vattext
@@ -275,6 +438,7 @@
             this.vattext.ReadOnly = true;
             this.vattext.Size = new System.Drawing.Size(138, 21);
             this.vattext.TabIndex = 4;
+            this.vattext.Text = "0";
             this.vattext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tongtientext
@@ -286,6 +450,7 @@
             this.tongtientext.ReadOnly = true;
             this.tongtientext.Size = new System.Drawing.Size(138, 21);
             this.tongtientext.TabIndex = 3;
+            this.tongtientext.Text = "0";
             this.tongtientext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
@@ -321,16 +486,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Tổng tiền:";
             // 
-            // additem
-            // 
-            this.additem.Location = new System.Drawing.Point(34, 367);
-            this.additem.Name = "additem";
-            this.additem.Size = new System.Drawing.Size(214, 59);
-            this.additem.TabIndex = 8;
-            this.additem.Text = "Thêm món";
-            this.additem.UseVisualStyleBackColor = true;
-            this.additem.Click += new System.EventHandler(this.additem_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -344,9 +499,9 @@
             this.ThanhTien});
             this.dataGridView1.Location = new System.Drawing.Point(34, 188);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(749, 150);
             this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // stt
             // 
@@ -358,34 +513,39 @@
             // 
             this.MaSP.HeaderText = "Mã Sản Phẩm";
             this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
             // 
             // TenSp
             // 
             this.TenSp.HeaderText = "Tên Sản Phẩm";
             this.TenSp.Name = "TenSp";
+            this.TenSp.ReadOnly = true;
             // 
             // SoLuong
             // 
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             // 
             // Gia
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Gia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Gia.DefaultCellStyle = dataGridViewCellStyle3;
             this.Gia.HeaderText = "Giá";
             this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
             // 
             // ThanhTien
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle4;
             this.ThanhTien.HeaderText = "Thành Tiền";
             this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.htpvtext);
+            this.groupBox3.Controls.Add(this.htpvcombo);
             this.groupBox3.Controls.Add(this.datetext);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
@@ -398,15 +558,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin hóa đơn";
             // 
-            // htpvtext
+            // htpvcombo
             // 
-            this.htpvtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.htpvtext.ForeColor = System.Drawing.Color.Black;
-            this.htpvtext.Location = new System.Drawing.Point(94, 67);
-            this.htpvtext.Name = "htpvtext";
-            this.htpvtext.Size = new System.Drawing.Size(138, 21);
-            this.htpvtext.TabIndex = 5;
-            this.htpvtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.htpvcombo.DataSource = this.hinhThucPhucVuBindingSource;
+            this.htpvcombo.DisplayMember = "TenHinhThuc";
+            this.htpvcombo.FormattingEnabled = true;
+            this.htpvcombo.Location = new System.Drawing.Point(94, 61);
+            this.htpvcombo.Name = "htpvcombo";
+            this.htpvcombo.Size = new System.Drawing.Size(138, 32);
+            this.htpvcombo.TabIndex = 6;
+            this.htpvcombo.ValueMember = "MaHinhThuc";
+            // 
+            // hinhThucPhucVuBindingSource
+            // 
+            this.hinhThucPhucVuBindingSource.DataMember = "HinhThucPhucVu";
+            this.hinhThucPhucVuBindingSource.DataSource = this.pizzaDBDataSet2;
+            // 
+            // pizzaDBDataSet2
+            // 
+            this.pizzaDBDataSet2.DataSetName = "PizzaDBDataSet2";
+            this.pizzaDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // datetext
             // 
@@ -550,6 +721,19 @@
             this.tabControl1.Size = new System.Drawing.Size(1326, 663);
             this.tabControl1.TabIndex = 1;
             // 
+            // pizzaDBDataSetBindingSource
+            // 
+            this.pizzaDBDataSetBindingSource.DataSource = this.pizzaDBDataSet;
+            this.pizzaDBDataSetBindingSource.Position = 0;
+            // 
+            // sanPhamTableAdapter
+            // 
+            this.sanPhamTableAdapter.ClearBeforeFill = true;
+            // 
+            // hinhThucPhucVuTableAdapter
+            // 
+            this.hinhThucPhucVuTableAdapter.ClearBeforeFill = true;
+            // 
             // CsrUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,14 +748,24 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hinhThucPhucVuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,12 +789,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox htpvtext;
         private System.Windows.Forms.TextBox datetext;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button additem;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSp;
@@ -620,5 +812,25 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button savebutton;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView ItemTable;
+        private System.Windows.Forms.BindingSource pizzaDBDataSetBindingSource;
+        private PizzaDBDataSet pizzaDBDataSet;
+        private System.Windows.Forms.BindingSource sanPhamBindingSource;
+        private PizzaDBDataSetTableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
+        private System.Windows.Forms.TextBox soluongtext;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox suasoluongtext;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox htpvcombo;
+        private PizzaDBDataSet2 pizzaDBDataSet2;
+        private System.Windows.Forms.BindingSource hinhThucPhucVuBindingSource;
+        private PizzaDBDataSet2TableAdapters.HinhThucPhucVuTableAdapter hinhThucPhucVuTableAdapter;
     }
 }

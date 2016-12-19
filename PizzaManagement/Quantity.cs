@@ -50,5 +50,10 @@ namespace PizzaManagement
             else MessageBox.Show("Số lượng nhập vào phải là số. Vui lòng nhập lại", "Nhập sai", MessageBoxButtons.OK);
             
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
