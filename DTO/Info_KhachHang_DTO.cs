@@ -67,7 +67,7 @@ namespace DTO
         public int ChietKhau //minh them doan nay
         {
             get { return chietkhau; }
-            set { ChietKhau = value; }
+            set { chietkhau = value; }
         }
     }
 }

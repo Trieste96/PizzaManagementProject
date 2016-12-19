@@ -113,7 +113,7 @@ namespace PizzaManagement
                 tongtien = tongtien + Int32.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
             tongtientext.Text = tongtien.ToString();
             vattext.Text = ((tongtien * 10) / 100).ToString();
-            thanhtoantext.Text = (tongtien+ ((tongtien * 10) / 100)-Int32.Parse(cktext.Text.ToString())).ToString();
+            thanhtoantext.Text = (tongtien+ ((tongtien * 10) / 100)-(Int32.Parse(cktext.Text.ToString())* (tongtien + ((tongtien * 10) / 100)))/100).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -166,7 +166,8 @@ namespace PizzaManagement
             {
                 case DialogResult.Yes: {
                         this.Controls.Clear();
-                        this.InitializeComponent(); break; }
+
+                        this.Cs(); break; }
                 case DialogResult.No: { this.Dispose(); break; }
                 case DialogResult.Cancel: break;
             }
@@ -184,6 +185,7 @@ namespace PizzaManagement
             tenkhtext.Text = dtokh.HoTen;
             loaikhtext.Text = dtokh.LoaiKH;
             cktext.Text = dtokh.ChietKhau.ToString();
+            updategiatrihoadon();
         }
     }
 }

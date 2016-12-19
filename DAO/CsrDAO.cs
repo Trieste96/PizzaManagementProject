@@ -18,7 +18,7 @@ namespace DAO
             SqlCommand cm = new SqlCommand("taohoadon", cn);*/
             SqlConnection cn = new SqlConnection();
             cn = DBConnection.GetConnection();
-            cn.Open();
+            //cn.Open();
             SqlCommand cm = new SqlCommand("taohoadon", cn);
             cm.CommandType = System.Data.CommandType.StoredProcedure;
             cm.Parameters.Add("@makh", SqlDbType.Int);
@@ -31,13 +31,13 @@ namespace DAO
             cm.Parameters["@time"].Value = dto.ngaygio;
             cm.Parameters["@hinhthuc"].Value = dto.htpv;
             cm.ExecuteNonQuery();
-            cn.Close();
+            //cn.Close();
         }
         public void themchitiethoadon(DTO.HoaDonDTO dto)
         {
             SqlConnection cn = new SqlConnection();
             cn = DBConnection.GetConnection();
-            cn.Open();
+            //cn.Open();
             SqlCommand cm = new SqlCommand("chitiethoadon",cn);
             cm.CommandType = System.Data.CommandType.StoredProcedure;
             cm.Parameters.Add("@time", SqlDbType.DateTime);
@@ -48,14 +48,14 @@ namespace DAO
             cm.Parameters["@masp"].Value = dto.masp;
             cm.Parameters["@soluong"].Value = dto.soluong;
             cm.ExecuteNonQuery();
-            cn.Close();
+            //cn.Close();
         }
         public DTO.Info_KhachHang_DTO timthongtinkhachhang(int makh)
         {
             DTO.Info_KhachHang_DTO dto = new DTO.Info_KhachHang_DTO();
             SqlConnection cn = new SqlConnection();
             cn = DBConnection.GetConnection();
-            cn.Open();
+            //cn.Open();
             SqlCommand cm = new SqlCommand("thongtinkhachhang", cn);
             cm.CommandType = System.Data.CommandType.StoredProcedure;
             cm.Parameters.Add("@makh", SqlDbType.Int);
@@ -72,7 +72,7 @@ namespace DAO
                 }
             }
             return dto;
-
+            //cn.Close();
         }
     }
 }
