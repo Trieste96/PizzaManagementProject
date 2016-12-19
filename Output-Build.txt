@@ -1,0 +1,7 @@
+﻿1>------ Build started: Project: DTO, Configuration: Debug Any CPU ------
+1>  DTO -> C:\Users\GT\Source\Repos\PizzaManagementProject\DTO\bin\Debug\DTO.dll
+2>------ Build started: Project: DAO, Configuration: Debug Any CPU ------
+2>  DAO -> C:\Users\GT\Source\Repos\PizzaManagementProject\DAO\bin\Debug\DAO.dll
+3>------ Build started: Project: BUS, Configuration: Debug Any CPU ------
+3>  BUS -> C:\Users\GT\Source\Repos\PizzaManagementProject\BUS\bin\Debug\BUS.dll
+========== Build: 3 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
