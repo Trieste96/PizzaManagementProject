@@ -54,6 +54,7 @@
             this.ItemTable.DataSource = this.sanPhamBindingSource;
             this.ItemTable.Location = new System.Drawing.Point(12, 12);
             this.ItemTable.Name = "ItemTable";
+            this.ItemTable.ReadOnly = true;
             this.ItemTable.Size = new System.Drawing.Size(650, 246);
             this.ItemTable.TabIndex = 0;
             this.ItemTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemTable_CellClick);
@@ -72,18 +73,21 @@
             this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
             this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
             this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // giaDataGridViewTextBoxColumn
             // 
             this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
             this.giaDataGridViewTextBoxColumn.HeaderText = "Gia";
             this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
+            this.giaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maLoaiSPDataGridViewTextBoxColumn
             // 
             this.maLoaiSPDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiSP";
             this.maLoaiSPDataGridViewTextBoxColumn.HeaderText = "MaLoaiSP";
             this.maLoaiSPDataGridViewTextBoxColumn.Name = "maLoaiSPDataGridViewTextBoxColumn";
+            this.maLoaiSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sanPhamBindingSource
             // 

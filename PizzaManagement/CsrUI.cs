@@ -175,5 +175,15 @@ namespace PizzaManagement
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int makh = int.Parse(makhtext.Text);
+            Info_KhachHang_DTO dtokh = new Info_KhachHang_DTO();
+            dtokh = csrbus.thongtinkhachhang(makh);
+            tenkhtext.Text = dtokh.HoTen;
+            loaikhtext.Text = dtokh.LoaiKH;
+            cktext.Text = dtokh.ChietKhau.ToString();
+        }
     }
 }

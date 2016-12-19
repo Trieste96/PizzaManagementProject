@@ -13,13 +13,13 @@ namespace BUS
         {
 
             try
-             {
-                 csrdao.taohoadon(dto);
-             }
-             catch(Exception)
-             {
-                 throw;
-             }
+            {
+                csrdao.taohoadon(dto);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public void themchitiethoadon(DTO.HoaDonDTO dto)
         {
@@ -31,6 +31,11 @@ namespace BUS
             {
                 throw;
             }
+        }
+        public DTO.Info_KhachHang_DTO thongtinkhachhang(int makh)
+        {
+            DAO.CsrDAO csr = new DAO.CsrDAO();
+            return csr.timthongtinkhachhang(makh);
         }
     }
 }

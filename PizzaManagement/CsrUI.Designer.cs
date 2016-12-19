@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtViTri = new System.Windows.Forms.TextBox();
             this.txtHoTenNV = new System.Windows.Forms.TextBox();
@@ -64,14 +64,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.loaikhtext = new System.Windows.Forms.TextBox();
+            this.tenkhtext = new System.Windows.Forms.TextBox();
             this.makhtext = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -238,9 +238,9 @@
             this.cktext.ForeColor = System.Drawing.Color.Black;
             this.cktext.Location = new System.Drawing.Point(177, 101);
             this.cktext.Name = "cktext";
+            this.cktext.ReadOnly = true;
             this.cktext.Size = new System.Drawing.Size(138, 21);
             this.cktext.TabIndex = 7;
-            this.cktext.Text = "0";
             this.cktext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
@@ -250,9 +250,9 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label13.Location = new System.Drawing.Point(16, 104);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 15);
+            this.label13.Size = new System.Drawing.Size(80, 15);
             this.label13.TabIndex = 6;
-            this.label13.Text = "Chiết khấu";
+            this.label13.Text = "% chiết khấu:";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // thanhtoantext
@@ -371,15 +371,15 @@
             // 
             // Gia
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Gia.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Gia.DefaultCellStyle = dataGridViewCellStyle1;
             this.Gia.HeaderText = "Giá";
             this.Gia.Name = "Gia";
             // 
             // ThanhTien
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
             this.ThanhTien.HeaderText = "Thành Tiền";
             this.ThanhTien.Name = "ThanhTien";
             // 
@@ -446,8 +446,8 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.loaikhtext);
+            this.groupBox2.Controls.Add(this.tenkhtext);
             this.groupBox2.Controls.Add(this.makhtext);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
@@ -462,27 +462,39 @@
             this.groupBox2.Text = "Thông tin khách hàng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // textBox1
+            // button3
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(94, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(138, 21);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button3.Location = new System.Drawing.Point(156, 26);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Tìm kiếm";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox2
+            // loaikhtext
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(94, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(138, 21);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.loaikhtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loaikhtext.ForeColor = System.Drawing.Color.Black;
+            this.loaikhtext.Location = new System.Drawing.Point(94, 102);
+            this.loaikhtext.Name = "loaikhtext";
+            this.loaikhtext.ReadOnly = true;
+            this.loaikhtext.Size = new System.Drawing.Size(138, 21);
+            this.loaikhtext.TabIndex = 5;
+            this.loaikhtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tenkhtext
+            // 
+            this.tenkhtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenkhtext.ForeColor = System.Drawing.Color.Black;
+            this.tenkhtext.Location = new System.Drawing.Point(94, 64);
+            this.tenkhtext.Name = "tenkhtext";
+            this.tenkhtext.ReadOnly = true;
+            this.tenkhtext.Size = new System.Drawing.Size(138, 21);
+            this.tenkhtext.TabIndex = 4;
+            this.tenkhtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // makhtext
             // 
@@ -538,17 +550,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1326, 663);
             this.tabControl1.TabIndex = 1;
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Location = new System.Drawing.Point(156, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Tìm kiếm";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // CsrUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,8 +588,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox loaikhtext;
+        private System.Windows.Forms.TextBox tenkhtext;
         private System.Windows.Forms.TextBox makhtext;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
