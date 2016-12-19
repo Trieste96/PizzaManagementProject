@@ -167,7 +167,7 @@ namespace PizzaManagement
                 case DialogResult.Yes: {
                         this.Controls.Clear();
 
-                        this.Cs(); break; }
+                        this.InitializeComponent(); break; }
                 case DialogResult.No: { this.Dispose(); break; }
                 case DialogResult.Cancel: break;
             }
