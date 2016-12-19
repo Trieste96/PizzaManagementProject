@@ -926,6 +926,7 @@
             this.tableChiTiet_PKK.Name = "tableChiTiet_PKK";
             this.tableChiTiet_PKK.Size = new System.Drawing.Size(719, 574);
             this.tableChiTiet_PKK.TabIndex = 0;
+            this.tableChiTiet_PKK.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.tableChiTiet_PKK_CellBeginEdit);
             this.tableChiTiet_PKK.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtChiTietPhieuTK_CellEndEdit);
             this.tableChiTiet_PKK.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtChiTietPhieuTK_DataError);
             this.tableChiTiet_PKK.Leave += new System.EventHandler(this.tableChiTiet_PKK_Leave);
