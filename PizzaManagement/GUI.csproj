@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddKHUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddKHUI.Designer.cs">
+      <DependentUpon>AddKHUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crudNL\AddNLUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crudNL\AddNLUI.Designer.cs">
+      <DependentUpon>AddNLUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddItemUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,24 @@
     </Compile>
     <Compile Include="CsrUI.Designer.cs">
       <DependentUpon>CsrUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crudNL\EditNL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crudNL\EditNL.Designer.cs">
+      <DependentUpon>EditNL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crudNV\EditNVUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crudNV\EditNVUI.Designer.cs">
+      <DependentUpon>EditNVUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditKHUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditKHUI.Designer.cs">
+      <DependentUpon>EditKHUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Quantity.cs">
       <SubType>Form</SubType>
@@ -83,18 +113,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI_Add-Edit_Delete_SP\EditSPUI.cs">
+    <Compile Include="crudSP\EditSPUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI_Add-Edit_Delete_SP\EditSPUI.designer.cs">
+    <Compile Include="crudSP\EditSPUI.designer.cs">
       <DependentUpon>EditSPUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI_Add-Edit_Delete_SP\AddSPUI.cs">
+    <Compile Include="crudSP\AddSPUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI_Add-Edit_Delete_SP\AddSPUI.designer.cs">
+    <Compile Include="crudSP\AddSPUI.designer.cs">
       <DependentUpon>AddSPUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="crudNV\AddNVUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crudNV\AddNVUI.Designer.cs">
+      <DependentUpon>AddNVUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddKHUI.resx">
+      <DependentUpon>AddKHUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crudNL\AddNLUI.resx">
+      <DependentUpon>AddNLUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddItemUI.resx">
       <DependentUpon>AddItemUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +146,15 @@
     <EmbeddedResource Include="CsrUI.resx">
       <DependentUpon>CsrUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="crudNL\EditNL.resx">
+      <DependentUpon>EditNL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crudNV\EditNVUI.resx">
+      <DependentUpon>EditNVUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditKHUI.resx">
+      <DependentUpon>EditKHUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUI.resx">
       <DependentUpon>ManagerUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,13 +162,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="crudSP\EditSPUI.resx">
     <EmbeddedResource Include="Quantity.resx">
       <DependentUpon>Quantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Add-Edit_Delete_SP\EditSPUI.resx">
       <DependentUpon>EditSPUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI_Add-Edit_Delete_SP\AddSPUI.resx">
+    <EmbeddedResource Include="crudSP\AddSPUI.resx">
       <DependentUpon>AddSPUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PizzaDBDataSet1.xsc">
@@ -131,6 +183,9 @@
     <None Include="PizzaDBDataSet1.xss">
       <DependentUpon>PizzaDBDataSet1.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="crudNV\AddNVUI.resx">
+      <DependentUpon>AddNVUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using DTO;
+using System.Windows.Forms;
 
 namespace DAO
 {
@@ -16,7 +17,7 @@ namespace DAO
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dtSP);
-            //cn.Close();
+            //DBConnection.CloseConnection();
             return dtSP;
         }
 
@@ -29,7 +30,7 @@ namespace DAO
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            //cn.Close();
+            //DBConnection.CloseConnection();
             return dt;
         }
 
@@ -39,6 +40,7 @@ namespace DAO
             cn = DBConnection.GetConnection();
             SqlCommand cmd = new SqlCommand("sp_INFO_addSP", cn);
             cmd.CommandType = CommandType.StoredProcedure;
+
             cmd.Parameters.Add("@TenSP", SqlDbType.NVarChar);
             cmd.Parameters.Add("@Gia", SqlDbType.Int);
             cmd.Parameters.Add("@MaLoaiSP", SqlDbType.SmallInt);
@@ -48,7 +50,7 @@ namespace DAO
             cmd.Parameters["@MaLoaiSP"].Value = spDTO.MaLoaiSP;
 
             cmd.ExecuteNonQuery();
-            //cn.Close();
+            //DBConnection.CloseConnection();
         }
 
         public void editSP(Info_SanPham_DTO spDTO)
@@ -68,7 +70,7 @@ namespace DAO
             cmd.Parameters["@MaLoaiSP"].Value = spDTO.MaLoaiSP;
 
             cmd.ExecuteNonQuery();
-            //cn.Close();
+            //DBConnection.CloseConnection();
         }
 
         public void deleteSP(Info_SanPham_DTO spDto)
@@ -81,7 +83,7 @@ namespace DAO
             cmd.Parameters["@MaSP"].Value = spDto.MaSP;
 
             cmd.ExecuteNonQuery();
-            //cn.Close();
+            //DBConnection.CloseConnection();;
         }
     }
 }

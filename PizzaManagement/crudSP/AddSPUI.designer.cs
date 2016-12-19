@@ -132,7 +132,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemMoiSP";
             this.Text = "Thêm mới Sản phẩm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThemMoiSP_FormClosing);
             this.Load += new System.EventHandler(this.ThemMoiSP_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
