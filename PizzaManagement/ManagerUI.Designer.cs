@@ -139,6 +139,8 @@
             this.hoaDonTableAdapter = new PizzaManagement.PizzaDBDataSet2TableAdapters.HoaDonTableAdapter();
             this.tableAdapterManager = new PizzaManagement.PizzaDBDataSet2TableAdapters.TableAdapterManager();
             this.hoaDonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblDenNgayTitle = new System.Windows.Forms.Label();
+            this.lblTuNgayTitle = new System.Windows.Forms.Label();
             groupBox4 = new System.Windows.Forms.GroupBox();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDS_PKK)).BeginInit();
@@ -221,8 +223,8 @@
             // tableDS_PKK
             // 
             this.tableDS_PKK.AllowUserToAddRows = false;
-            this.tableDS_PKK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.tableDS_PKK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tableDS_PKK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableDS_PKK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.tableDS_PKK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableDS_PKK.Location = new System.Drawing.Point(6, 29);
             this.tableDS_PKK.MultiSelect = false;
@@ -744,14 +746,16 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lblTuNgayTitle);
+            this.groupBox6.Controls.Add(this.lblDenNgayTitle);
             this.groupBox6.Controls.Add(this.lblDenNgay);
             this.groupBox6.Controls.Add(this.lblTuNgay);
             this.groupBox6.Controls.Add(this.tableThongKe);
             this.groupBox6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox6.Location = new System.Drawing.Point(6, 221);
+            this.groupBox6.Location = new System.Drawing.Point(6, 231);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1055, 426);
+            this.groupBox6.Size = new System.Drawing.Size(1055, 416);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Bảng thống kê";
@@ -760,8 +764,8 @@
             // 
             this.lblDenNgay.AutoSize = true;
             this.lblDenNgay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDenNgay.ForeColor = System.Drawing.Color.Black;
-            this.lblDenNgay.Location = new System.Drawing.Point(706, 31);
+            this.lblDenNgay.ForeColor = System.Drawing.Color.Blue;
+            this.lblDenNgay.Location = new System.Drawing.Point(713, 31);
             this.lblDenNgay.Name = "lblDenNgay";
             this.lblDenNgay.Size = new System.Drawing.Size(34, 29);
             this.lblDenNgay.TabIndex = 4;
@@ -771,8 +775,8 @@
             // 
             this.lblTuNgay.AutoSize = true;
             this.lblTuNgay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuNgay.ForeColor = System.Drawing.Color.Black;
-            this.lblTuNgay.Location = new System.Drawing.Point(356, 31);
+            this.lblTuNgay.ForeColor = System.Drawing.Color.Blue;
+            this.lblTuNgay.Location = new System.Drawing.Point(328, 31);
             this.lblTuNgay.Name = "lblTuNgay";
             this.lblTuNgay.Size = new System.Drawing.Size(34, 29);
             this.lblTuNgay.TabIndex = 3;
@@ -810,11 +814,13 @@
             // 
             this.btnXemTK.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemTK.ForeColor = System.Drawing.Color.Black;
-            this.btnXemTK.Location = new System.Drawing.Point(127, 115);
+            this.btnXemTK.Image = ((System.Drawing.Image)(resources.GetObject("btnXemTK.Image")));
+            this.btnXemTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemTK.Location = new System.Drawing.Point(195, 115);
             this.btnXemTK.Name = "btnXemTK";
-            this.btnXemTK.Size = new System.Drawing.Size(222, 41);
+            this.btnXemTK.Size = new System.Drawing.Size(154, 41);
             this.btnXemTK.TabIndex = 6;
-            this.btnXemTK.Text = "Xem thống kê";
+            this.btnXemTK.Text = "Tra cứu";
             this.btnXemTK.UseVisualStyleBackColor = true;
             this.btnXemTK.Click += new System.EventHandler(this.btnXemTK_Click);
             // 
@@ -1033,8 +1039,8 @@
             // tableChiTiet_PKK
             // 
             this.tableChiTiet_PKK.AllowUserToAddRows = false;
-            this.tableChiTiet_PKK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.tableChiTiet_PKK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tableChiTiet_PKK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableChiTiet_PKK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.tableChiTiet_PKK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableChiTiet_PKK.Location = new System.Drawing.Point(6, 79);
             this.tableChiTiet_PKK.Name = "tableChiTiet_PKK";
@@ -1242,7 +1248,7 @@
             this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(2);
-            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1134, 838);
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1066, 855);
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
@@ -1250,9 +1256,12 @@
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(448, 489);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(190, 43);
+            this.button5.Size = new System.Drawing.Size(220, 43);
             this.button5.TabIndex = 6;
             this.button5.Text = "Xem hóa đơn";
             this.button5.UseVisualStyleBackColor = true;
@@ -1260,6 +1269,9 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(236, 489);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(206, 43);
@@ -1270,6 +1282,9 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(4, 489);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 43);
@@ -1372,7 +1387,9 @@
             // 
             // btnTraCuuTaiChinh
             // 
-            this.btnTraCuuTaiChinh.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnTraCuuTaiChinh.ForeColor = System.Drawing.Color.Black;
+            this.btnTraCuuTaiChinh.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuuTaiChinh.Image")));
+            this.btnTraCuuTaiChinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTraCuuTaiChinh.Location = new System.Drawing.Point(199, 116);
             this.btnTraCuuTaiChinh.Margin = new System.Windows.Forms.Padding(2);
             this.btnTraCuuTaiChinh.Name = "btnTraCuuTaiChinh";
@@ -1479,6 +1496,28 @@
             // 
             this.hoaDonBindingSource1.DataMember = "HoaDon";
             this.hoaDonBindingSource1.DataSource = this.pizzaDBDataSet2BindingSource;
+            // 
+            // lblDenNgayTitle
+            // 
+            this.lblDenNgayTitle.AutoSize = true;
+            this.lblDenNgayTitle.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDenNgayTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblDenNgayTitle.Location = new System.Drawing.Point(581, 31);
+            this.lblDenNgayTitle.Name = "lblDenNgayTitle";
+            this.lblDenNgayTitle.Size = new System.Drawing.Size(126, 29);
+            this.lblDenNgayTitle.TabIndex = 5;
+            this.lblDenNgayTitle.Text = "đến ngày:";
+            // 
+            // lblTuNgayTitle
+            // 
+            this.lblTuNgayTitle.AutoSize = true;
+            this.lblTuNgayTitle.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTuNgayTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTuNgayTitle.Location = new System.Drawing.Point(207, 31);
+            this.lblTuNgayTitle.Name = "lblTuNgayTitle";
+            this.lblTuNgayTitle.Size = new System.Drawing.Size(115, 29);
+            this.lblTuNgayTitle.TabIndex = 6;
+            this.lblTuNgayTitle.Text = "Từ ngày:";
             // 
             // ManagerUI
             // 
@@ -1653,6 +1692,8 @@
         private System.Windows.Forms.Label lblTuNgay;
         private System.Windows.Forms.Label lblNgay;
         private System.Windows.Forms.Label lblNgayTitle;
+        private System.Windows.Forms.Label lblTuNgayTitle;
+        private System.Windows.Forms.Label lblDenNgayTitle;
     }
 }
 
