@@ -154,7 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SuaSP";
-            this.Text = "SuaSP";
+            this.Text = "Sửa sản phẩm";
             this.Load += new System.EventHandler(this.SuaSP_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

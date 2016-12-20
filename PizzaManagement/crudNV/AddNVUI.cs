@@ -58,6 +58,7 @@ namespace PizzaManagement
                     MessageBox.Show("Kiểm tra dữ liệu đầu vào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                MessageBox.Show("Thêm nhân viên thành công", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

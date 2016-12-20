@@ -549,6 +549,8 @@ namespace PizzaManagement
         {
             PizzaManagement.ThemMoiSP f = new ThemMoiSP();
             f.ShowDialog();
+            //dgv_info_SanPham.Rows[dgv_info_SanPham.RowCount - 1].Selected = true;
+            //dgv_info_SanPham.FirstDisplayedScrollingRowIndex = dgv_info_SanPham.RowCount-1;
         }
         private void btn_SuaSP_Click(object sender, EventArgs e)
         {
@@ -565,9 +567,9 @@ namespace PizzaManagement
             string tenSP;
             maSP = dgv_info_SanPham.CurrentRow.Cells[0].FormattedValue.ToString();
             tenSP = dgv_info_SanPham.CurrentRow.Cells[1].FormattedValue.ToString();
-            int a = dgv_info_SanPham.CurrentCell.RowIndex;
+            //int a = dgv_info_SanPham.CurrentCell.RowIndex;
             
-            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá sản phẩm {0} ra khỏi danh sách?", tenSP), "Xác nhận",
+            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá sản phẩm \"{0}\" ra khỏi danh sách?", tenSP), "Xác nhận",
                 MessageBoxButtons.YesNo);
             
             if (result == DialogResult.Yes)
@@ -583,8 +585,8 @@ namespace PizzaManagement
                     return;
                 };
                 MessageBox.Show("Xoá thành công!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-               // dgv_info_SanPham.Rows[a-1].Selected = true;
-                dgv_info_SanPham.FirstDisplayedScrollingRowIndex = a-1;
+                //dgv_info_SanPham.Rows[a-1].Selected = true;
+                //dgv_info_SanPham.FirstDisplayedScrollingRowIndex = a-1;
             }
             
         }
@@ -693,7 +695,7 @@ namespace PizzaManagement
             maNV = dgv_info_NhanVien.CurrentRow.Cells[0].FormattedValue.ToString();
             tenNV = dgv_info_NhanVien.CurrentRow.Cells[1].FormattedValue.ToString();
             int a = dgv_info_NhanVien.CurrentCell.RowIndex;
-            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá nguyên liệu {0} ra khỏi danh sách?", tenNV), "Xác nhận",
+            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá nhân viên \"{0}\" ra khỏi danh sách?", tenNV), "Xác nhận",
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -731,14 +733,9 @@ namespace PizzaManagement
                 dgv_info_NhanVien.Rows[e.RowIndex].Selected = true;
                 dgv_info_NhanVien.Focus();
             }
-            
-            
         }
 
-        private void tableChiTiet_PKK_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            btnLuuPKK.Enabled = false;
-        }
+        
 
         private void btn_themKH_Click(object sender, EventArgs e)
         {
@@ -763,7 +760,7 @@ namespace PizzaManagement
             maKH = dgv_info_KhachHang.CurrentRow.Cells[0].FormattedValue.ToString();
             tenKH = dgv_info_KhachHang.CurrentRow.Cells[1].FormattedValue.ToString();
             int a = dgv_info_KhachHang.CurrentCell.RowIndex;
-            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá khách hàng {0} ra khỏi danh sách?", tenKH), "Xác nhận",
+            DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá khách hàng \"{0}\" ra khỏi danh sách?", tenKH), "Xác nhận",
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -801,6 +798,11 @@ namespace PizzaManagement
             }
         }
 
+
+        private void tableChiTiet_PKK_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            btnLuuPKK.Enabled = false;
+        }
         private void label12_Click(object sender, EventArgs e)
         {
 
