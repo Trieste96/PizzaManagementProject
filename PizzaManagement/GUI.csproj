@@ -94,6 +94,16 @@
     <Compile Include="EditKHUI.Designer.cs">
       <DependentUpon>EditKHUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="PizzaDBDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaDBDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaDBDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaDBDataSet21.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Quantity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +194,28 @@
     <EmbeddedResource Include="crudNV\AddNVUI.resx">
       <DependentUpon>AddNVUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="PizzaDBDataSet13.xsc">
+      <DependentUpon>PizzaDBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="PizzaDBDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PizzaDBDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PizzaDBDataSet13.xss">
+      <DependentUpon>PizzaDBDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="PizzaDBDataSet21.xsc">
+      <DependentUpon>PizzaDBDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="PizzaDBDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PizzaDBDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PizzaDBDataSet21.xss">
+      <DependentUpon>PizzaDBDataSet21.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

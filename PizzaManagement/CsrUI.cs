@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using System.Text.RegularExpressions;
 
 namespace PizzaManagement
 {
@@ -20,10 +21,12 @@ namespace PizzaManagement
         Int32 current;
         int[] a=new int[100];
         int n = 0;
+        int mode;
         public CsrUI()
         {
             InitializeComponent();
             datetext.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            tongtientext.Text = "0";
             a[0] = 0;
         }
 
@@ -34,6 +37,10 @@ namespace PizzaManagement
 
         private void CsrUI_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pizzaDBDataSet2.HinhThucPhucVu' table. You can move, or remove it, as needed.
+            this.hinhThucPhucVuTableAdapter.Fill(this.pizzaDBDataSet2.HinhThucPhucVu);
+            // TODO: This line of code loads data into the 'pizzaDBDataSet.SanPham' table. You can move, or remove it, as needed.
+            this.sanPhamTableAdapter.Fill(this.pizzaDBDataSet.SanPham);
             txtMaNV.Text = user.MaNV.ToString();
             txtHoTenNV.Text = user.HoTen;
             txtViTri.Text = user.TenLoaiNV;
@@ -59,11 +66,6 @@ namespace PizzaManagement
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        
         private void additem_Click(object sender, EventArgs e)
         {
             AddItemUI form = new AddItemUI();
@@ -113,7 +115,9 @@ namespace PizzaManagement
                 tongtien = tongtien + Int32.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
             tongtientext.Text = tongtien.ToString();
             vattext.Text = ((tongtien * 10) / 100).ToString();
-            thanhtoantext.Text = (tongtien+ ((tongtien * 10) / 100)-(Int32.Parse(cktext.Text.ToString())* (tongtien + ((tongtien * 10) / 100)))/100).ToString();
+            int vat = int.Parse(vattext.Text);
+            int ck = int.Parse(cktext.Text);
+            thanhtoantext.Text = (tongtien + vat - ((tongtien + vat) * ck) / 100).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,9 +128,12 @@ namespace PizzaManagement
              }*/
             if (dataGridView1.RowCount > 1)
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
-                sttupdate();
-                updategiatrihoadon();
+                if (dataGridView1.CurrentRow.Index < dataGridView1.RowCount)
+                {
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+                    sttupdate();
+                    updategiatrihoadon();
+                }
             }
         }
         public void currentupdate()
@@ -141,9 +148,14 @@ namespace PizzaManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Quantity form = new Quantity();
-            form.setmode(1);
-            form.Show(this);
+            int x=dataGridView1.CurrentRow.Index;
+            string idPattern = @"^[0-9]+$";
+            Regex re = new Regex(idPattern);
+            if (re.IsMatch(soluongtext.Text) && int.Parse(soluongtext.Text.ToString()) > 0)
+            {
+                dataGridView1.Rows[x].Cells[3].Value = suasoluongtext.Text;
+                suasoluongtext.Text = "1";
+            }
 
         }
 
@@ -151,7 +163,8 @@ namespace PizzaManagement
         {
             
             DTO.HoaDonDTO dtohd = new DTO.HoaDonDTO();
-            dtohd.htpv = int.Parse(htpvtext.Text);
+            if
+            dtohd.htpv = int.Parse(htpvcombo.SelectedValue.ToString());
             dtohd.manv = user.MaNV;
             dtohd.makh = int.Parse(makhtext.Text.ToString());
             dtohd.ngaygio = datetext.Text;
@@ -165,9 +178,7 @@ namespace PizzaManagement
             switch (MessageBox.Show("Hóa đơn đã lưu thành công. Bạn có muốn tạo hóa đơn khác?", "Thành công", MessageBoxButtons.YesNoCancel))
             {
                 case DialogResult.Yes: {
-                        this.Controls.Clear();
-
-                        this.InitializeComponent(); break; }
+                        clear(); break; }
                 case DialogResult.No: { this.Dispose(); break; }
                 case DialogResult.Cancel: break;
             }
@@ -187,5 +198,61 @@ namespace PizzaManagement
             cktext.Text = dtokh.ChietKhau.ToString();
             updategiatrihoadon();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int item = ItemTable.CurrentRow.Index;
+            int x = 0;
+            string idPattern = @"^[0-9]+$";
+            Regex re = new Regex(idPattern);
+            if (re.IsMatch(soluongtext.Text)&&int.Parse(soluongtext.Text.ToString())>0)
+            {
+                for (int i = 0; i <= current; i++)
+                    if (int.Parse(ItemTable.Rows[item].Cells[0].Value.ToString()) == a[i]) x = 1;
+                if (x == 0)
+                {
+                    a[n] = int.Parse(ItemTable.Rows[item].Cells[0].Value.ToString());
+                    n++;
+                    currentupdate();
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[current].Cells[0].Value = dataGridView1.RowCount - 1;
+                    dataGridView1.Rows[current].Cells[1].Value = ItemTable.Rows[item].Cells[0].Value;
+                    dataGridView1.Rows[current].Cells[2].Value = ItemTable.Rows[item].Cells[1].Value;
+                    dataGridView1.Rows[current].Cells[3].Value = soluongtext.Text;
+                    dataGridView1.Rows[current].Cells[4].Value = ItemTable.Rows[item].Cells[2].Value; ;
+                    dataGridView1.Rows[current].Cells[5].Value = int.Parse(dataGridView1.Rows[current].Cells[3].Value.ToString()) * int.Parse(dataGridView1.Rows[current].Cells[4].Value.ToString());
+                    updategiatrihoadon();
+                    soluongtext.Text = "1";
+                }
+                else MessageBox.Show("Không thể thêm vào 1 sản phẩm đã thêm trước đó, bạn có thể thay đổi số lượng ở phần tạo hóa đơn");
+            }
+            else MessageBox.Show("Số lượng nhập vào phải là số. Vui lòng nhập lại", "Nhập sai", MessageBoxButtons.OK);
+        }
+        public void clear()
+        {
+            makhtext.Text = "";
+            tenkhtext.Text = "";
+            loaikhtext.Text = "";
+            datetext.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            tongtientext.Text = "0";
+            cktext.Text = "0";
+            vattext.Text = "0";
+            thanhtoantext.Text = "0";
+            dataGridView1.Rows.Clear();
+            suasoluongtext.Text = "1";
+            a = new int[100];
+            Array.Clear(a, 0, 100);
+            a[0] = 0;
+            n = 0;
+            htpvcombo.SelectedIndex = 0;
+            currentupdate();
+            ItemTable.ClearSelection();
+        }
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+
+   
+    }
