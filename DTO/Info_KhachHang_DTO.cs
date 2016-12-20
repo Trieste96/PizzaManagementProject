@@ -14,7 +14,8 @@ namespace DTO
         private string email;
         private string sdt;
         private int maloaiKH;
-
+        private string loaiKH;// minh them dong nay
+        private int chietkhau;//minh them dong nay
         public int MaKH
         {
             get { return maKH; }
@@ -53,6 +54,20 @@ namespace DTO
             email = _email;
             sdt = _sdt;
             maloaiKH = _maloaikh;
+        }
+        public Info_KhachHang_DTO() //minh them dong nay
+        {
+
+        }
+        public string LoaiKH //minh them doan nay
+        {
+            get { return loaiKH; }
+            set { loaiKH = value; }
+        }
+        public int ChietKhau //minh them doan nay
+        {
+            get { return chietkhau; }
+            set { chietkhau = value; }
         }
     }
 }

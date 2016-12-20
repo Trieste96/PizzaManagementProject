@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BangTinhHinhTK.cs" />
+    <Compile Include="HoaDonDTO.cs" />
     <Compile Include="Info_KhachHang_DTO.cs" />
     <Compile Include="PhieuThongKe.cs" />
     <Compile Include="Info_NguyenLieu_DTO.cs" />

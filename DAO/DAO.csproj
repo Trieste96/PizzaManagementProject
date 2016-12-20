@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationDAO.cs" />
+    <Compile Include="CsrDAO.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="DoanhThuDAO.cs" />
     <Compile Include="KhachHangDAO.cs" />
     <Compile Include="NguyenLieuDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />

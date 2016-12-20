@@ -29,93 +29,99 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pizzaDBDataSet = new PizzaManagement.PizzaDBDataSet();
-            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sanPhamTableAdapter = new PizzaManagement.PizzaDBDataSetTableAdapters.SanPhamTableAdapter();
+            this.ItemTable = new System.Windows.Forms.DataGridView();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maLoaiSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet)).BeginInit();
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pizzaDBDataSet = new PizzaManagement.PizzaDBDataSet();
+            this.sanPhamTableAdapter = new PizzaManagement.PizzaDBDataSetTableAdapters.SanPhamTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ItemTable
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ItemTable.AutoGenerateColumns = false;
+            this.ItemTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ItemTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSPDataGridViewTextBoxColumn,
             this.tenSPDataGridViewTextBoxColumn,
             this.giaDataGridViewTextBoxColumn,
             this.maLoaiSPDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.sanPhamBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(612, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // pizzaDBDataSet
-            // 
-            this.pizzaDBDataSet.DataSetName = "PizzaDBDataSet";
-            this.pizzaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sanPhamBindingSource
-            // 
-            this.sanPhamBindingSource.DataMember = "SanPham";
-            this.sanPhamBindingSource.DataSource = this.pizzaDBDataSet;
-            // 
-            // sanPhamTableAdapter
-            // 
-            this.sanPhamTableAdapter.ClearBeforeFill = true;
+            this.ItemTable.DataSource = this.sanPhamBindingSource;
+            this.ItemTable.Location = new System.Drawing.Point(12, 12);
+            this.ItemTable.Name = "ItemTable";
+            this.ItemTable.ReadOnly = true;
+            this.ItemTable.Size = new System.Drawing.Size(650, 246);
+            this.ItemTable.TabIndex = 0;
+            this.ItemTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemTable_CellClick);
+            this.ItemTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ItemTable.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemTable_CellContentDoubleClick);
             // 
             // maSPDataGridViewTextBoxColumn
             // 
             this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "Mã Sản Phẩm";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
             this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
             this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenSPDataGridViewTextBoxColumn
             // 
             this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên Sản Phẩm";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
             this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // giaDataGridViewTextBoxColumn
             // 
             this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
-            this.giaDataGridViewTextBoxColumn.HeaderText = "Giá";
+            this.giaDataGridViewTextBoxColumn.HeaderText = "Gia";
             this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
+            this.giaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maLoaiSPDataGridViewTextBoxColumn
             // 
             this.maLoaiSPDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiSP";
-            this.maLoaiSPDataGridViewTextBoxColumn.HeaderText = "Mã Loại Sản Phẩm";
+            this.maLoaiSPDataGridViewTextBoxColumn.HeaderText = "MaLoaiSP";
             this.maLoaiSPDataGridViewTextBoxColumn.Name = "maLoaiSPDataGridViewTextBoxColumn";
+            this.maLoaiSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sanPhamBindingSource
+            // 
+            this.sanPhamBindingSource.DataMember = "SanPham";
+            this.sanPhamBindingSource.DataSource = this.pizzaDBDataSet;
+            // 
+            // pizzaDBDataSet
+            // 
+            this.pizzaDBDataSet.DataSetName = "PizzaDBDataSet";
+            this.pizzaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sanPhamTableAdapter
+            // 
+            this.sanPhamTableAdapter.ClearBeforeFill = true;
             // 
             // AddItemUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 270);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(674, 270);
+            this.Controls.Add(this.ItemTable);
             this.Name = "AddItemUI";
-            this.Text = "Thêm món";
+            this.Text = "Chọn sản phẩm";
             this.Load += new System.EventHandler(this.AddItemUI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ItemTable;
         private PizzaDBDataSet pizzaDBDataSet;
         private System.Windows.Forms.BindingSource sanPhamBindingSource;
         private PizzaDBDataSetTableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
