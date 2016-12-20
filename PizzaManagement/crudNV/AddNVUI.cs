@@ -42,15 +42,20 @@ namespace PizzaManagement
             if (MessageBox.Show("Bạn có muốn thêm nhân viên này?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
 == DialogResult.OK)
             {
-                NhanVien nvDto = new NhanVien(0, txtInfoTenNV.Text, txtInfoCMND.Text, txtInfoDTNV.Text, txtInfoDiaChiNV.Text, txtInfoEmailNV.Text,
-                    Convert.ToInt32(cbInfoLoaiNV.SelectedValue.ToString()), txtInfoMatKhauNV.Text, Convert.ToInt32(cbInfoTinhTrang.SelectedValue.ToString()));
                 try
                 {
+                    NhanVien nvDto = new NhanVien(0, txtInfoTenNV.Text, txtInfoCMND.Text, txtInfoDTNV.Text, txtInfoDiaChiNV.Text, txtInfoEmailNV.Text,
+                   Convert.ToInt32(cbInfoLoaiNV.SelectedValue.ToString()), txtInfoMatKhauNV.Text, Convert.ToInt32(cbInfoTinhTrang.SelectedValue.ToString()));
                     nvBus.addNV(nvDto);
                 }
-                catch (Exception)
+                //catch (Exception)
+                //{
+                //    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
+                catch (FormatException)
                 {
-                    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kiểm tra dữ liệu đầu vào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.Close();

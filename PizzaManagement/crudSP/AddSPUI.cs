@@ -37,14 +37,19 @@ namespace PizzaManagement
             if (MessageBox.Show("Bạn có muốn thêm sản phẩm này?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                     == DialogResult.OK)
             {
-                Info_SanPham_DTO spDTO = new Info_SanPham_DTO(0, txtInfoTenSP.Text, Int32.Parse(txtInfoGia.Text), Convert.ToInt32(cbInfoLoaiSP.SelectedValue.ToString()));
                 try
                 {
+                    Info_SanPham_DTO spDTO = new Info_SanPham_DTO(0, txtInfoTenSP.Text, Int32.Parse(txtInfoGia.Text), Convert.ToInt32(cbInfoLoaiSP.SelectedValue.ToString()));
                     spBus.addSP(spDTO);
                 }
-                catch (Exception)
+                catch (SqlException)
                 {
                     MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                catch(FormatException)
+                {
+                    MessageBox.Show("Kiển tra dữ liệu nhập vào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.Close();
