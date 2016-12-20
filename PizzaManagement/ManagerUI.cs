@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.Data.SqlClient;
 
 namespace PizzaManagement
 {
@@ -81,6 +82,8 @@ namespace PizzaManagement
         }
         private void ManagerUI_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pizzaDBDataSet2.HoaDon' table. You can move, or remove it, as needed.
+            this.hoaDonTableAdapter.Fill(this.pizzaDBDataSet2.HoaDon);
             //Tạo sơ đồ dạng cây
             loadTreeView();
 
@@ -423,6 +426,9 @@ namespace PizzaManagement
             tableThongKe.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             tableThongKe.DefaultCellStyle.ForeColor = Color.Black;
             tableThongKe.Columns["Đã sử dụng"].DefaultCellStyle.ForeColor = Color.Red;
+
+            dataGridView2.Font = new Font("Arial", 12, FontStyle.Regular);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Regular);
         }
 
         private void ManagerUI_Activated(object sender, EventArgs e)
@@ -771,6 +777,110 @@ namespace PizzaManagement
             }
         }
 
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            SqlDataReader reader;
+            BUS.DoanhThuBUS bus = new DoanhThuBUS();
+            string bd = datebd.Text;
+            string kt = datekt.Text;
+            int current = 0;
+            reader = bus.tracuu(bd, kt);
+            while (reader.Read())
+            {
+                dataGridView2.Rows.Add();
+                dataGridView2.Rows[current].Cells[0].Value = reader[0].ToString();
+                dataGridView2.Rows[current].Cells[1].Value = reader[1].ToString();
+                dataGridView2.Rows[current].Cells[2].Value = reader[2].ToString();
+                dataGridView2.Rows[current].Cells[3].Value = reader[3].ToString();
+                dataGridView2.Rows[current].Cells[4].Value = reader[4].ToString();
+                dataGridView2.Rows[current].Cells[5].Value = reader[5].ToString();
+                current++;
+            }
+            reader.Close();
+            updatedoanhthu();
+        }
+
+        private void tabTinhHinhTaiChinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeFunctionList_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void label12_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            SqlDataReader reader;
+            BUS.DoanhThuBUS bus = new DoanhThuBUS();
+            int current = 0;
+            reader = bus.tracuuall();
+            while (reader.Read())
+            {
+                dataGridView2.Rows.Add();
+                dataGridView2.Rows[current].Cells[0].Value = reader[0].ToString();
+                dataGridView2.Rows[current].Cells[1].Value = reader[1].ToString();
+                dataGridView2.Rows[current].Cells[2].Value = reader[2].ToString();
+                dataGridView2.Rows[current].Cells[3].Value = reader[3].ToString();
+                dataGridView2.Rows[current].Cells[4].Value = reader[4].ToString();
+                dataGridView2.Rows[current].Cells[5].Value = reader[5].ToString();
+                current++;
+            }
+            reader.Close();
+            updatedoanhthu();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BUS.DoanhThuBUS bus = new DoanhThuBUS();
+            int current = dataGridView2.CurrentRow.Index;
+            int mahd = int.Parse(dataGridView2.Rows[current].Cells[0].Value.ToString());
+            bus.huyhoadon(mahd);
+            dataGridView2.Rows.RemoveAt(current);
+            updatedoanhthu();
+        }
+        public void updatedoanhthu()
+        {
+            int current = dataGridView2.RowCount-1;
+            int doanhthu = 0;
+            for(int i=0;i< current;i++)
+            {
+                doanhthu = doanhthu+int.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString());
+            }
+            doanhthutext.Text = doanhthu.ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            BUS.DoanhThuBUS bus = new DoanhThuBUS();
+            int current = dataGridView2.CurrentRow.Index;
+            int mahd = int.Parse(dataGridView2.Rows[current].Cells[0].Value.ToString());
+            SqlDataReader reader;
+            reader=bus.thongtinhoadon(mahd);
+            HoaDonUI form = new HoaDonUI(reader,mahd);
+            form.Show();
+            reader.Close();
+        }
+    }
+
         //private void getCurrentCellButton_Click(object sender, System.EventArgs e)
         //{
         //    string msg = String.Format("Row: {0}, Column: {1}",
@@ -782,4 +892,4 @@ namespace PizzaManagement
 
         // ========================Nghia =========================================================================
     }
-}
+

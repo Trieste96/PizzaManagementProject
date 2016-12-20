@@ -124,7 +124,7 @@
   <data name="btnXemChiTietPKK.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAABYRJREFUSEudV3tQlUUUp/6zJhtnKmcKcCgVpHwgFZhBDyfEtBmVtGl8IoaChqLy
+        vgAADr4B6kKxwAAABYRJREFUSEudV3tQlUUUp/6zJhtnKmcKcCgVpHwgFZhBDyfEtBmVtGl8IoaChqLy
         0AQUDfERIuX7gSZJaiIgj3uBi2AoCqKRwKAWToOPcErNTHl476895/v28vFxL9fhN3Nmz+6e3d8+zp7d
         dTKbzZBCMJVVIDQiFnPClyFkQRTCIr8SehRLCIko04q9OiqbPX8J1m/ezv0SHj9+zDwWiwVMTAWE9IOH
         0c9lKNZuSEPa9n1I25GOiZ/PxfY9B5G6bS9St5Ls0YjIU7mtOlG2ddcB+AUEwevdcdy/5KK0C7GH9wc4
@@ -154,7 +154,7 @@
   <data name="btnXoaPKK.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAgcKAAIHCgGZ1Tq1AAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAgcEAAIHBAE9XHZLAAAAB3RJ
         TUUH4AwGCwAVW4MI9QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGASURBVEhL
         xZdZTsMwFEXTQtfHsIOyOJBAol/9YGMIMZV7otzw5NpxFCl1pKOkfsNpYld1ulPXRXbD+UG8iWuxEVsx
         5qVHjAlyqaGWHvRi3L17xgvhwI34ECfxIq5EUR7HhKXUUEsPetGT+Ch3gQfuxbf4FZ+CwleRlSdEKTXU
@@ -173,7 +173,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACo
-        GQAAAk1TRnQBSQFMAgEBCQEAAcABAAHAAQABGwEAARsBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        GQAAAk1TRnQBSQFMAgEBCQEAAfABAAHwAQABGwEAARsBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABbAMAAVEDAAEBAQABCAUAASwBIhgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -344,7 +344,7 @@
   <data name="btnLuuPKK.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAC4iAAAuIgGq4t2SAAAAB3RJ
         TUUH4AwGCjobmFCRvAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAJYSURB
         VEhL3ZW9TlVBFIUvolFKY0Ij2lth519Bbywt0GDsSHgGAhKjD0HrT4zPYfxteASjJhoKozYiKOr6MrPY
         +5xcjhfvvYWu5MucM7Nnr5m5+8zt/V9aX9yfsappNikONfrGomwQhhPpuTBS5cTFDO6Ks7XvcG3rhFEo
@@ -383,7 +383,7 @@
   <data name="btnXemDS_PKK.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAJCSURBVEhLxZfLThRBGIX7GYiG
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr4AAA6+AepCscAAAAJCSURBVEhLxZfLThRBGIX7GYiG
         hRogakTkIg9gImtXbowYYXS84WVpdBIDCxMTSRhGEtbKZaEbZfQBSNjoFmGvbkwwygJf4Fhf19SkpmzT
         PaNSJzmTnqq/zqnbX12dqCA2P0nzb6RSVRp7KI3elU4b8kwZdcQURa7xQl06elU6fFk6fk0auCUN3ZZG
         7ljyTBl1xBBLmzz80XhjW+otSX1XrDijK0JiaUPbja2GWAYyjSvPpYMX2zMMSVs00MrCb8aTc9KRCTuN
@@ -396,6 +396,42 @@
         YoilTR5yjR3CjzZGN3qv04826Rc3lp0z19shIQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="MaHD.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NhanVien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="KhachHang.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="HinhThuc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NgayGio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TongTien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="hoaDonBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 72</value>
+  </metadata>
+  <metadata name="pizzaDBDataSet2BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>620, 34</value>
+  </metadata>
+  <metadata name="pizzaDBDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>484, 34</value>
+  </metadata>
+  <metadata name="hoaDonTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>180, 72</value>
+  </metadata>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>338, 72</value>
+  </metadata>
+  <metadata name="hoaDonBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>499, 72</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>62</value>
   </metadata>

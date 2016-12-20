@@ -25,11 +25,13 @@ namespace DAO
             cm.Parameters.Add("@manv", SqlDbType.Int);
             cm.Parameters.Add("@time", SqlDbType.DateTime);
             cm.Parameters.Add("@hinhthuc", SqlDbType.SmallInt);
+            cm.Parameters.Add("@tongtien", SqlDbType.Int);
 
             cm.Parameters["@makh"].Value = dto.makh;
             cm.Parameters["@manv"].Value = dto.manv;
             cm.Parameters["@time"].Value = dto.ngaygio;
             cm.Parameters["@hinhthuc"].Value = dto.htpv;
+            cm.Parameters["@tongtien"].Value = dto.tongtien;
             cm.ExecuteNonQuery();
             //cn.Close();
         }

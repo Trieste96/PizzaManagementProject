@@ -8,7 +8,7 @@ namespace DTO
 {
     public class HoaDonDTO
     {
-        private int MaNV, MaKH, HtPV, MaSP, SoLuong;
+        private int MaNV, MaKH, HtPV, MaSP, SoLuong, TongTien;
         private String NgayGio;
         public HoaDonDTO()
         {
@@ -52,6 +52,11 @@ namespace DTO
         {
             get { return NgayGio; }
             set { NgayGio = value; }
+        }
+        public int tongtien
+        {
+            get { return TongTien; }
+            set { TongTien = value; }
         }
     }
 }

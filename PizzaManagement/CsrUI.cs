@@ -163,11 +163,13 @@ namespace PizzaManagement
         {
             
             DTO.HoaDonDTO dtohd = new DTO.HoaDonDTO();
-            if
+            dtohd.makh = 5;
             dtohd.htpv = int.Parse(htpvcombo.SelectedValue.ToString());
             dtohd.manv = user.MaNV;
+            if (!string.IsNullOrEmpty(makhtext.Text))
             dtohd.makh = int.Parse(makhtext.Text.ToString());
             dtohd.ngaygio = datetext.Text;
+            dtohd.tongtien = int.Parse(thanhtoantext.Text);
             csrbus.taohoadon(dtohd);
             for (int i=0;i<dataGridView1.RowCount-1;i++)
             {
@@ -252,6 +254,8 @@ namespace PizzaManagement
         {
 
         }
+
+
     }
 
    
