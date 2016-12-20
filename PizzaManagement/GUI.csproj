@@ -94,6 +94,12 @@
     <Compile Include="EditKHUI.Designer.cs">
       <DependentUpon>EditKHUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonUI.Designer.cs">
+      <DependentUpon>HoaDonUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="PizzaDBDataSet13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditKHUI.resx">
       <DependentUpon>EditKHUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonUI.resx">
+      <DependentUpon>HoaDonUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUI.resx">
       <DependentUpon>ManagerUI.cs</DependentUpon>
