@@ -347,10 +347,10 @@
             // 
             // tabKhachHang
             // 
+            this.tabKhachHang.Controls.Add(this.dgv_info_KhachHang);
             this.tabKhachHang.Controls.Add(this.btn_xoaKH);
             this.tabKhachHang.Controls.Add(this.btn_suaKH);
             this.tabKhachHang.Controls.Add(this.btn_themKH);
-            this.tabKhachHang.Controls.Add(this.dgv_info_KhachHang);
             this.tabKhachHang.ImageIndex = 7;
             this.tabKhachHang.Location = new System.Drawing.Point(4, 38);
             this.tabKhachHang.Name = "tabKhachHang";
@@ -396,15 +396,16 @@
             // dgv_info_KhachHang
             // 
             this.dgv_info_KhachHang.AllowUserToAddRows = false;
-            this.dgv_info_KhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_info_KhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_info_KhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_info_KhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_info_KhachHang.ContextMenuStrip = this.menu_suaXoaKH;
-            this.dgv_info_KhachHang.Location = new System.Drawing.Point(0, 0);
+            this.dgv_info_KhachHang.Location = new System.Drawing.Point(1, 0);
+            this.dgv_info_KhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_info_KhachHang.MultiSelect = false;
             this.dgv_info_KhachHang.Name = "dgv_info_KhachHang";
             this.dgv_info_KhachHang.RowTemplate.Height = 24;
-            this.dgv_info_KhachHang.Size = new System.Drawing.Size(1113, 448);
+            this.dgv_info_KhachHang.Size = new System.Drawing.Size(1608, 551);
             this.dgv_info_KhachHang.TabIndex = 12;
             this.dgv_info_KhachHang.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_info_KhachHang_CellMouseDown);
             // 
@@ -415,28 +416,28 @@
             this.StripMenu_SuaKH,
             this.StripMenu_XoaKH});
             this.menu_suaXoaKH.Name = "menu_suaXoaKH";
-            this.menu_suaXoaKH.Size = new System.Drawing.Size(160, 48);
+            this.menu_suaXoaKH.Size = new System.Drawing.Size(184, 52);
             // 
             // StripMenu_SuaKH
             // 
             this.StripMenu_SuaKH.Name = "StripMenu_SuaKH";
-            this.StripMenu_SuaKH.Size = new System.Drawing.Size(159, 22);
+            this.StripMenu_SuaKH.Size = new System.Drawing.Size(183, 24);
             this.StripMenu_SuaKH.Text = "Sửa khách hàng";
             this.StripMenu_SuaKH.Click += new System.EventHandler(this.StripMenu_SuaKH_Click);
             // 
             // StripMenu_XoaKH
             // 
             this.StripMenu_XoaKH.Name = "StripMenu_XoaKH";
-            this.StripMenu_XoaKH.Size = new System.Drawing.Size(159, 22);
+            this.StripMenu_XoaKH.Size = new System.Drawing.Size(183, 24);
             this.StripMenu_XoaKH.Text = "Xóa khách hàng";
             this.StripMenu_XoaKH.Click += new System.EventHandler(this.StripMenu_XoaKH_Click);
             // 
             // tabNhanVien
             // 
+            this.tabNhanVien.Controls.Add(this.dgv_info_NhanVien);
             this.tabNhanVien.Controls.Add(this.btn_xoaNV);
             this.tabNhanVien.Controls.Add(this.btn_suaNV);
             this.tabNhanVien.Controls.Add(this.btn_themNV);
-            this.tabNhanVien.Controls.Add(this.dgv_info_NhanVien);
             this.tabNhanVien.ImageIndex = 6;
             this.tabNhanVien.Location = new System.Drawing.Point(4, 38);
             this.tabNhanVien.Margin = new System.Windows.Forms.Padding(4);
@@ -483,15 +484,18 @@
             // dgv_info_NhanVien
             // 
             this.dgv_info_NhanVien.AllowUserToAddRows = false;
-            this.dgv_info_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_info_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_info_NhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_info_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_info_NhanVien.ContextMenuStrip = this.menu_suaXoaNV;
-            this.dgv_info_NhanVien.Location = new System.Drawing.Point(1, 3);
+            this.dgv_info_NhanVien.EnableHeadersVisualStyles = false;
+            this.dgv_info_NhanVien.Location = new System.Drawing.Point(0, 0);
+            this.dgv_info_NhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_info_NhanVien.MultiSelect = false;
             this.dgv_info_NhanVien.Name = "dgv_info_NhanVien";
+            this.dgv_info_NhanVien.ReadOnly = true;
             this.dgv_info_NhanVien.RowTemplate.Height = 24;
-            this.dgv_info_NhanVien.Size = new System.Drawing.Size(1113, 448);
+            this.dgv_info_NhanVien.Size = new System.Drawing.Size(1648, 551);
             this.dgv_info_NhanVien.TabIndex = 8;
             this.dgv_info_NhanVien.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_info_NhanVien_CellMouseDown);
             // 
@@ -502,19 +506,19 @@
             this.StripMenu_SuaNV,
             this.StripMenu_XoaNV});
             this.menu_suaXoaNV.Name = "menu_suaXoaNV";
-            this.menu_suaXoaNV.Size = new System.Drawing.Size(150, 48);
+            this.menu_suaXoaNV.Size = new System.Drawing.Size(172, 52);
             // 
             // StripMenu_SuaNV
             // 
             this.StripMenu_SuaNV.Name = "StripMenu_SuaNV";
-            this.StripMenu_SuaNV.Size = new System.Drawing.Size(149, 22);
+            this.StripMenu_SuaNV.Size = new System.Drawing.Size(171, 24);
             this.StripMenu_SuaNV.Text = "Sửa nhân viên";
             this.StripMenu_SuaNV.Click += new System.EventHandler(this.StripMenu_SuaNV_Click);
             // 
             // StripMenu_XoaNV
             // 
             this.StripMenu_XoaNV.Name = "StripMenu_XoaNV";
-            this.StripMenu_XoaNV.Size = new System.Drawing.Size(149, 22);
+            this.StripMenu_XoaNV.Size = new System.Drawing.Size(171, 24);
             this.StripMenu_XoaNV.Text = "Xóa nhân viên";
             this.StripMenu_XoaNV.Click += new System.EventHandler(this.StripMenu_XoaNV_Click);
             // 
@@ -525,19 +529,19 @@
             this.StripMenu_SuaNL,
             this.StripMenu_XoaNL});
             this.menu_suaXoaNL.Name = "menu_themSuaNL";
-            this.menu_suaXoaNL.Size = new System.Drawing.Size(160, 48);
+            this.menu_suaXoaNL.Size = new System.Drawing.Size(185, 52);
             // 
             // StripMenu_SuaNL
             // 
             this.StripMenu_SuaNL.Name = "StripMenu_SuaNL";
-            this.StripMenu_SuaNL.Size = new System.Drawing.Size(159, 22);
+            this.StripMenu_SuaNL.Size = new System.Drawing.Size(184, 24);
             this.StripMenu_SuaNL.Text = "Sửa nguyên liệu";
             this.StripMenu_SuaNL.Click += new System.EventHandler(this.StripMenu_SuaNL_Click);
             // 
             // StripMenu_XoaNL
             // 
             this.StripMenu_XoaNL.Name = "StripMenu_XoaNL";
-            this.StripMenu_XoaNL.Size = new System.Drawing.Size(159, 22);
+            this.StripMenu_XoaNL.Size = new System.Drawing.Size(184, 24);
             this.StripMenu_XoaNL.Text = "Xóa nguyên liệu";
             this.StripMenu_XoaNL.Click += new System.EventHandler(this.StripMenu_XoaNL_Click);
             // 
@@ -593,15 +597,16 @@
             // dgv_info_NguyenLieu
             // 
             this.dgv_info_NguyenLieu.AllowUserToAddRows = false;
-            this.dgv_info_NguyenLieu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_info_NguyenLieu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_info_NguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_info_NguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_info_NguyenLieu.ContextMenuStrip = this.menu_suaXoaNL;
-            this.dgv_info_NguyenLieu.Location = new System.Drawing.Point(0, 0);
+            this.dgv_info_NguyenLieu.Location = new System.Drawing.Point(1, 0);
+            this.dgv_info_NguyenLieu.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_info_NguyenLieu.MultiSelect = false;
             this.dgv_info_NguyenLieu.Name = "dgv_info_NguyenLieu";
             this.dgv_info_NguyenLieu.RowTemplate.Height = 24;
-            this.dgv_info_NguyenLieu.Size = new System.Drawing.Size(1089, 448);
+            this.dgv_info_NguyenLieu.Size = new System.Drawing.Size(943, 551);
             this.dgv_info_NguyenLieu.TabIndex = 4;
             this.dgv_info_NguyenLieu.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_info_NguyenLieu_CellMouseDown);
             // 
@@ -624,8 +629,8 @@
             // btn_XoaSP
             // 
             this.btn_XoaSP.AutoSize = true;
-            this.btn_XoaSP.Location = new System.Drawing.Point(593, 496);
-            this.btn_XoaSP.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_XoaSP.Location = new System.Drawing.Point(713, 602);
+            this.btn_XoaSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_XoaSP.Name = "btn_XoaSP";
             this.btn_XoaSP.Size = new System.Drawing.Size(133, 46);
             this.btn_XoaSP.TabIndex = 3;
@@ -636,8 +641,8 @@
             // btn_SuaSP
             // 
             this.btn_SuaSP.AutoSize = true;
-            this.btn_SuaSP.Location = new System.Drawing.Point(347, 496);
-            this.btn_SuaSP.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_SuaSP.Location = new System.Drawing.Point(385, 602);
+            this.btn_SuaSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_SuaSP.Name = "btn_SuaSP";
             this.btn_SuaSP.Size = new System.Drawing.Size(150, 46);
             this.btn_SuaSP.TabIndex = 2;
@@ -648,8 +653,8 @@
             // btn_themSP
             // 
             this.btn_themSP.AutoSize = true;
-            this.btn_themSP.Location = new System.Drawing.Point(101, 496);
-            this.btn_themSP.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_themSP.Location = new System.Drawing.Point(57, 602);
+            this.btn_themSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_themSP.Name = "btn_themSP";
             this.btn_themSP.Size = new System.Drawing.Size(167, 45);
             this.btn_themSP.TabIndex = 1;
@@ -660,16 +665,16 @@
             // dgv_info_SanPham
             // 
             this.dgv_info_SanPham.AllowUserToAddRows = false;
-            this.dgv_info_SanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_info_SanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_info_SanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_info_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_info_SanPham.ContextMenuStrip = this.menu_suaXoaSP;
-            this.dgv_info_SanPham.Location = new System.Drawing.Point(0, 3);
-            this.dgv_info_SanPham.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_info_SanPham.Location = new System.Drawing.Point(0, 2);
+            this.dgv_info_SanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_info_SanPham.MultiSelect = false;
             this.dgv_info_SanPham.Name = "dgv_info_SanPham";
             this.dgv_info_SanPham.RowTemplate.Height = 24;
-            this.dgv_info_SanPham.Size = new System.Drawing.Size(1089, 448);
+            this.dgv_info_SanPham.Size = new System.Drawing.Size(942, 551);
             this.dgv_info_SanPham.TabIndex = 0;
             this.dgv_info_SanPham.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_info_SanPham_CellMouseDown);
             // 
@@ -680,20 +685,20 @@
             this.stripMenu_suaSP,
             this.stripMenu_xoaSP});
             this.menu_suaXoaSP.Name = "menu_themSuaSP";
-            this.menu_suaXoaSP.Size = new System.Drawing.Size(150, 48);
+            this.menu_suaXoaSP.Size = new System.Drawing.Size(179, 56);
             this.menu_suaXoaSP.TabStop = true;
             // 
             // stripMenu_suaSP
             // 
             this.stripMenu_suaSP.Name = "stripMenu_suaSP";
-            this.stripMenu_suaSP.Size = new System.Drawing.Size(149, 22);
+            this.stripMenu_suaSP.Size = new System.Drawing.Size(172, 24);
             this.stripMenu_suaSP.Text = "Sửa sản phẩm";
             this.stripMenu_suaSP.Click += new System.EventHandler(this.stripMenu_suaSP_Click);
             // 
             // stripMenu_xoaSP
             // 
             this.stripMenu_xoaSP.Name = "stripMenu_xoaSP";
-            this.stripMenu_xoaSP.Size = new System.Drawing.Size(149, 22);
+            this.stripMenu_xoaSP.Size = new System.Drawing.Size(172, 24);
             this.stripMenu_xoaSP.Text = "Xóa sản phẩm";
             this.stripMenu_xoaSP.Click += new System.EventHandler(this.stripMenu_xoaSP_Click);
             // 

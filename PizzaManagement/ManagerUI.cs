@@ -30,6 +30,7 @@ namespace PizzaManagement
             nlBus = new NguyenLieuBUS();
             nvBus = new NhanVienBUS();
             khBus = new KhachHangBUS();
+
         }
 
         private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
@@ -451,6 +452,8 @@ namespace PizzaManagement
         }
         private void load_info_SP()
         {
+            dgv_info_SanPham.Font = new Font("Arial", 13, FontStyle.Regular);
+            dgv_info_SanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
             DataTable dt = new DataTable();
             SanPhamBUS spBUS = new SanPhamBUS();
             dt = spBUS.Load_info_SP();
@@ -459,7 +462,8 @@ namespace PizzaManagement
             dgv_info_SanPham.Columns[1].HeaderText = "Tên SP";
             dgv_info_SanPham.Columns[2].HeaderText = "Giá bán";
             dgv_info_SanPham.Columns[3].HeaderText = "Loại SP";
-            dgv_info_SanPham.Columns[4].HeaderText = "Mã loại SP";
+            //dgv_info_SanPham.Columns[4].HeaderText = "Mã loại SP";
+            dgv_info_SanPham.Columns[4].Visible = false;
 
             for (int i = 0; i < dgv_info_SanPham.ColumnCount; i++)
             {
@@ -467,11 +471,11 @@ namespace PizzaManagement
             }
             dgv_info_SanPham.ReadOnly = true;
             dgv_info_SanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
         }
         private void load_info_NL()
         {
-            
+            dgv_info_NguyenLieu.Font = new Font("Arial", 13, FontStyle.Regular);
+            dgv_info_NguyenLieu.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
             DataTable dt = new DataTable();
             NguyenLieuBUS nlBus = new NguyenLieuBUS();
             dt = nlBus.Load_info_NL();
@@ -486,9 +490,12 @@ namespace PizzaManagement
             }
             dgv_info_NguyenLieu.ReadOnly = true;
             dgv_info_NguyenLieu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
         }
         private void load_info_NV()
         {
+            dgv_info_NhanVien.Font = new Font("Arial", 13, FontStyle.Regular);
+            dgv_info_NhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
             DataTable dt = new DataTable();
             NhanVienBUS nvBus = new NhanVienBUS();
             dt = nvBus.Load_info_NV();
@@ -504,7 +511,7 @@ namespace PizzaManagement
             dgv_info_NhanVien.Columns[8].HeaderText = "Tình trạng";
             dgv_info_NhanVien.Columns[9].Visible = false;
             dgv_info_NhanVien.Columns[10].Visible = false;
-            for (int i=0;i<dgv_info_NhanVien.ColumnCount;i++)
+            for (int i = 0; i < dgv_info_NhanVien.ColumnCount; i++)
             {
                 dgv_info_NhanVien.AutoResizeColumn(i);
             }
@@ -513,6 +520,8 @@ namespace PizzaManagement
         }
         private void load_info_KH()
         {
+            dgv_info_KhachHang.Font = new Font("Arial", 13, FontStyle.Regular);
+            dgv_info_KhachHang.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
             DataTable dt = new DataTable();
             KhachHangBUS khBus = new KhachHangBUS();
             dt = khBus.Load_info_KH();
@@ -535,10 +544,11 @@ namespace PizzaManagement
             dgv_info_KhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+
         private void btn_themSP_Click(object sender, EventArgs e)
         {
             PizzaManagement.ThemMoiSP f = new ThemMoiSP();
-            f.Show();
+            f.ShowDialog();
         }
         private void btn_SuaSP_Click(object sender, EventArgs e)
         {
@@ -547,7 +557,7 @@ namespace PizzaManagement
             string tensp = dgv_info_SanPham.CurrentRow.Cells[1].FormattedValue.ToString();
             int gia = Convert.ToInt32(dgv_info_SanPham.CurrentRow.Cells[2].FormattedValue.ToString());
             PizzaManagement.SuaSP f = new SuaSP(masp, check, tensp, gia);
-            f.Show();
+            f.ShowDialog();
         }
         private void btn_XoaSP_Click(object sender, EventArgs e)
         {
@@ -556,8 +566,10 @@ namespace PizzaManagement
             maSP = dgv_info_SanPham.CurrentRow.Cells[0].FormattedValue.ToString();
             tenSP = dgv_info_SanPham.CurrentRow.Cells[1].FormattedValue.ToString();
             int a = dgv_info_SanPham.CurrentCell.RowIndex;
+            
             DialogResult result = MessageBox.Show(String.Format("Bạn có chắc chắn muốn xoá sản phẩm {0} ra khỏi danh sách?", tenSP), "Xác nhận",
                 MessageBoxButtons.YesNo);
+            
             if (result == DialogResult.Yes)
             {
                 Info_SanPham_DTO spDto = new Info_SanPham_DTO(Convert.ToInt32(maSP), null, 0, 0);
@@ -574,6 +586,7 @@ namespace PizzaManagement
                // dgv_info_SanPham.Rows[a-1].Selected = true;
                 dgv_info_SanPham.FirstDisplayedScrollingRowIndex = a-1;
             }
+            
         }
         private void stripMenu_suaSP_Click(object sender, EventArgs e)
         {
@@ -598,7 +611,7 @@ namespace PizzaManagement
         private void btn_themNL_Click(object sender, EventArgs e)
         {
             PizzaManagement.ThemMoiNL f2 = new ThemMoiNL();
-            f2.Show();
+            f2.ShowDialog();
 
         }
         private void btn_SuaNL_Click(object sender, EventArgs e)
@@ -607,7 +620,7 @@ namespace PizzaManagement
             string tenNL = dgv_info_NguyenLieu.CurrentRow.Cells[1].FormattedValue.ToString();
             string donVi = dgv_info_NguyenLieu.CurrentRow.Cells[2].FormattedValue.ToString();
             PizzaManagement.SuaNL f2 = new SuaNL(maNL, tenNL, donVi);
-            f2.Show();
+            f2.ShowDialog();
         }
         private void btn_XoaNL_Click(object sender, EventArgs e)
         {
@@ -658,7 +671,7 @@ namespace PizzaManagement
         private void btn_themNV_Click(object sender, EventArgs e)
         {
             PizzaManagement.ThemNV f3 = new ThemNV();
-            f3.Show();
+            f3.ShowDialog();
         }
         private void btn_suaNV_Click(object sender, EventArgs e)
         {
@@ -671,7 +684,7 @@ namespace PizzaManagement
             int check_loainv = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[9].FormattedValue.ToString())-1;
             int check_tinhtrang = Convert.ToInt32(dgv_info_NhanVien.CurrentRow.Cells[10].FormattedValue.ToString());
             PizzaManagement.SuaNV f3 = new SuaNV(maNV, tenNV, cmnd, sdt, diachi, email, check_loainv, check_tinhtrang);
-            f3.Show();
+            f3.ShowDialog();
         }
         private void btn_xoaNV_Click(object sender, EventArgs e)
         {
@@ -730,7 +743,7 @@ namespace PizzaManagement
         private void btn_themKH_Click(object sender, EventArgs e)
         {
             PizzaManagement.ThemKH f4 = new ThemKH();
-            f4.Show();
+            f4.ShowDialog();
         }
         private void btn_suaKH_Click(object sender, EventArgs e)
         {
@@ -741,7 +754,7 @@ namespace PizzaManagement
             string sdt = dgv_info_KhachHang.CurrentRow.Cells[5].FormattedValue.ToString();
             int check_loaikh = Convert.ToInt32(dgv_info_KhachHang.CurrentRow.Cells[7].FormattedValue.ToString()) - 1;
             PizzaManagement.SuaKH f4 = new SuaKH(maKH,tenKH,diachi,email,sdt,check_loaikh);
-            f4.Show();
+            f4.ShowDialog();
         }
         private void btn_xoaKH_Click(object sender, EventArgs e)
         {
