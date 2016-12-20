@@ -850,7 +850,7 @@
             this.tabKiemKho.Location = new System.Drawing.Point(4, 38);
             this.tabKiemKho.Name = "tabKiemKho";
             this.tabKiemKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKiemKho.Size = new System.Drawing.Size(1414, 883);
+            this.tabKiemKho.Size = new System.Drawing.Size(1072, 883);
             this.tabKiemKho.TabIndex = 2;
             this.tabKiemKho.Text = "Lập phiếu kiểm kho";
             this.tabKiemKho.UseVisualStyleBackColor = true;
@@ -1176,7 +1176,7 @@
             this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1414, 883);
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1072, 883);
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
@@ -1187,7 +1187,7 @@
             this.tabLichLam.Location = new System.Drawing.Point(4, 38);
             this.tabLichLam.Name = "tabLichLam";
             this.tabLichLam.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLichLam.Size = new System.Drawing.Size(1414, 883);
+            this.tabLichLam.Size = new System.Drawing.Size(1064, 883);
             this.tabLichLam.TabIndex = 0;
             this.tabLichLam.Text = "Sắp xếp lịch làm";
             this.tabLichLam.UseVisualStyleBackColor = true;
@@ -1211,7 +1211,7 @@
             this.tabControl.Location = new System.Drawing.Point(270, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1080, 925);
+            this.tabControl.Size = new System.Drawing.Size(1072, 925);
             this.tabControl.TabIndex = 6;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -1219,7 +1219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 733);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.treeFunctionList);
