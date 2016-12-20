@@ -811,9 +811,9 @@ namespace PizzaManagement
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTraCuuTaiChinh_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Clear();
+            tableBangTaiChinh.Rows.Clear();
             SqlDataReader reader;
             BUS.DoanhThuBUS bus = new DoanhThuBUS();
             string bd = datebd.Text;
@@ -822,15 +822,16 @@ namespace PizzaManagement
             reader = bus.tracuu(bd, kt);
             while (reader.Read())
             {
-                dataGridView2.Rows.Add();
-                dataGridView2.Rows[current].Cells[0].Value = reader[0].ToString();
-                dataGridView2.Rows[current].Cells[1].Value = reader[1].ToString();
-                dataGridView2.Rows[current].Cells[2].Value = reader[2].ToString();
-                dataGridView2.Rows[current].Cells[3].Value = reader[3].ToString();
-                dataGridView2.Rows[current].Cells[4].Value = reader[4].ToString();
-                dataGridView2.Rows[current].Cells[5].Value = reader[5].ToString();
+                tableBangTaiChinh.Rows.Add();
+                tableBangTaiChinh.Rows[current].Cells[0].Value = reader[0].ToString();
+                tableBangTaiChinh.Rows[current].Cells[1].Value = reader[1].ToString();
+                tableBangTaiChinh.Rows[current].Cells[2].Value = reader[2].ToString();
+                tableBangTaiChinh.Rows[current].Cells[3].Value = reader[3].ToString();
+                tableBangTaiChinh.Rows[current].Cells[4].Value = reader[4].ToString();
+                tableBangTaiChinh.Rows[current].Cells[5].Value = reader[5].ToString();
                 current++;
             }
+           
             reader.Close();
             updatedoanhthu();
         }
@@ -852,22 +853,24 @@ namespace PizzaManagement
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Clear();
+            tableBangTaiChinh.Rows.Clear();
             SqlDataReader reader;
             BUS.DoanhThuBUS bus = new DoanhThuBUS();
             int current = 0;
             reader = bus.tracuuall();
             while (reader.Read())
             {
-                dataGridView2.Rows.Add();
-                dataGridView2.Rows[current].Cells[0].Value = reader[0].ToString();
-                dataGridView2.Rows[current].Cells[1].Value = reader[1].ToString();
-                dataGridView2.Rows[current].Cells[2].Value = reader[2].ToString();
-                dataGridView2.Rows[current].Cells[3].Value = reader[3].ToString();
-                dataGridView2.Rows[current].Cells[4].Value = reader[4].ToString();
-                dataGridView2.Rows[current].Cells[5].Value = reader[5].ToString();
+                tableBangTaiChinh.Rows.Add();
+                tableBangTaiChinh.Rows[current].Cells[0].Value = reader[0].ToString();
+                tableBangTaiChinh.Rows[current].Cells[1].Value = reader[1].ToString();
+                tableBangTaiChinh.Rows[current].Cells[2].Value = reader[2].ToString();
+                tableBangTaiChinh.Rows[current].Cells[3].Value = reader[3].ToString();
+                tableBangTaiChinh.Rows[current].Cells[4].Value = reader[4].ToString();
+                tableBangTaiChinh.Rows[current].Cells[5].Value = reader[5].ToString();
                 current++;
             }
+            tableBangTaiChinh.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 15, FontStyle.Bold);
+            tableBangTaiChinh.Font = new Font("Arial", 15, FontStyle.Regular);
             reader.Close();
             updatedoanhthu();
         }
@@ -875,19 +878,19 @@ namespace PizzaManagement
         private void button4_Click(object sender, EventArgs e)
         {
             BUS.DoanhThuBUS bus = new DoanhThuBUS();
-            int current = dataGridView2.CurrentRow.Index;
-            int mahd = int.Parse(dataGridView2.Rows[current].Cells[0].Value.ToString());
+            int current = tableBangTaiChinh.CurrentRow.Index;
+            int mahd = int.Parse(tableBangTaiChinh.Rows[current].Cells[0].Value.ToString());
             bus.huyhoadon(mahd);
-            dataGridView2.Rows.RemoveAt(current);
+            tableBangTaiChinh.Rows.RemoveAt(current);
             updatedoanhthu();
         }
         public void updatedoanhthu()
         {
-            int current = dataGridView2.RowCount-1;
+            int current = tableBangTaiChinh.RowCount-1;
             int doanhthu = 0;
             for(int i=0;i< current;i++)
             {
-                doanhthu = doanhthu+int.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString());
+                doanhthu = doanhthu+int.Parse(tableBangTaiChinh.Rows[i].Cells[5].Value.ToString());
             }
             doanhthutext.Text = doanhthu.ToString();
         }
@@ -895,8 +898,8 @@ namespace PizzaManagement
         private void button5_Click(object sender, EventArgs e)
         {
             BUS.DoanhThuBUS bus = new DoanhThuBUS();
-            int current = dataGridView2.CurrentRow.Index;
-            int mahd = int.Parse(dataGridView2.Rows[current].Cells[0].Value.ToString());
+            int current = tableBangTaiChinh.CurrentRow.Index;
+            int mahd = int.Parse(tableBangTaiChinh.Rows[current].Cells[0].Value.ToString());
             SqlDataReader reader;
             reader=bus.thongtinhoadon(mahd);
             HoaDonUI form = new HoaDonUI(reader,mahd);
