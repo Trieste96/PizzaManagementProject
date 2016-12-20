@@ -29,14 +29,19 @@ namespace PizzaManagement
             if (MessageBox.Show("Bạn có muốn sửa nguyên liệu này?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                     == DialogResult.OK)
             {
-                Info_NguyenLieu_DTO nlDto = new Info_NguyenLieu_DTO(Int32.Parse(txtMaNL.Text),txtInfoTenNL.Text,txtInfoDonVi.Text);
                 try
                 {
+                    Info_NguyenLieu_DTO nlDto = new Info_NguyenLieu_DTO(Int32.Parse(txtMaNL.Text), txtInfoTenNL.Text, txtInfoDonVi.Text);
                     nlBus.editNL(nlDto);
                 }
-                catch (Exception)
+                //catch (Exception)
+                //{
+                //    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
+                catch (FormatException)
                 {
-                    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kiểm tra dữ liệu đầu vào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.Close();

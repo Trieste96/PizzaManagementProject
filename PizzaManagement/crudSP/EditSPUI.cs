@@ -40,15 +40,20 @@ namespace PizzaManagement
         {
             if (MessageBox.Show("Bạn có muốn sửa sản phẩm này?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                     == DialogResult.OK)
-            {
-                Info_SanPham_DTO spDTO = new Info_SanPham_DTO(Int32.Parse(txtInfoMaSP.Text), txtInfoTenSP.Text, Int32.Parse(txtInfoGia.Text), Convert.ToInt32(cbInfoLoaiSP.SelectedValue.ToString()));
+            {               
                 try
                 {
+                    Info_SanPham_DTO spDTO = new Info_SanPham_DTO(Int32.Parse(txtInfoMaSP.Text), txtInfoTenSP.Text, Int32.Parse(txtInfoGia.Text), Convert.ToInt32(cbInfoLoaiSP.SelectedValue.ToString()));
                     spBus.editSP(spDTO);
                 }
-                catch (Exception)
+                //catch (Exc)
+                //{
+                //    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
+                catch(FormatException)
                 {
-                    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kiểm tra dữ liệu đầu vào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.Close();

@@ -52,7 +52,6 @@ namespace PizzaManagement
             TreeNode[] storeOptions =
             {
                 new TreeNode("Lập phiếu kiểm kho", 31, 31),
-                new TreeNode("Lập phiếu nhập kho", 32, 32),
                 new TreeNode("Tra cứu thông tin kho hàng", 33, 33)
             };
             TreeNode store = new TreeNode("Quản lý kho hàng", 3, 3, storeOptions);
@@ -92,6 +91,20 @@ namespace PizzaManagement
             
             //Thiết lập cho việc tạo phiếu kiểm kho
             cbLoaiPhieuTao.SelectedIndex = 0;
+
+            //Chỉnh font cho phần CRUD
+            Font cellsFont = new Font("Arial", 15, FontStyle.Regular);
+            dgv_info_KhachHang.Font = cellsFont;
+            dgv_info_NhanVien.Font = cellsFont;
+            dgv_info_NguyenLieu.Font = cellsFont;
+            dgv_info_SanPham.Font = cellsFont;
+
+            Font headersFont = new Font("Arial", 15, FontStyle.Bold);
+            dgv_info_KhachHang.ColumnHeadersDefaultCellStyle.Font = headersFont;
+            dgv_info_NhanVien.ColumnHeadersDefaultCellStyle.Font = headersFont;
+            dgv_info_NguyenLieu.ColumnHeadersDefaultCellStyle.Font = headersFont;
+            dgv_info_SanPham.ColumnHeadersDefaultCellStyle.Font = headersFont;
+            
         }
 
 
@@ -117,10 +130,6 @@ namespace PizzaManagement
                         tabControl.TabPages.Add(tabKiemKho);
                         tabControl.TabPages.Add(tabThongTinKho);
                         tabControl.SelectedTab = tabKiemKho;
-                        break;
-                    case 32:
-                        tabControl.TabPages.Add(tabKiemKho);
-                        tabControl.TabPages.Add(tabThongTinKho);
                         break;
                     case 33:
                         tabControl.TabPages.Add(tabKiemKho);
@@ -246,6 +255,7 @@ namespace PizzaManagement
                 //Thông tin phiếu trên label
                 lblMaPhieu.Text = tableDS_PKK.SelectedRows[0].Cells[0].Value.ToString();
                 lblLoaiPhieu.Text = tableDS_PKK.SelectedRows[0].Cells[1].Value.ToString();
+                lblNgay.Text = DateTime.Parse(tableDS_PKK.SelectedRows[0].Cells[2].Value.ToString()).ToString("dd/MM/yyyy");
 
                 tableChiTiet_PKK.Columns[0].ReadOnly = true;
                 tableChiTiet_PKK.Columns[1].ReadOnly = true;
@@ -423,6 +433,10 @@ namespace PizzaManagement
             tableThongKe.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             tableThongKe.DefaultCellStyle.ForeColor = Color.Black;
             tableThongKe.Columns["Đã sử dụng"].DefaultCellStyle.ForeColor = Color.Red;
+
+            //Hiển thị "Từ ngày" ... "đến ngày" ...
+            lblTuNgay.Text = dtpNgayBD.Value.ToString("dd/MM/yyyy");
+            lblDenNgay.Text = dtpNgayKT.Value.ToString("dd/MM/yyyy");
         }
 
         private void ManagerUI_Activated(object sender, EventArgs e)
@@ -554,7 +568,7 @@ namespace PizzaManagement
                     return;
                 };
                 MessageBox.Show("Xoá thành công!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                dgv_info_SanPham.Rows[a-1].Selected = true;
+               // dgv_info_SanPham.Rows[a-1].Selected = true;
                 dgv_info_SanPham.FirstDisplayedScrollingRowIndex = a-1;
             }
         }

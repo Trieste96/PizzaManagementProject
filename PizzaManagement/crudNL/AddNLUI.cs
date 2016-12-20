@@ -35,9 +35,14 @@ namespace PizzaManagement
                 {
                     nlBus.addNL(nlDTO);
                 }
-                catch (Exception)
+                //catch (Exception)
+                //{
+                //    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
+                catch (FormatException)
                 {
-                    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kiểm tra dữ liệu đầu vào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.Close();
