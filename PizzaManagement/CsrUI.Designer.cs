@@ -66,12 +66,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.htpvcombo = new System.Windows.Forms.ComboBox();
             this.hinhThucPhucVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -91,6 +85,12 @@
             this.pizzaDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sanPhamTableAdapter = new PizzaManagement.PizzaDBDataSetTableAdapters.SanPhamTableAdapter();
             this.hinhThucPhucVuTableAdapter = new PizzaManagement.PizzaDBDataSet2TableAdapters.HinhThucPhucVuTableAdapter();
+            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -220,13 +220,13 @@
             this.groupBox6.Size = new System.Drawing.Size(404, 200);
             this.groupBox6.TabIndex = 19;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "groupBox6";
+            this.groupBox6.UseCompatibleTextRendering = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(184, 29);
+            this.button2.Location = new System.Drawing.Point(227, 41);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 59);
+            this.button2.Size = new System.Drawing.Size(143, 40);
             this.button2.TabIndex = 11;
             this.button2.Text = "Sửa số lượng";
             this.button2.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(184, 94);
+            this.button1.Location = new System.Drawing.Point(94, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 59);
             this.button1.TabIndex = 9;
@@ -244,7 +244,7 @@
             // 
             // suasoluongtext
             // 
-            this.suasoluongtext.Location = new System.Drawing.Point(108, 48);
+            this.suasoluongtext.Location = new System.Drawing.Point(136, 48);
             this.suasoluongtext.Name = "suasoluongtext";
             this.suasoluongtext.Size = new System.Drawing.Size(70, 26);
             this.suasoluongtext.TabIndex = 17;
@@ -255,7 +255,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(8, 48);
+            this.label14.Location = new System.Drawing.Point(36, 48);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 24);
             this.label14.TabIndex = 16;
@@ -365,6 +365,7 @@
             // 
             // savebutton
             // 
+            this.savebutton.ForeColor = System.Drawing.Color.Blue;
             this.savebutton.Location = new System.Drawing.Point(569, 550);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(214, 59);
@@ -501,46 +502,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(749, 150);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // stt
-            // 
-            this.stt.HeaderText = "STT";
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            // 
-            // MaSP
-            // 
-            this.MaSP.HeaderText = "Mã Sản Phẩm";
-            this.MaSP.Name = "MaSP";
-            this.MaSP.ReadOnly = true;
-            // 
-            // TenSp
-            // 
-            this.TenSp.HeaderText = "Tên Sản Phẩm";
-            this.TenSp.Name = "TenSp";
-            this.TenSp.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // Gia
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Gia.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -733,6 +694,48 @@
             // 
             this.hinhThucPhucVuTableAdapter.ClearBeforeFill = true;
             // 
+            // stt
+            // 
+            this.stt.HeaderText = "STT";
+            this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
+            // 
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "Mã Sản Phẩm";
+            this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
+            // 
+            // TenSp
+            // 
+            this.TenSp.HeaderText = "Tên Sản Phẩm";
+            this.TenSp.Name = "TenSp";
+            this.TenSp.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N0";
+            this.Gia.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N0";
+            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            // 
             // CsrUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,12 +795,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox cktext;
         private System.Windows.Forms.Label label13;
@@ -831,5 +828,11 @@
         private PizzaDBDataSet2 pizzaDBDataSet2;
         private System.Windows.Forms.BindingSource hinhThucPhucVuBindingSource;
         private PizzaDBDataSet2TableAdapters.HinhThucPhucVuTableAdapter hinhThucPhucVuTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
     }
 }
