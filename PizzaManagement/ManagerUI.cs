@@ -830,7 +830,9 @@ namespace PizzaManagement
                 tableBangTaiChinh.Rows[current].Cells[5].Value = reader[5].ToString();
                 current++;
             }
-           
+            tableBangTaiChinh.Columns["TongTien"].DefaultCellStyle.Format = "n0";
+            tableBangTaiChinh.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 15, FontStyle.Bold);
+            tableBangTaiChinh.Font = new Font("Arial", 15, FontStyle.Regular);
             reader.Close();
             updatedoanhthu();
         }
@@ -852,6 +854,7 @@ namespace PizzaManagement
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             tableBangTaiChinh.Rows.Clear();
             SqlDataReader reader;
             BUS.DoanhThuBUS bus = new DoanhThuBUS();
@@ -868,6 +871,7 @@ namespace PizzaManagement
                 tableBangTaiChinh.Rows[current].Cells[5].Value = reader[5].ToString();
                 current++;
             }
+            tableBangTaiChinh.Columns["TongTien"].DefaultCellStyle.Format = "n0";
             tableBangTaiChinh.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 15, FontStyle.Bold);
             tableBangTaiChinh.Font = new Font("Arial", 15, FontStyle.Regular);
             reader.Close();
@@ -876,12 +880,29 @@ namespace PizzaManagement
 
         private void button4_Click(object sender, EventArgs e)
         {
-            BUS.DoanhThuBUS bus = new DoanhThuBUS();
-            int current = tableBangTaiChinh.CurrentRow.Index;
-            int mahd = int.Parse(tableBangTaiChinh.Rows[current].Cells[0].Value.ToString());
-            bus.huyhoadon(mahd);
-            tableBangTaiChinh.Rows.RemoveAt(current);
-            updatedoanhthu();
+            if (tableBangTaiChinh.SelectedCells.Count > 0)
+            {
+                int x = tableBangTaiChinh.CurrentRow.Index;
+                if (tableBangTaiChinh.Rows[x].Cells[0].Value!=null)
+                {
+                    switch (MessageBox.Show("Bạn có chắc chắn muốn hủy hóa đơn?", "Xác nhận", MessageBoxButtons.YesNo))
+                    {
+                        case DialogResult.Yes:
+                            {
+                                BUS.DoanhThuBUS bus = new DoanhThuBUS();
+                                int current = tableBangTaiChinh.CurrentRow.Index;
+                                int mahd = int.Parse(tableBangTaiChinh.Rows[current].Cells[0].Value.ToString());
+                                bus.huyhoadon(mahd);
+                                tableBangTaiChinh.Rows.RemoveAt(current);
+                                updatedoanhthu();
+                                break;
+                            }
+                        case DialogResult.No: break;
+                    }
+                }
+                else MessageBox.Show("Hóa đơn được chọn không hợp lệ, vui lòng kiểm tra lại", "Lỗi", MessageBoxButtons.OK);
+            }
+            else MessageBox.Show("Vui lòng chọn hóa đơn để hủy", "Lỗi", MessageBoxButtons.OK);
         }
         public void updatedoanhthu()
         {
@@ -891,19 +912,29 @@ namespace PizzaManagement
             {
                 doanhthu = doanhthu+int.Parse(tableBangTaiChinh.Rows[i].Cells[5].Value.ToString());
             }
-            doanhthutext.Text = doanhthu.ToString();
+            //doanhthutext.Text = doanhthu.ToString();
+            doanhthutext.Text = string.Format("{0:N0}",doanhthu);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            BUS.DoanhThuBUS bus = new DoanhThuBUS();
-            int current = tableBangTaiChinh.CurrentRow.Index;
-            int mahd = int.Parse(tableBangTaiChinh.Rows[current].Cells[0].Value.ToString());
-            SqlDataReader reader;
-            reader=bus.thongtinhoadon(mahd);
-            HoaDonUI form = new HoaDonUI(reader,mahd);
-            form.Show();
-            reader.Close();
+            if (tableBangTaiChinh.SelectedCells.Count > 0)
+            {
+                int x = tableBangTaiChinh.CurrentRow.Index;
+                if (tableBangTaiChinh.Rows[x].Cells[0].Value!=null)
+                {
+                    BUS.DoanhThuBUS bus = new DoanhThuBUS();
+                    int current = tableBangTaiChinh.CurrentRow.Index;
+                    int mahd = int.Parse(tableBangTaiChinh.Rows[current].Cells[0].Value.ToString());
+                    SqlDataReader reader;
+                    reader = bus.thongtinhoadon(mahd);
+                    HoaDonUI form = new HoaDonUI(reader, mahd);
+                    form.Show();
+                    reader.Close();
+                }
+                else MessageBox.Show("Hóa đơn được chọn không hợp lệ, vui lòng kiểm tra lại", "Lỗi", MessageBoxButtons.OK);
+            }
+            else MessageBox.Show("Vui lòng chọn hóa đơn để xem", "Lỗi", MessageBoxButtons.OK);
         }
         }
 
