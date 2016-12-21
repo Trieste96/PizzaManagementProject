@@ -220,13 +220,13 @@
             this.groupBox6.Size = new System.Drawing.Size(404, 200);
             this.groupBox6.TabIndex = 19;
             this.groupBox6.TabStop = false;
-            this.groupBox6.UseCompatibleTextRendering = true;
+            this.groupBox6.Text = "groupBox6";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(227, 41);
+            this.button2.Location = new System.Drawing.Point(184, 29);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 40);
+            this.button2.Size = new System.Drawing.Size(214, 59);
             this.button2.TabIndex = 11;
             this.button2.Text = "Sửa số lượng";
             this.button2.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(94, 104);
+            this.button1.Location = new System.Drawing.Point(184, 94);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 59);
             this.button1.TabIndex = 9;
@@ -244,7 +244,7 @@
             // 
             // suasoluongtext
             // 
-            this.suasoluongtext.Location = new System.Drawing.Point(136, 48);
+            this.suasoluongtext.Location = new System.Drawing.Point(108, 48);
             this.suasoluongtext.Name = "suasoluongtext";
             this.suasoluongtext.Size = new System.Drawing.Size(70, 26);
             this.suasoluongtext.TabIndex = 17;
@@ -255,12 +255,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(36, 48);
+            this.label14.Location = new System.Drawing.Point(8, 48);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 24);
             this.label14.TabIndex = 16;
             this.label14.Text = "Số lượng";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // groupBox4
             // 
@@ -366,7 +365,6 @@
             // 
             // savebutton
             // 
-            this.savebutton.ForeColor = System.Drawing.Color.Blue;
             this.savebutton.Location = new System.Drawing.Point(569, 550);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(214, 59);
