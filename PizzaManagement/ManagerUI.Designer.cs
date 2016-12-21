@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.GroupBox groupBox4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnXemChiTietPKK = new System.Windows.Forms.Button();
             this.btnXoaPKK = new System.Windows.Forms.Button();
             this.tableDS_PKK = new System.Windows.Forms.DataGridView();
@@ -124,6 +124,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.doanhthutext = new System.Windows.Forms.TextBox();
             this.tableBangTaiChinh = new System.Windows.Forms.DataGridView();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnTraCuuTaiChinh = new System.Windows.Forms.Button();
             this.datekt = new System.Windows.Forms.DateTimePicker();
@@ -136,12 +142,6 @@
             this.hoaDonTableAdapter = new PizzaManagement.PizzaDBDataSet2TableAdapters.HoaDonTableAdapter();
             this.tableAdapterManager = new PizzaManagement.PizzaDBDataSet2TableAdapters.TableAdapterManager();
             this.hoaDonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             groupBox4 = new System.Windows.Forms.GroupBox();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDS_PKK)).BeginInit();
@@ -184,9 +184,9 @@
             groupBox4.Controls.Add(this.tableDS_PKK);
             groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             groupBox4.ForeColor = System.Drawing.Color.Blue;
-            groupBox4.Location = new System.Drawing.Point(23, 333);
+            groupBox4.Location = new System.Drawing.Point(23, 335);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new System.Drawing.Size(474, 298);
+            groupBox4.Size = new System.Drawing.Size(474, 330);
             groupBox4.TabIndex = 12;
             groupBox4.TabStop = false;
             groupBox4.Text = "Danh sách các phiếu";
@@ -198,10 +198,10 @@
             this.btnXemChiTietPKK.ForeColor = System.Drawing.Color.Black;
             this.btnXemChiTietPKK.Image = ((System.Drawing.Image)(resources.GetObject("btnXemChiTietPKK.Image")));
             this.btnXemChiTietPKK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemChiTietPKK.Location = new System.Drawing.Point(29, 300);
+            this.btnXemChiTietPKK.Location = new System.Drawing.Point(40, 247);
             this.btnXemChiTietPKK.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemChiTietPKK.Name = "btnXemChiTietPKK";
-            this.btnXemChiTietPKK.Size = new System.Drawing.Size(268, 57);
+            this.btnXemChiTietPKK.Size = new System.Drawing.Size(205, 57);
             this.btnXemChiTietPKK.TabIndex = 12;
             this.btnXemChiTietPKK.Text = "Xem chi tiết phiếu";
             this.btnXemChiTietPKK.UseVisualStyleBackColor = true;
@@ -214,10 +214,10 @@
             this.btnXoaPKK.ForeColor = System.Drawing.Color.Black;
             this.btnXoaPKK.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPKK.Image")));
             this.btnXoaPKK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPKK.Location = new System.Drawing.Point(328, 300);
+            this.btnXoaPKK.Location = new System.Drawing.Point(273, 247);
             this.btnXoaPKK.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaPKK.Name = "btnXoaPKK";
-            this.btnXoaPKK.Size = new System.Drawing.Size(261, 57);
+            this.btnXoaPKK.Size = new System.Drawing.Size(173, 57);
             this.btnXoaPKK.TabIndex = 2;
             this.btnXoaPKK.Text = "Xoá phiếu";
             this.btnXoaPKK.UseVisualStyleBackColor = true;
@@ -245,7 +245,7 @@
             this.treeFunctionList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeFunctionList.Location = new System.Drawing.Point(2, 153);
             this.treeFunctionList.Name = "treeFunctionList";
-            this.treeFunctionList.Size = new System.Drawing.Size(262, 929);
+            this.treeFunctionList.Size = new System.Drawing.Size(262, 921);
             this.treeFunctionList.TabIndex = 5;
             this.treeFunctionList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeFunctionList_AfterSelect);
             this.treeFunctionList.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeFunctionList_NodeMouseDoubleClick);
@@ -360,7 +360,7 @@
             this.tabKhachHang.Location = new System.Drawing.Point(4, 38);
             this.tabKhachHang.Name = "tabKhachHang";
             this.tabKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKhachHang.Size = new System.Drawing.Size(1066, 855);
+            this.tabKhachHang.Size = new System.Drawing.Size(1060, 847);
             this.tabKhachHang.TabIndex = 7;
             this.tabKhachHang.Text = "Khách hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
@@ -388,19 +388,19 @@
             this.StripMenu_SuaKH,
             this.StripMenu_XoaKH});
             this.menu_suaXoaKH.Name = "menu_suaXoaKH";
-            this.menu_suaXoaKH.Size = new System.Drawing.Size(190, 56);
+            this.menu_suaXoaKH.Size = new System.Drawing.Size(160, 48);
             // 
             // StripMenu_SuaKH
             // 
             this.StripMenu_SuaKH.Name = "StripMenu_SuaKH";
-            this.StripMenu_SuaKH.Size = new System.Drawing.Size(189, 26);
+            this.StripMenu_SuaKH.Size = new System.Drawing.Size(159, 22);
             this.StripMenu_SuaKH.Text = "Sửa khách hàng";
             this.StripMenu_SuaKH.Click += new System.EventHandler(this.StripMenu_SuaKH_Click);
             // 
             // StripMenu_XoaKH
             // 
             this.StripMenu_XoaKH.Name = "StripMenu_XoaKH";
-            this.StripMenu_XoaKH.Size = new System.Drawing.Size(189, 26);
+            this.StripMenu_XoaKH.Size = new System.Drawing.Size(159, 22);
             this.StripMenu_XoaKH.Text = "Xóa khách hàng";
             this.StripMenu_XoaKH.Click += new System.EventHandler(this.StripMenu_XoaKH_Click);
             // 
@@ -454,7 +454,7 @@
             this.tabNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(4);
-            this.tabNhanVien.Size = new System.Drawing.Size(1066, 855);
+            this.tabNhanVien.Size = new System.Drawing.Size(1060, 847);
             this.tabNhanVien.TabIndex = 6;
             this.tabNhanVien.Text = "Nhân viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
@@ -484,19 +484,19 @@
             this.StripMenu_SuaNV,
             this.StripMenu_XoaNV});
             this.menu_suaXoaNV.Name = "menu_suaXoaNV";
-            this.menu_suaXoaNV.Size = new System.Drawing.Size(148, 48);
+            this.menu_suaXoaNV.Size = new System.Drawing.Size(150, 48);
             // 
             // StripMenu_SuaNV
             // 
             this.StripMenu_SuaNV.Name = "StripMenu_SuaNV";
-            this.StripMenu_SuaNV.Size = new System.Drawing.Size(147, 22);
+            this.StripMenu_SuaNV.Size = new System.Drawing.Size(149, 22);
             this.StripMenu_SuaNV.Text = "Sửa nhân viên";
             this.StripMenu_SuaNV.Click += new System.EventHandler(this.StripMenu_SuaNV_Click);
             // 
             // StripMenu_XoaNV
             // 
             this.StripMenu_XoaNV.Name = "StripMenu_XoaNV";
-            this.StripMenu_XoaNV.Size = new System.Drawing.Size(147, 22);
+            this.StripMenu_XoaNV.Size = new System.Drawing.Size(149, 22);
             this.StripMenu_XoaNV.Text = "Xóa nhân viên";
             this.StripMenu_XoaNV.Click += new System.EventHandler(this.StripMenu_XoaNV_Click);
             // 
@@ -546,19 +546,19 @@
             this.StripMenu_SuaNL,
             this.StripMenu_XoaNL});
             this.menu_suaXoaNL.Name = "menu_themSuaNL";
-            this.menu_suaXoaNL.Size = new System.Drawing.Size(158, 48);
+            this.menu_suaXoaNL.Size = new System.Drawing.Size(160, 48);
             // 
             // StripMenu_SuaNL
             // 
             this.StripMenu_SuaNL.Name = "StripMenu_SuaNL";
-            this.StripMenu_SuaNL.Size = new System.Drawing.Size(157, 22);
+            this.StripMenu_SuaNL.Size = new System.Drawing.Size(159, 22);
             this.StripMenu_SuaNL.Text = "Sửa nguyên liệu";
             this.StripMenu_SuaNL.Click += new System.EventHandler(this.StripMenu_SuaNL_Click);
             // 
             // StripMenu_XoaNL
             // 
             this.StripMenu_XoaNL.Name = "StripMenu_XoaNL";
-            this.StripMenu_XoaNL.Size = new System.Drawing.Size(157, 22);
+            this.StripMenu_XoaNL.Size = new System.Drawing.Size(159, 22);
             this.StripMenu_XoaNL.Text = "Xóa nguyên liệu";
             this.StripMenu_XoaNL.Click += new System.EventHandler(this.StripMenu_XoaNL_Click);
             // 
@@ -573,7 +573,7 @@
             this.tabNguyenLieu.Margin = new System.Windows.Forms.Padding(4);
             this.tabNguyenLieu.Name = "tabNguyenLieu";
             this.tabNguyenLieu.Padding = new System.Windows.Forms.Padding(4);
-            this.tabNguyenLieu.Size = new System.Drawing.Size(1066, 855);
+            this.tabNguyenLieu.Size = new System.Drawing.Size(1060, 847);
             this.tabNguyenLieu.TabIndex = 5;
             this.tabNguyenLieu.Text = "Nguyên liệu";
             this.tabNguyenLieu.UseVisualStyleBackColor = true;
@@ -644,7 +644,7 @@
             this.tabSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.tabSanPham.Name = "tabSanPham";
             this.tabSanPham.Padding = new System.Windows.Forms.Padding(4);
-            this.tabSanPham.Size = new System.Drawing.Size(1066, 855);
+            this.tabSanPham.Size = new System.Drawing.Size(1060, 847);
             this.tabSanPham.TabIndex = 4;
             this.tabSanPham.Text = "Sản phẩm";
             this.tabSanPham.UseVisualStyleBackColor = true;
@@ -714,20 +714,20 @@
             this.stripMenu_suaSP,
             this.stripMenu_xoaSP});
             this.menu_suaXoaSP.Name = "menu_themSuaSP";
-            this.menu_suaXoaSP.Size = new System.Drawing.Size(147, 48);
+            this.menu_suaXoaSP.Size = new System.Drawing.Size(150, 48);
             this.menu_suaXoaSP.TabStop = true;
             // 
             // stripMenu_suaSP
             // 
             this.stripMenu_suaSP.Name = "stripMenu_suaSP";
-            this.stripMenu_suaSP.Size = new System.Drawing.Size(146, 22);
+            this.stripMenu_suaSP.Size = new System.Drawing.Size(149, 22);
             this.stripMenu_suaSP.Text = "Sửa sản phẩm";
             this.stripMenu_suaSP.Click += new System.EventHandler(this.stripMenu_suaSP_Click);
             // 
             // stripMenu_xoaSP
             // 
             this.stripMenu_xoaSP.Name = "stripMenu_xoaSP";
-            this.stripMenu_xoaSP.Size = new System.Drawing.Size(146, 22);
+            this.stripMenu_xoaSP.Size = new System.Drawing.Size(149, 22);
             this.stripMenu_xoaSP.Text = "Xóa sản phẩm";
             this.stripMenu_xoaSP.Click += new System.EventHandler(this.stripMenu_xoaSP_Click);
             // 
@@ -742,7 +742,7 @@
             this.tabThongTinKho.Margin = new System.Windows.Forms.Padding(4);
             this.tabThongTinKho.Name = "tabThongTinKho";
             this.tabThongTinKho.Padding = new System.Windows.Forms.Padding(4);
-            this.tabThongTinKho.Size = new System.Drawing.Size(1066, 855);
+            this.tabThongTinKho.Size = new System.Drawing.Size(1060, 847);
             this.tabThongTinKho.TabIndex = 3;
             this.tabThongTinKho.Text = "Tra cứu thông tin kho";
             this.tabThongTinKho.UseVisualStyleBackColor = true;
@@ -756,9 +756,9 @@
             this.groupBox6.Controls.Add(this.tableThongKe);
             this.groupBox6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox6.Location = new System.Drawing.Point(6, 231);
+            this.groupBox6.Location = new System.Drawing.Point(9, 239);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1055, 416);
+            this.groupBox6.Size = new System.Drawing.Size(1055, 417);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Bảng thống kê";
@@ -813,11 +813,11 @@
             this.tableThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tableThongKe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tableThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableThongKe.Location = new System.Drawing.Point(8, 33);
+            this.tableThongKe.Location = new System.Drawing.Point(7, 64);
             this.tableThongKe.Margin = new System.Windows.Forms.Padding(4);
             this.tableThongKe.Name = "tableThongKe";
             this.tableThongKe.ReadOnly = true;
-            this.tableThongKe.Size = new System.Drawing.Size(1395, 452);
+            this.tableThongKe.Size = new System.Drawing.Size(1395, 345);
             this.tableThongKe.TabIndex = 0;
             // 
             // grpbxXemThongKe
@@ -831,7 +831,7 @@
             this.grpbxXemThongKe.ForeColor = System.Drawing.Color.Blue;
             this.grpbxXemThongKe.Location = new System.Drawing.Point(299, 59);
             this.grpbxXemThongKe.Name = "grpbxXemThongKe";
-            this.grpbxXemThongKe.Size = new System.Drawing.Size(507, 166);
+            this.grpbxXemThongKe.Size = new System.Drawing.Size(502, 174);
             this.grpbxXemThongKe.TabIndex = 6;
             this.grpbxXemThongKe.TabStop = false;
             this.grpbxXemThongKe.Text = "Xem thống kê trong khoảng thời gian";
@@ -842,7 +842,7 @@
             this.btnXemTK.ForeColor = System.Drawing.Color.Black;
             this.btnXemTK.Image = ((System.Drawing.Image)(resources.GetObject("btnXemTK.Image")));
             this.btnXemTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemTK.Location = new System.Drawing.Point(195, 115);
+            this.btnXemTK.Location = new System.Drawing.Point(199, 125);
             this.btnXemTK.Name = "btnXemTK";
             this.btnXemTK.Size = new System.Drawing.Size(154, 41);
             this.btnXemTK.TabIndex = 6;
@@ -869,7 +869,7 @@
             this.dtpNgayBD.Location = new System.Drawing.Point(199, 47);
             this.dtpNgayBD.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(335, 26);
+            this.dtpNgayBD.Size = new System.Drawing.Size(285, 26);
             this.dtpNgayBD.TabIndex = 2;
             this.dtpNgayBD.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             this.dtpNgayBD.ValueChanged += new System.EventHandler(this.dtpNgayBD_ValueChanged);
@@ -893,7 +893,7 @@
             this.dtpNgayKT.Location = new System.Drawing.Point(199, 91);
             this.dtpNgayKT.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(335, 26);
+            this.dtpNgayKT.Size = new System.Drawing.Size(285, 26);
             this.dtpNgayKT.TabIndex = 3;
             this.dtpNgayKT.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
@@ -941,7 +941,7 @@
             this.tabKiemKho.Location = new System.Drawing.Point(4, 38);
             this.tabKiemKho.Name = "tabKiemKho";
             this.tabKiemKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKiemKho.Size = new System.Drawing.Size(1066, 855);
+            this.tabKiemKho.Size = new System.Drawing.Size(1060, 847);
             this.tabKiemKho.TabIndex = 2;
             this.tabKiemKho.Text = "Lập phiếu kiểm kho";
             this.tabKiemKho.UseVisualStyleBackColor = true;
@@ -959,9 +959,9 @@
             this.groupBox5.Controls.Add(this.tableChiTiet_PKK);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox5.Location = new System.Drawing.Point(517, 56);
+            this.groupBox5.Location = new System.Drawing.Point(503, 50);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(551, 581);
+            this.groupBox5.Size = new System.Drawing.Size(551, 615);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chi tiết phiếu kiểm kho";
@@ -971,7 +971,7 @@
             this.lblNgay.AutoSize = true;
             this.lblNgay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgay.ForeColor = System.Drawing.Color.Blue;
-            this.lblNgay.Location = new System.Drawing.Point(395, 17);
+            this.lblNgay.Location = new System.Drawing.Point(302, 53);
             this.lblNgay.Name = "lblNgay";
             this.lblNgay.Size = new System.Drawing.Size(34, 29);
             this.lblNgay.TabIndex = 15;
@@ -982,7 +982,7 @@
             this.lblNgayTitle.AutoSize = true;
             this.lblNgayTitle.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgayTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblNgayTitle.Location = new System.Drawing.Point(299, 17);
+            this.lblNgayTitle.Location = new System.Drawing.Point(206, 53);
             this.lblNgayTitle.Name = "lblNgayTitle";
             this.lblNgayTitle.Size = new System.Drawing.Size(78, 29);
             this.lblNgayTitle.TabIndex = 14;
@@ -993,7 +993,7 @@
             this.lblLoaiPhieu.AutoSize = true;
             this.lblLoaiPhieu.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaiPhieu.ForeColor = System.Drawing.Color.Blue;
-            this.lblLoaiPhieu.Location = new System.Drawing.Point(560, 21);
+            this.lblLoaiPhieu.Location = new System.Drawing.Point(424, 15);
             this.lblLoaiPhieu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoaiPhieu.Name = "lblLoaiPhieu";
             this.lblLoaiPhieu.Size = new System.Drawing.Size(34, 29);
@@ -1005,7 +1005,7 @@
             this.lbLoaiPhieuTitle.AutoSize = true;
             this.lbLoaiPhieuTitle.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoaiPhieuTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbLoaiPhieuTitle.Location = new System.Drawing.Point(372, 21);
+            this.lbLoaiPhieuTitle.Location = new System.Drawing.Point(281, 17);
             this.lbLoaiPhieuTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLoaiPhieuTitle.Name = "lbLoaiPhieuTitle";
             this.lbLoaiPhieuTitle.Size = new System.Drawing.Size(142, 29);
@@ -1033,7 +1033,7 @@
             this.lblMaPhieu.AutoSize = true;
             this.lblMaPhieu.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaPhieu.ForeColor = System.Drawing.Color.Blue;
-            this.lblMaPhieu.Location = new System.Drawing.Point(163, 17);
+            this.lblMaPhieu.Location = new System.Drawing.Point(158, 15);
             this.lblMaPhieu.Name = "lblMaPhieu";
             this.lblMaPhieu.Size = new System.Drawing.Size(34, 29);
             this.lblMaPhieu.TabIndex = 2;
@@ -1072,10 +1072,10 @@
             this.tableChiTiet_PKK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableChiTiet_PKK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.tableChiTiet_PKK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableChiTiet_PKK.Location = new System.Drawing.Point(8, 58);
+            this.tableChiTiet_PKK.Location = new System.Drawing.Point(7, 86);
             this.tableChiTiet_PKK.Margin = new System.Windows.Forms.Padding(4);
             this.tableChiTiet_PKK.Name = "tableChiTiet_PKK";
-            this.tableChiTiet_PKK.Size = new System.Drawing.Size(719, 574);
+            this.tableChiTiet_PKK.Size = new System.Drawing.Size(529, 503);
             this.tableChiTiet_PKK.TabIndex = 0;
             this.tableChiTiet_PKK.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.tableChiTiet_PKK_CellBeginEdit);
             this.tableChiTiet_PKK.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtChiTietPhieuTK_CellEndEdit);
@@ -1118,10 +1118,10 @@
             this.btnTaoPKK.ForeColor = System.Drawing.Color.Black;
             this.btnTaoPKK.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoPKK.Image")));
             this.btnTaoPKK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaoPKK.Location = new System.Drawing.Point(197, 96);
+            this.btnTaoPKK.Location = new System.Drawing.Point(140, 75);
             this.btnTaoPKK.Margin = new System.Windows.Forms.Padding(4);
             this.btnTaoPKK.Name = "btnTaoPKK";
-            this.btnTaoPKK.Size = new System.Drawing.Size(316, 48);
+            this.btnTaoPKK.Size = new System.Drawing.Size(226, 48);
             this.btnTaoPKK.TabIndex = 5;
             this.btnTaoPKK.Text = "Tạo phiếu kiểm kho";
             this.btnTaoPKK.UseVisualStyleBackColor = true;
@@ -1194,7 +1194,7 @@
             this.btnChonLai.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChonLai.ForeColor = System.Drawing.Color.Black;
             this.btnChonLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChonLai.Location = new System.Drawing.Point(283, 94);
+            this.btnChonLai.Location = new System.Drawing.Point(302, 94);
             this.btnChonLai.Name = "btnChonLai";
             this.btnChonLai.Size = new System.Drawing.Size(144, 43);
             this.btnChonLai.TabIndex = 12;
@@ -1248,10 +1248,10 @@
             this.btnXemDS_PKK.ForeColor = System.Drawing.Color.Black;
             this.btnXemDS_PKK.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDS_PKK.Image")));
             this.btnXemDS_PKK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemDS_PKK.Location = new System.Drawing.Point(31, 116);
+            this.btnXemDS_PKK.Location = new System.Drawing.Point(40, 95);
             this.btnXemDS_PKK.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemDS_PKK.Name = "btnXemDS_PKK";
-            this.btnXemDS_PKK.Size = new System.Drawing.Size(275, 53);
+            this.btnXemDS_PKK.Size = new System.Drawing.Size(209, 41);
             this.btnXemDS_PKK.TabIndex = 8;
             this.btnXemDS_PKK.Text = "Tải danh sách phiếu";
             this.btnXemDS_PKK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1282,7 +1282,7 @@
             this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(2);
-            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1066, 855);
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1060, 847);
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
@@ -1366,6 +1366,46 @@
             this.tableBangTaiChinh.Size = new System.Drawing.Size(1053, 303);
             this.tableBangTaiChinh.TabIndex = 1;
             // 
+            // MaHD
+            // 
+            this.MaHD.HeaderText = "Mã Hóa Đơn";
+            this.MaHD.Name = "MaHD";
+            this.MaHD.ReadOnly = true;
+            // 
+            // NhanVien
+            // 
+            this.NhanVien.HeaderText = "Nhân Viên";
+            this.NhanVien.Name = "NhanVien";
+            this.NhanVien.ReadOnly = true;
+            // 
+            // KhachHang
+            // 
+            this.KhachHang.HeaderText = "Khách Hàng";
+            this.KhachHang.Name = "KhachHang";
+            this.KhachHang.ReadOnly = true;
+            // 
+            // HinhThuc
+            // 
+            this.HinhThuc.HeaderText = "Hình Thức Phục Vụ";
+            this.HinhThuc.Name = "HinhThuc";
+            this.HinhThuc.ReadOnly = true;
+            // 
+            // NgayGio
+            // 
+            this.NgayGio.HeaderText = "Ngày Giờ";
+            this.NgayGio.Name = "NgayGio";
+            this.NgayGio.ReadOnly = true;
+            // 
+            // TongTien
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.TongTien.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TongTien.HeaderText = "Tổng Tiền";
+            this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
+            // 
             // groupBox7
             // 
             this.groupBox7.AutoSize = true;
@@ -1388,7 +1428,7 @@
             this.btnTraCuuTaiChinh.ForeColor = System.Drawing.Color.Black;
             this.btnTraCuuTaiChinh.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuuTaiChinh.Image")));
             this.btnTraCuuTaiChinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTraCuuTaiChinh.Location = new System.Drawing.Point(199, 116);
+            this.btnTraCuuTaiChinh.Location = new System.Drawing.Point(200, 116);
             this.btnTraCuuTaiChinh.Margin = new System.Windows.Forms.Padding(2);
             this.btnTraCuuTaiChinh.Name = "btnTraCuuTaiChinh";
             this.btnTraCuuTaiChinh.Size = new System.Drawing.Size(150, 38);
@@ -1437,7 +1477,7 @@
             this.tabLichLam.Location = new System.Drawing.Point(4, 38);
             this.tabLichLam.Name = "tabLichLam";
             this.tabLichLam.Padding = new System.Windows.Forms.Padding(2);
-            this.tabLichLam.Size = new System.Drawing.Size(1066, 855);
+            this.tabLichLam.Size = new System.Drawing.Size(1060, 847);
             this.tabLichLam.TabIndex = 0;
             this.tabLichLam.Text = "Sắp xếp lịch làm";
             this.tabLichLam.UseVisualStyleBackColor = true;
@@ -1461,7 +1501,7 @@
             this.tabControl.Location = new System.Drawing.Point(274, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1074, 897);
+            this.tabControl.Size = new System.Drawing.Size(1068, 889);
             this.tabControl.TabIndex = 6;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -1496,51 +1536,11 @@
             this.hoaDonBindingSource1.DataMember = "HoaDon";
             this.hoaDonBindingSource1.DataSource = this.pizzaDBDataSet2BindingSource;
             // 
-            // MaHD
-            // 
-            this.MaHD.HeaderText = "Mã Hóa Đơn";
-            this.MaHD.Name = "MaHD";
-            this.MaHD.ReadOnly = true;
-            // 
-            // NhanVien
-            // 
-            this.NhanVien.HeaderText = "Nhân Viên";
-            this.NhanVien.Name = "NhanVien";
-            this.NhanVien.ReadOnly = true;
-            // 
-            // KhachHang
-            // 
-            this.KhachHang.HeaderText = "Khách Hàng";
-            this.KhachHang.Name = "KhachHang";
-            this.KhachHang.ReadOnly = true;
-            // 
-            // HinhThuc
-            // 
-            this.HinhThuc.HeaderText = "Hình Thức Phục Vụ";
-            this.HinhThuc.Name = "HinhThuc";
-            this.HinhThuc.ReadOnly = true;
-            // 
-            // NgayGio
-            // 
-            this.NgayGio.HeaderText = "Ngày Giờ";
-            this.NgayGio.Name = "NgayGio";
-            this.NgayGio.ReadOnly = true;
-            // 
-            // TongTien
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.TongTien.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TongTien.HeaderText = "Tổng Tiền";
-            this.TongTien.Name = "TongTien";
-            this.TongTien.ReadOnly = true;
-            // 
             // ManagerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1360, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.treeFunctionList);
