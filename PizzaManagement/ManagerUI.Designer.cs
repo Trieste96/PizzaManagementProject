@@ -32,6 +32,20 @@
             System.Windows.Forms.GroupBox groupBox4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerUI));
             this.tableDS_PKK = new System.Windows.Forms.DataGridView();
+            this.btnXemChiTietPKK = new System.Windows.Forms.Button();
+            this.btnXoaPKK = new System.Windows.Forms.Button();
+            this.btnXoaThayDoiPKK = new System.Windows.Forms.Button();
+            this.btnLuuPKK = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnTaoPKK = new System.Windows.Forms.Button();
+            this.btnXemDS_PKK = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.doanhthutext = new System.Windows.Forms.TextBox();
+            this.tableBangTaiChinh = new System.Windows.Forms.DataGridView();
+            this.btnTraCuuTaiChinh = new System.Windows.Forms.Button();
             this.treeFunctionList = new System.Windows.Forms.TreeView();
             this.tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -229,7 +243,7 @@
             // 
             // treeFunctionList
             // 
-            this.treeFunctionList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.treeFunctionList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeFunctionList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeFunctionList.Location = new System.Drawing.Point(2, 153);
@@ -1256,24 +1270,19 @@
             this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(2);
-<<<<<<< HEAD
             this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1060, 847);
-=======
             this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1134, 838);
->>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
             this.tabTinhHinhTaiChinh.Click += new System.EventHandler(this.tabTinhHinhTaiChinh_Click);
             // 
-<<<<<<< HEAD
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-=======
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { });
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(448, 489);
@@ -1323,6 +1332,7 @@
             this.doanhthutext.TabIndex = 2;
             this.doanhthutext.Text = "0";
             this.doanhthutext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+
             // 
             // tableBangTaiChinh
             // 
@@ -1330,7 +1340,6 @@
             this.tableBangTaiChinh.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tableBangTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableBangTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
->>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             this.MaHD,
             this.NhanVien,
             this.KhachHang,
@@ -1398,7 +1407,6 @@
             // 
             // button1
             // 
-<<<<<<< HEAD
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.Location = new System.Drawing.Point(137, 122);
             this.button1.Name = "button1";
@@ -1406,8 +1414,6 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Tra cứu";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-=======
             this.btnTraCuuTaiChinh.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnTraCuuTaiChinh.Location = new System.Drawing.Point(199, 116);
             this.btnTraCuuTaiChinh.Margin = new System.Windows.Forms.Padding(2);
@@ -1417,7 +1423,6 @@
             this.btnTraCuuTaiChinh.Text = "Tra cứu";
             this.btnTraCuuTaiChinh.UseVisualStyleBackColor = true;
             this.btnTraCuuTaiChinh.Click += new System.EventHandler(this.btnTraCuuTaiChinh_Click);
->>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             // 
             // datekt
             // 
@@ -1488,8 +1493,8 @@
             // 
             // tabControl
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabLichLam);
             this.tabControl.Controls.Add(this.tabTinhHinhTaiChinh);
@@ -1518,7 +1523,6 @@
             this.menu_suaXoaKH.Name = "menu_suaXoaKH";
             this.menu_suaXoaKH.Size = new System.Drawing.Size(190, 56);
             // 
-<<<<<<< HEAD
             // StripMenu_SuaKH
             // 
             this.StripMenu_SuaKH.Name = "StripMenu_SuaKH";
@@ -1533,8 +1537,6 @@
             this.StripMenu_XoaKH.Text = "Xóa khách hàng";
             this.StripMenu_XoaKH.Click += new System.EventHandler(this.StripMenu_XoaKH_Click);
             // 
-=======
->>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             // ManagerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1625,6 +1627,7 @@
         private System.Windows.Forms.Label lblMaPhieuTitle;
         private System.Windows.Forms.Button btnLuuPKK;
         private System.Windows.Forms.DataGridView tableChiTiet_PKK;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnXemChiTietPKK;
         private System.Windows.Forms.Button btnXoaPKK;
         private System.Windows.Forms.DataGridView tableDS_PKK;
@@ -1680,8 +1683,6 @@
         private System.Windows.Forms.ContextMenuStrip menu_suaXoaKH;
         private System.Windows.Forms.ToolStripMenuItem StripMenu_SuaKH;
         private System.Windows.Forms.ToolStripMenuItem StripMenu_XoaKH;
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -1703,14 +1704,16 @@
         private System.Windows.Forms.BindingSource hoaDonBindingSource1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox doanhthutext;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lblDenNgay;
         private System.Windows.Forms.Label lblTuNgay;
+        private System.Windows.Forms.Label lblDenNgayTitle;
+        private System.Windows.Forms.Label lblTuNgayTitle;
         private System.Windows.Forms.Label lblNgay;
         private System.Windows.Forms.Label lblNgayTitle;
->>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
     }
 }
 
