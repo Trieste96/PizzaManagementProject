@@ -67,5 +67,19 @@ namespace BUS
                 throw;
             }
         }
+
+        public DataTable Load_info_NV_daNghi()
+        {
+            DataTable dt = new DataTable();
+            dt = nvDao.Load_info_NV_daNghi();
+            return dt;
+        }
+
+        public DataTable Load_info_NV_dangLam()
+        {
+            DataTable dt = new DataTable();
+            dt = nvDao.Load_info_NV_dangLam();
+            return dt;
+        }
     }
 }

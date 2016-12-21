@@ -19,6 +19,30 @@ namespace DAO
             return dtNV;
         }
 
+        public DataTable Load_info_NV_daNghi()
+        {
+            DataTable dtNV = new DataTable();
+            SqlConnection cn = DBConnection.GetConnection();
+            SqlCommand cmd = new SqlCommand("sp_INFO_loadNV_daNghi", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dtNV);
+            return dtNV;
+        }
+
+        public DataTable Load_info_NV_dangLam()
+        {
+            DataTable dtNV = new DataTable();
+            SqlConnection cn = DBConnection.GetConnection();
+            SqlCommand cmd = new SqlCommand("sp_INFO_loadNV_dangLam", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dtNV);
+            return dtNV;
+        }
+
         public DataTable Load_tinhTrang()
         {
             DataTable dt1 = new DataTable();
@@ -72,6 +96,9 @@ namespace DAO
             cmd.ExecuteNonQuery();
 
         }
+
+        
+
         public void editNV(NhanVien nvDto)
         {
             SqlConnection cn = DBConnection.GetConnection();

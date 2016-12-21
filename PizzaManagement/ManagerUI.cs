@@ -30,7 +30,10 @@ namespace PizzaManagement
             nlBus = new NguyenLieuBUS();
             nvBus = new NhanVienBUS();
             khBus = new KhachHangBUS();
-
+            
+            // Load nhân viên đang làm
+            load_cboTinhTrang();
+            btn_XemNVtheoTinhTrang_Click(null, null);
         }
 
         private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
@@ -108,7 +111,6 @@ namespace PizzaManagement
             dgv_info_NhanVien.ColumnHeadersDefaultCellStyle.Font = headersFont;
             dgv_info_NguyenLieu.ColumnHeadersDefaultCellStyle.Font = headersFont;
             dgv_info_SanPham.ColumnHeadersDefaultCellStyle.Font = headersFont;
-            
         }
 
 
@@ -445,9 +447,9 @@ namespace PizzaManagement
 
         private void ManagerUI_Activated(object sender, EventArgs e)
         {
+
             load_info_SP();
             load_info_NL();
-            load_info_NV();
             load_info_KH();
         }
         private void load_info_SP()
@@ -542,6 +544,90 @@ namespace PizzaManagement
             }
             dgv_info_KhachHang.ReadOnly = true;
             dgv_info_KhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void load_cboTinhTrang()
+        {
+            cb_TinhTrangNV.DisplayMember = "Text";
+            cb_TinhTrangNV.ValueMember = "Value";
+
+            var items = new[] {
+            new { Text = "Đang làm", Value = 1 },
+            new { Text = "Đã nghỉ", Value = 0 },
+           
+            new { Text = "Tất cả", Value = 2 },
+            };
+            //cb_TinhTrangNV.SelectedIndex.Equals(2);
+            cb_TinhTrangNV.DataSource = items;
+            
+
+        }
+
+        private void load_info_NV_DaNghi()
+        {
+            dgv_info_NhanVien.Font = new Font("Arial", 13, FontStyle.Regular);
+            dgv_info_NhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
+            DataTable dt2 = new DataTable();
+            NhanVienBUS nvBus = new NhanVienBUS();
+            dt2 = nvBus.Load_info_NV_daNghi();
+            dgv_info_NhanVien.DataSource = dt2;
+            dgv_info_NhanVien.Columns[0].HeaderText = "Mã NV";
+            dgv_info_NhanVien.Columns[1].HeaderText = "Họ tên NV";
+            dgv_info_NhanVien.Columns[2].HeaderText = "CMND";
+            dgv_info_NhanVien.Columns[3].HeaderText = "số ĐT";
+            dgv_info_NhanVien.Columns[4].HeaderText = "Địa chỉ";
+            dgv_info_NhanVien.Columns[5].HeaderText = "Email";
+            dgv_info_NhanVien.Columns[6].HeaderText = "Tên loại NV";
+            dgv_info_NhanVien.Columns[7].HeaderText = "Lương/giờ";
+            dgv_info_NhanVien.Columns[8].HeaderText = "Tình trạng";
+            dgv_info_NhanVien.Columns[9].Visible = false;
+            dgv_info_NhanVien.Columns[10].Visible = false;
+            for (int i = 0; i < dgv_info_NhanVien.ColumnCount; i++)
+            {
+                dgv_info_NhanVien.AutoResizeColumn(i);
+            }
+            dgv_info_NhanVien.ReadOnly = true;
+            dgv_info_NhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void load_info_NV_DangLam()
+        {
+            dgv_info_NhanVien.Font = new Font("Arial", 13, FontStyle.Regular);
+            dgv_info_NhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14, FontStyle.Bold);
+            DataTable dt3 = new DataTable();
+            NhanVienBUS nvBus = new NhanVienBUS();
+            dt3 = nvBus.Load_info_NV_dangLam();
+            dgv_info_NhanVien.DataSource = dt3;
+            dgv_info_NhanVien.Columns[0].HeaderText = "Mã NV";
+            dgv_info_NhanVien.Columns[1].HeaderText = "Họ tên NV";
+            dgv_info_NhanVien.Columns[2].HeaderText = "CMND";
+            dgv_info_NhanVien.Columns[3].HeaderText = "số ĐT";
+            dgv_info_NhanVien.Columns[4].HeaderText = "Địa chỉ";
+            dgv_info_NhanVien.Columns[5].HeaderText = "Email";
+            dgv_info_NhanVien.Columns[6].HeaderText = "Tên loại NV";
+            dgv_info_NhanVien.Columns[7].HeaderText = "Lương/giờ";
+            dgv_info_NhanVien.Columns[8].HeaderText = "Tình trạng";
+            dgv_info_NhanVien.Columns[9].Visible = false;
+            dgv_info_NhanVien.Columns[10].Visible = false;
+            for (int i = 0; i < dgv_info_NhanVien.ColumnCount; i++)
+            {
+                dgv_info_NhanVien.AutoResizeColumn(i);
+            }
+            dgv_info_NhanVien.ReadOnly = true;
+            dgv_info_NhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void btn_XemNVtheoTinhTrang_Click(object sender, EventArgs e)
+        {
+            if (cb_TinhTrangNV.SelectedValue.Equals(0))
+            {
+                load_info_NV_DaNghi();
+            }
+            else if (cb_TinhTrangNV.SelectedValue.Equals(1))
+            {
+                load_info_NV_DangLam();
+            }
+            else
+            {
+                load_info_NV();
+            }
         }
 
 
@@ -908,7 +994,9 @@ namespace PizzaManagement
             form.Show();
             reader.Close();
         }
-        }
+
+
+    }
 
         //private void getCurrentCellButton_Click(object sender, System.EventArgs e)
         //{
