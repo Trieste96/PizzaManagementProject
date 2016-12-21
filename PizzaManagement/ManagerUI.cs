@@ -40,6 +40,8 @@ namespace PizzaManagement
 
         private void loadTreeView()
         {
+            //Node lịch làm việc
+            TreeNode timeTable = new TreeNode("Sắp xếp lịch làm việc", 1, 1);
             //Node tài chính
             TreeNode[] financeOptions =
             {
@@ -67,6 +69,7 @@ namespace PizzaManagement
             };
             TreeNode info = new TreeNode("Quản lý thông tin", 4, 4, infoOptions);
             //Thêm node vào tree view
+            treeFunctionList.Nodes.Add(timeTable);
             treeFunctionList.Nodes.Add(finance);
             treeFunctionList.Nodes.Add(store);
             treeFunctionList.Nodes.Add(info);
