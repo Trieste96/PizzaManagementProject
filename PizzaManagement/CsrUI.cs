@@ -113,6 +113,7 @@ namespace PizzaManagement
             Int32 tongtien = 0;
             for (int i = 0; i < dataGridView1.RowCount-1; i++)
                 tongtien = tongtien + Int32.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
+            //tongtientext.Text = tongtien.ToString();
             tongtientext.Text = tongtien.ToString();
             vattext.Text = ((tongtien * 10) / 100).ToString();
             int vat = int.Parse(vattext.Text);
