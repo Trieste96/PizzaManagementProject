@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddKHUI.cs">
+    <Compile Include="crudKH\AddKHUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddKHUI.Designer.cs">
+    <Compile Include="crudKH\AddKHUI.Designer.cs">
       <DependentUpon>AddKHUI.cs</DependentUpon>
     </Compile>
     <Compile Include="crudNL\AddNLUI.cs">
@@ -88,10 +88,10 @@
     <Compile Include="crudNV\EditNVUI.Designer.cs">
       <DependentUpon>EditNVUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditKHUI.cs">
+    <Compile Include="crudKH\EditKHUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditKHUI.Designer.cs">
+    <Compile Include="crudKH\EditKHUI.Designer.cs">
       <DependentUpon>EditKHUI.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDonUI.cs">
@@ -99,6 +99,9 @@
     </Compile>
     <Compile Include="HoaDonUI.Designer.cs">
       <DependentUpon>HoaDonUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaDBDataSet1.cs">
+      <DependentUpon>PizzaDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="PizzaDBDataSet13.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -147,7 +150,7 @@
     <Compile Include="crudNV\AddNVUI.Designer.cs">
       <DependentUpon>AddNVUI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddKHUI.resx">
+    <EmbeddedResource Include="crudKH\AddKHUI.resx">
       <DependentUpon>AddKHUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="crudNL\AddNLUI.resx">
@@ -168,7 +171,7 @@
     <EmbeddedResource Include="crudNV\EditNVUI.resx">
       <DependentUpon>EditNVUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditKHUI.resx">
+    <EmbeddedResource Include="crudKH\EditKHUI.resx">
       <DependentUpon>EditKHUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonUI.resx">
