@@ -1256,18 +1256,81 @@
             this.tabTinhHinhTaiChinh.Location = new System.Drawing.Point(4, 38);
             this.tabTinhHinhTaiChinh.Name = "tabTinhHinhTaiChinh";
             this.tabTinhHinhTaiChinh.Padding = new System.Windows.Forms.Padding(2);
+<<<<<<< HEAD
             this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1060, 847);
+=======
+            this.tabTinhHinhTaiChinh.Size = new System.Drawing.Size(1134, 838);
+>>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             this.tabTinhHinhTaiChinh.TabIndex = 1;
             this.tabTinhHinhTaiChinh.Text = "Tra cứu tình hình tài chính";
             this.tabTinhHinhTaiChinh.UseVisualStyleBackColor = true;
             this.tabTinhHinhTaiChinh.Click += new System.EventHandler(this.tabTinhHinhTaiChinh_Click);
             // 
+<<<<<<< HEAD
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+=======
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(448, 489);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(190, 43);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Xem hóa đơn";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(236, 489);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(206, 43);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Hủy hóa đơn";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(4, 489);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(226, 43);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Tất cả hóa đơn";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(692, 495);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(198, 29);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Tổng doanh thu";
+            this.label12.Click += new System.EventHandler(this.label12_Click_1);
+            // 
+            // doanhthutext
+            // 
+            this.doanhthutext.Location = new System.Drawing.Point(896, 492);
+            this.doanhthutext.Name = "doanhthutext";
+            this.doanhthutext.ReadOnly = true;
+            this.doanhthutext.Size = new System.Drawing.Size(127, 35);
+            this.doanhthutext.TabIndex = 2;
+            this.doanhthutext.Text = "0";
+            this.doanhthutext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableBangTaiChinh
+            // 
+            this.tableBangTaiChinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableBangTaiChinh.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tableBangTaiChinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableBangTaiChinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+>>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             this.MaHD,
             this.NhanVien,
             this.KhachHang,
@@ -1335,6 +1398,7 @@
             // 
             // button1
             // 
+<<<<<<< HEAD
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.Location = new System.Drawing.Point(137, 122);
             this.button1.Name = "button1";
@@ -1343,6 +1407,17 @@
             this.button1.Text = "Tra cứu";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+=======
+            this.btnTraCuuTaiChinh.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnTraCuuTaiChinh.Location = new System.Drawing.Point(199, 116);
+            this.btnTraCuuTaiChinh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTraCuuTaiChinh.Name = "btnTraCuuTaiChinh";
+            this.btnTraCuuTaiChinh.Size = new System.Drawing.Size(150, 38);
+            this.btnTraCuuTaiChinh.TabIndex = 6;
+            this.btnTraCuuTaiChinh.Text = "Tra cứu";
+            this.btnTraCuuTaiChinh.UseVisualStyleBackColor = true;
+            this.btnTraCuuTaiChinh.Click += new System.EventHandler(this.btnTraCuuTaiChinh_Click);
+>>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             // 
             // datekt
             // 
@@ -1443,6 +1518,7 @@
             this.menu_suaXoaKH.Name = "menu_suaXoaKH";
             this.menu_suaXoaKH.Size = new System.Drawing.Size(190, 56);
             // 
+<<<<<<< HEAD
             // StripMenu_SuaKH
             // 
             this.StripMenu_SuaKH.Name = "StripMenu_SuaKH";
@@ -1457,6 +1533,8 @@
             this.StripMenu_XoaKH.Text = "Xóa khách hàng";
             this.StripMenu_XoaKH.Click += new System.EventHandler(this.StripMenu_XoaKH_Click);
             // 
+=======
+>>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
             // ManagerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1602,6 +1680,37 @@
         private System.Windows.Forms.ContextMenuStrip menu_suaXoaKH;
         private System.Windows.Forms.ToolStripMenuItem StripMenu_SuaKH;
         private System.Windows.Forms.ToolStripMenuItem StripMenu_XoaKH;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker datebd;
+        private System.Windows.Forms.BindingSource pizzaDBDataSet2BindingSource;
+        private PizzaDBDataSet2 pizzaDBDataSet2;
+        private System.Windows.Forms.Button btnTraCuuTaiChinh;
+        private System.Windows.Forms.DateTimePicker datekt;
+        private System.Windows.Forms.BindingSource hoaDonBindingSource;
+        private PizzaDBDataSet2TableAdapters.HoaDonTableAdapter hoaDonTableAdapter;
+        private PizzaDBDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView tableBangTaiChinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhThuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayGio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.BindingSource hoaDonBindingSource1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox doanhthutext;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label lblDenNgay;
+        private System.Windows.Forms.Label lblTuNgay;
+        private System.Windows.Forms.Label lblNgay;
+        private System.Windows.Forms.Label lblNgayTitle;
+>>>>>>> parent of be738d5... Triết: Thêm icon vào tất cả button trong ManageUI
     }
 }
 
